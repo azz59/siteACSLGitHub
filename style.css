@@ -1,0 +1,765 @@
+/* ===== GLOBAL ===== */
+
+@font-face {
+  font-family: 'Paris Forbel';
+  src: url('fonts/Vogue.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'Paris Forbel', 'Poppins', sans-serif;
+  background: #000000;
+  color:  #ffffff;
+  scroll-behavior: smooth;
+}
+
+.section {
+  padding: 80px 20px;
+  transition: opacity 1s ease;
+}
+
+/* ===== HEADER ===== */
+.menu-bar {
+  background: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  margin-right: 100px;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.menu-bar h1 {
+  flex: 1;
+  text-align: left;
+  font-size: 1.5rem;
+  font-family: 'Gemola';
+}
+
+.hamburger {
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+    margin-right: 80px; /* <-- ajuste la distance depuis le bord gauche */
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  height: 3px;
+  background: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px,5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px,-5px);
+}
+
+#navMenu.nav-hidden {
+  display: none;
+}
+
+#navMenu.nav-visible {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  background: #222;
+  border-radius: 6px;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+#navMenu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+}
+#navMenu a:hover { background: #800020; }
+
+
+  /* ===== Version mobile ===== */
+@media (max-width: 600px) {
+  .hamburger {
+    margin-right: 40px; /* décale le hamburger un peu à droite */
+  }
+
+  .menu-bar {
+    justify-content: space-between; /* garde le h1 à gauche et le menu à droite */
+    padding: 10px 15px; /* un peu d’air */
+  }
+
+  .menu-bar h1 {
+    text-align: left; /* s’assure qu’il reste à gauche */
+    font-size: 1rem;
+  }
+}
+
+/* =============================================================== */
+/* ============================ ACCUEIL ========================== */
+/* =============================================================== */
+.accueil {
+  position: relative;
+  width: 100%;
+  min-height: 70vh;         /* prend toute la hauteur de la fenêtre */
+  background-color: #000;    
+  overflow: hidden;
+  display: flex;              /* permet un centrage parfait */
+  align-items: center;        /* centre verticalement */
+  justify-content: center;    /* centre horizontalement */
+  flex-direction: column;     /* garde le texte centré en colonne */
+}
+
+.accueil video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* remplit sans distorsion */
+  transform: translate(-50%, -50%); /* centre parfaitement la vidéo */
+  z-index: 0;
+}
+
+/* ===== Supprime les ascenseurs du body ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* bloque le défilement horizontal */
+}
+
+
+/* 🔹 Superposition sombre par-dessus la vidéo */
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+/* Texte centré au-dessus de la vidéo */
+.accueil-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centre pile au milieu */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre horizontalement */
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  width: 90%; /* évite le dépassement sur mobile */
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+.accueil-text h1 {
+  color: #e91147;
+  font-size: 2.8em;
+  margin: 0;
+}
+
+.accueil-text h2 {
+  color: #ffffff;
+  font-size: 1.5em;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* ===== RESPONSIVE ===== */
+/* === Responsive === */
+@media (max-width: 768px) {
+  .accueil-text {
+    left: 50%;
+    transform: translateX(-55%) translateY(-50%); /* assure le centrage horizontal */
+    width: 90%;
+  }
+
+  .accueil-text h1 {
+    font-size: 2rem;
+  }
+
+  .accueil-text h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accueil-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .accueil-text h2 {
+    font-size: 1rem;
+  }
+}
+
+/* =========================================================
+   SECTION : CLUBS
+   ========================================================= */
+
+.clubs {
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.clubs h2 {
+  text-align: center;
+  color: #e91147;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   STRUCTURE GÉNÉRALE DU CARROUSEL
+   ========================================================= */
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* =========================================================
+   BANDEAU 1 : VIDÉOS PLEINE LARGEUR
+   ========================================================= */
+
+.carousel.fullwidth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.carousel.fullwidth video {
+  flex: 1;
+  height: 25vw;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.carousel.fullwidth video:hover {
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   BANDEAUX 2 & 3 : IMAGES DES CLUBS
+   ========================================================= */
+
+.carousel.clubs {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+  overflow-x: auto;            /* ← permet le scroll horizontal */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* Masquer scrollbar */
+.carousel.clubs::-webkit-scrollbar {
+  display: none;
+}
+
+/* Conteneur interne animé */
+.carousel-track {
+  display: flex;
+  width: max-content;
+}
+
+/* Animation gauche (bandeau 2) */
+.carousel-left .carousel-track {
+  animation: scroll-left 35s linear infinite;
+}
+
+/* Animation droite (bandeau 3, sens inverse) */
+.carousel-right .carousel-track {
+  animation: scroll-right 35s linear infinite;
+}
+
+/* Pause de l’animation au survol */
+.carousel.clubs:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+/* =========================================================
+   STYLES DES BLOCS CLUBS
+   ========================================================= */
+
+.carousel.clubs .club-link {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 130px;
+  position: relative;
+  border-radius: 10%;
+  margin-right: 20px; /* ← AJOUTE L’ESPACE ENTRE LES IMAGES */
+  overflow: hidden;
+}
+
+.carousel.clubs .club-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+   transform: scale(1); /* ← dézoom à 90 % */
+  opacity: 0.3;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.carousel.clubs .club-link:hover img {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+.carousel.clubs .club-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem;
+  text-shadow: 0 0 5px rgba(0,0,0,0.7);
+  pointer-events: none;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+/* 📱 VERSION MOBILE : alignement sur une seule ligne horizontale */
+@media (max-width: 600px) {
+  .carousel.fullwidth {
+    flex-wrap: nowrap; /* force les vidéos sur une seule ligne */
+    overflow-x: auto; /* permet le scroll horizontal */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* pour iOS */
+    padding-bottom: 10px;
+  }
+
+  .carousel.fullwidth video {
+    width: 40%; /* largeur de chaque vidéo (elles dépasseront légèrement) */
+    flex: 0 0 auto; /* empêche la réduction automatique */
+    border-radius: 10px;
+  }
+
+  /* Optionnel : masquer la scrollbar horizontale */
+  .carousel.fullwidth::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+  /* Les bandes clubs plus petites et bien espacées */
+  .carousel.clubs .club-link {
+    width: 100px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel.fullwidth video {
+    width: 100%;
+    max-height: 160px;
+  }
+
+  .carousel.clubs .club-link {
+    width: 90px;
+    height: 70px;
+  }
+}
+
+
+
+
+
+
+/* ===== EVENEMENTS ===== */
+.evenements { background:#111; }
+.evenements h2 { color:#e91147; text-align:center; margin-bottom:20px; }
+.events {
+  display:flex;
+  flex-wrap: wrap;
+  gap:15px;
+  justify-content:center;
+}
+.event { display:flex; flex-direction:column; width:250px; text-align:center; }
+.event img { width:100%; border-radius:6px; }
+
+/* =========================================================
+   SECTION : QUAND LOMME COURT
+   ========================================================= */
+.quand-lomme-court {
+  position: relative;
+  width: 100vw;
+  height: 70vh;
+  background: url('images/qlcaccueil.png') center/cover no-repeat;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Titre principal === */
+.quand-lomme-court .section-title {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #e91147;
+  font-size: 2rem;
+  font-weight: bold;
+  z-index: 3;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+/* === Superposition sombre === */
+.quand-lomme-court .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Contenu central === */
+.quand-lomme-court .content {
+  text-align: center;
+  color: white;
+  z-index: 2;
+  padding: 20px;
+}
+
+.quand-lomme-court .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.quand-lomme-court .date-highlight {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e91147;
+  margin-bottom: 20px;
+}
+
+/* === Conteneur des cercles === */
+.label-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 15px 0 25px;
+}
+
+/* === Styles communs pour tous les cercles === */
+.label-bronze,
+.event-circle,
+.video-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.label-bronze {
+  object-fit: cover;
+  background: transparent;
+  filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
+}
+
+.label-bronze:hover,
+.event-circle:hover,
+.video-circle:hover {
+  transform: scale(1.05);
+}
+
+.event-circle {
+  background: linear-gradient(135deg, #e91147, #8a0027);
+}
+
+.event-circle .event-date { font-size: 0.9rem; margin: 0; }
+.event-circle .event-lieu { font-size: 0.7rem; margin-top: 3px; }
+
+/* === Cercle vidéo (comme le label-bronze) === */
+.video-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
+.video-circle .video-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5; /* ajuste la transparence ici (0 = invisible, 1 = opaque) */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.video-circle:hover img {
+  opacity: 1; /* image redevient complètement visible au survol */
+}
+.video-circle .video-text {
+  position: relative;
+  z-index: 2;
+  padding: 5px;
+  background: rgba(0,0,0,0.6); /* pour que le texte soit lisible */
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+
+/* === Carte d'infos === */
+.info-card {
+  display: inline-block;
+  background: white;
+  color: #e91147;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: #e91147;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 768px) {
+  .quand-lomme-court { height: 45vh; }
+  .quand-lomme-court .section-title { font-size: 1.6rem; }
+  .quand-lomme-court .content h3 { font-size: 1.3rem; }
+  .quand-lomme-court .date-highlight { font-size: 2rem; }
+
+  .event-circle .event-date { font-size: 0.75rem; }
+  .event-circle .event-lieu { font-size: 0.6rem; }
+
+  /* Conserver les cercles sur une ligne sans débordement */
+  .label-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px; /* réduire légèrement l’espace */
+    flex-wrap: nowrap; /* éviter que ça passe à la ligne suivante */
+    max-width: 100%; /* s’assurer que ça reste dans le conteneur */
+    overflow-x: hidden; /* couper léger débordement si nécessaire */
+  }
+
+  /* Ajuster la taille des cercles pour qu’ils tiennent */
+  .label-bronze,
+  .event-circle,
+  .video-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .video-circle { font-size: 0.65rem; padding: 8px; }
+}
+
+@media (max-width: 480px) {
+  .label-bronze,
+  .event-circle,
+  .video-circle {
+    width: 70px;
+    height: 70px;
+  }
+  .video-circle { font-size: 0.55rem; padding: 6px; }
+}
+
+
+
+
+
+
+
+
+
+/* ===== A PROPOS ===== */
+.apropos-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+   color: #e91147;
+}
+
+#apropos h2 {
+  text-align: center;   /* centre le texte */
+  color: #e91147;       /* rouge ACSL */
+  margin-bottom: 30px;  /* petit espace sous le titre */
+  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-weight: 700;     /* gras pour bien ressortir */
+}
+
+.card {
+  background: #a00909;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #b41f1f;
+}
+
+/* Liste cachée par défaut */
+.liste-membres {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 20px auto 0;
+  text-align: center;
+  color: white;
+}
+
+.liste-membres li {
+  margin: 5px 0;
+}
+
+/* Animation de dépliage */
+.liste-membres.show {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Liens */
+a.lien-card {
+  text-decoration: none;
+  color: white;
+}
+a.lien-card:hover {
+  color: #fff;
+}
+
+
+/* ===== PARTENAIRES ===== */
+.partners {
+  text-align: center;
+  padding: 40px 20px;
+  background: #111; /* fond sombre */
+}
+
+.partners h2 {
+  color: #cc0c3c; /* rouge bordeaux */
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.partners-logos img {
+  width: 150px;
+  height: 100px;
+  object-fit: contain; /* garde les proportions sans déformation importante */
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.partners-logos img:hover {
+  transform: scale(1.1);
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .cards { flex-direction: column; align-items:center; }
+  .apropos-cards { flex-direction: column; align-items:center; }
+  .events { flex-direction: column; align-items:center; }
+}
