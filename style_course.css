@@ -1,0 +1,558 @@
+/* =========================================================
+   🌍 GLOBAL
+   ========================================================= */
+@font-face {
+  font-family: 'Paris Forbel';
+  src: url('fonts/Vogue.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;   /* Empêche le scroll horizontal */
+  overflow-y: auto;     /* Autorise le scroll vertical */
+  font-family: 'Paris Forbel', 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   🧭 HEADER / NAVIGATION
+   ========================================================= */
+
+.menu-bar {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000; /* Le header reste sous le menu déroulant */
+}
+
+.menu-bar h1 {
+  flex: 1;
+  text-align: left;
+  font-family: 'Gemola';
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+  color: #fff;
+}
+
+.hamburger {
+  width: 30px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 80px;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+.hamburger span {
+  height: 3px;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== Menu déroulant ===== */
+#navMenu.nav-hidden {
+  display: none;
+}
+
+#navMenu.nav-visible {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 55px;
+  right: 100px;
+  background: #222;
+  border-radius: 6px;
+  padding: 10px 0;
+  z-index: 3000; /* 🔥 Plus haut que le header */
+}
+
+#navMenu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: background 0.3s ease;
+  position: relative;
+  z-index: 3100; /* 🔥 garantit que le lien est cliquable */
+  cursor: pointer;
+}
+
+#navMenu a:hover {
+  background: #800020;
+}
+
+/* ===== Version mobile ===== */
+@media (max-width: 600px) {
+  .hamburger {
+    margin-right: 40px;
+  }
+
+  .menu-bar {
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .menu-bar h1 {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  #navMenu.nav-visible {
+    right: 15px;
+    top: 45px;
+  }
+}
+
+
+/* =========================================================
+   🏁 SECTION ACCUEIL – Animation séquentielle centrée
+   ========================================================= */
+.accueil {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;         /* prend toute la hauteur de la fenêtre */
+  background-color: #000;    
+  overflow: hidden;
+  display: flex;              /* permet un centrage parfait */
+  align-items: center;        /* centre verticalement */
+  justify-content: center;    /* centre horizontalement */
+  flex-direction: column;     /* garde le texte centré en colonne */
+}
+
+.accueil video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* remplit sans distorsion */
+  transform: translate(-50%, -50%); /* centre parfaitement la vidéo */
+  z-index: 0;
+}
+
+/* ===== Supprime les ascenseurs du body ===== */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* bloque le défilement horizontal */
+}
+
+
+/* 🔹 Superposition sombre par-dessus la vidéo */
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* Texte centré au-dessus de la vidéo */
+.accueil-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centre pile au milieu */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre horizontalement */
+  justify-content: center;
+  text-align: center;
+  z-index: 2;
+  width: 90%; /* évite le dépassement sur mobile */
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+.accueil-text h1 {
+  color: #e91147;
+  font-size: 2.8em;
+  margin: 0;
+}
+
+.accueil-text h2 {
+  color: #ffffff;
+  font-size: 1.5em;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* ===== RESPONSIVE ===== */
+/* === Responsive === */
+@media (max-width: 768px) {
+  .accueil-text {
+    left: 50%;
+    transform: translateX(-55%) translateY(-50%); /* assure le centrage horizontal */
+    width: 90%;
+  }
+
+  .accueil-text h1 {
+    font-size: 2rem;
+  }
+
+  .accueil-text h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accueil-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .accueil-text h2 {
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================================================
+   🏁 SECTION INSCRIPTION
+   ========================================================= */
+.section.inscription {
+  padding: 100px 20px 80px;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  text-align: center;
+}
+
+.section.inscription .section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #e91147;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.section.inscription .section-title::after {
+  content: "";
+  display: none; /* désactive la ligne sous le titre */
+  width: 80px;
+  height: 3px;
+  background: #e91147;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* === Lien vidéo dans une carte (optionnel) === */
+.info-card .video-link {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #e91147, #8a0027);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.info-card .video-link:hover {
+  background: linear-gradient(135deg, #ff3366, #e91147);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   🃏 CARTES D’INFORMATION GÉNÉRALES
+   ========================================================= */
+.cards-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.info-card h3 {
+  font-size: 2rem;
+  color: #ff0040;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* — Variantes de texte — */
+.info-card .lieu {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.info-card .heure {
+  font-size: 1rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+.info-card .parcours {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e91147;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.info-card .label {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+./* Conteneur des boutons pour alignement horizontal */
+.card-buttons {
+  display: flex;
+  justify-content: center;   /* centrer horizontalement */
+  gap: 15px;                 /* espace entre les boutons */
+  margin-top: 15px;
+}
+
+/* Bouton S'inscrire (déjà existant) */
+.inscription-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #00b894, #009f6b);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.inscription-link:hover {
+  background: linear-gradient(135deg, #00d19b, #00b894);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Bouton Résultats */
+.resultats-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #ad3535, #760909);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.resultats-link:hover {
+  background: linear-gradient(135deg, #c93535, #bd1818);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================================
+   📱 RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .info-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .info-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section.inscription {
+    height: auto;
+    padding: 100px 20px;
+  }
+
+  .section.inscription h2 {
+    font-size: 1.8rem;
+  }
+
+  .section.inscription .date {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .info-card {
+    padding: 20px 15px;
+  }
+}
+
+
+/* =========================================================
+   REGLEMENT
+   ========================================================= */
+.reglement-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+   color: #e91147;
+}
+
+#reglement h2 {
+  text-align: center;   /* centre le texte */
+  color: #e91147;       /* rouge ACSL */
+  margin-bottom: 30px;  /* petit espace sous le titre */
+  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-weight: 700;     /* gras pour bien ressortir */
+}
+
+.card {
+  background: #a00909;
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background: #b41f1f;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Liens */
+a.lien-card {
+  text-decoration: none;
+  color: white;
+}
+a.lien-card:hover {
+  color: #fff;
+}
+
+
+/* =========================================================
+   🏃‍♀️ SECTION INFOS PRATIQUES - version sans cartes
+   ========================================================= */
+#infospratiques {
+  background-color: #000; /* fond noir pour toute la section */
+  padding: 50px 20px;     /* espace autour du contenu */
+  color: #fff;            /* couleur du texte par défaut */
+  text-align: center;
+}
+
+#infospratiques h2 {
+  color: #e91147;         /* rouge ACSL */
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+#infospratiques h3 {
+  color: #e91147;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+#infospratiques p,
+#infospratiques ul {
+  max-width: 800px;       /* limite la largeur pour plus de lisibilité */
+  margin: 0 auto 20px auto;
+  text-align: left;
+  line-height: 1.6;
+  color: #fff;
+}
+
+#infospratiques ul {
+  padding-left: 20px;
+}
+
+#infospratiques img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* liens éventuels */
+#infospratiques a {
+  color: #e91147;
+  text-decoration: none;
+}
+
+#infospratiques a:hover {
+  color: #ff3377;
+}
+
+
+
+
+
+
+
+
+
+
+
