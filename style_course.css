@@ -324,7 +324,7 @@ body, html {
 
 /* Titre dans le bandeau */
 .card-title h3 {
-  font-size: 3rem;
+  font-size: 2rem;
   color: #ff0040;
   margin: 0;
 }
