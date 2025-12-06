@@ -316,7 +316,7 @@ body, html {
 .card-title {
   width: calc(100% + 40px); /* pour annuler les 20px de padding */
   margin: -30px -20px 20px -20px; /* remonte le bandeau au bord */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.85), rgba(201, 197, 197, 0.4));
+  background: linear-gradient(to bottom, rgba(201, 197, 197, 0.4), rgba(0,0,0,0.85));
   padding: 12px 0;
   border-radius: 12px 12px 0 0; /* arrondi uniquement en haut */
   text-align: center;
