@@ -519,15 +519,20 @@ a.lien-card:hover {
 }
 
 /* Cartes par année */
+/* Force toutes les cartes à avoir la même hauteur */
 .section.retour-en-images .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch; /* ← assure que toutes les cartes aient la même hauteur */
 }
 
 .section.retour-en-images .info-card {
+  display: flex;             /* permet de gérer l'alignement des contenus */
+  flex-direction: column;    /* texte au-dessus, boutons en bas */
+  justify-content: space-between; /* espace entre titre et boutons */
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 30px 20px;
