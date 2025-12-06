@@ -493,11 +493,22 @@ a.lien-card:hover {
 
 
 
-/* Section Retour en images */
+/* =========================================================
+   Section Retour en images
+   ========================================================= */
+
 .section.retour-en-images {
   padding: 100px 20px;
   background: radial-gradient(circle at center, #111 0%, #000 100%);
   text-align: center;
+}
+
+#reglement h2 {
+  text-align: center;   /* centre le texte */
+  color: #e91147;       /* rouge ACSL */
+  margin-bottom: 30px;  /* petit espace sous le titre */
+  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-weight: 700;     /* gras pour bien ressortir */
 }
 
 .section.retour-en-images .section-title {
