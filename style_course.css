@@ -492,6 +492,105 @@ a.lien-card:hover {
 }
 
 
+
+/* Section Retour en images */
+.section.retour-en-images {
+  padding: 100px 20px;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  text-align: center;
+}
+
+.section.retour-en-images .section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #e91147;
+  margin-bottom: 50px;
+}
+
+/* Cartes par année */
+.section.retour-en-images .cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section.retour-en-images .info-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 30px 20px;
+  color: white;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.section.retour-en-images .info-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.section.retour-en-images .info-card h3 {
+  font-size: 2rem;
+  color: #ff0040;
+  margin-bottom: 15px;
+}
+
+/* Boutons Vidéo et Photos */
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.video-link,
+.photos-link {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.video-link {
+  background: linear-gradient(135deg, #00b894, #009f6b);
+}
+
+.video-link:hover {
+  background: linear-gradient(135deg, #00d19b, #00b894);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.photos-link {
+  background: linear-gradient(135deg, #ad3535, #760909);
+}
+
+.photos-link:hover {
+  background: linear-gradient(135deg, #c93535, #bd1818);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .section.retour-en-images .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section.retour-en-images .cards-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+
 /* =========================================================
    🏃‍♀️ SECTION INFOS PRATIQUES - version sans cartes
    ========================================================= */
