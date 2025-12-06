@@ -21,14 +21,25 @@ navMenu.querySelectorAll('a').forEach(link => {
 // ===== SCROLL FLUIDE =====
 document.querySelectorAll('#navMenu a').forEach(anchor => {
   anchor.addEventListener('click', function(e){
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    target.scrollIntoView({behavior:'smooth'});
+    const href = this.getAttribute('href');
+
+    if(href.startsWith('#')) {
+      // Lien interne → scroll fluide
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if(target) {
+        target.scrollIntoView({behavior:'smooth'});
+      }
+    }
+    // Lien externe ou vers une autre page → comportement normal
+
+    // Fermer le menu dans tous les cas
     hamburger.classList.remove('open');
     navMenu.classList.add('nav-hidden');
     navMenu.classList.remove('nav-visible');
   });
 });
+
 
 // ===== CARDS CLUBS =====
 // Afficher / cacher les listes au clic
