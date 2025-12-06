@@ -191,9 +191,11 @@ body, html {
 /* === Responsive === */
 
 @media (max-width: 768px) {
-  .accueil video {
-    height: auto;      /* laisse la hauteur s’ajuster automatiquement */
-    min-width: 100%;   /* garantit que la largeur couvre l’écran */
+   .accueil video {
+    width: 100vw;      /* largeur de l’écran */
+    height: auto;      /* hauteur ajustée automatiquement */
+    max-height: 70vh;  /* limite la hauteur pour éviter de dépasser */
+    object-fit: cover;
   }
 }
 
