@@ -189,12 +189,22 @@ body, html {
 
 /* ===== RESPONSIVE ===== */
 /* === Responsive === */
+
+@media (max-width: 768px) {
+  .accueil video {
+    height: auto;      /* laisse la hauteur s’ajuster automatiquement */
+    min-width: 100%;   /* garantit que la largeur couvre l’écran */
+  }
+}
+
+
 @media (max-width: 768px) {
   .accueil-text {
     left: 50%;
     transform: translateX(-55%) translateY(-50%); /* assure le centrage horizontal */
     width: 90%;
   }
+  
 
   .accueil-text h1 {
     font-size: 2rem;
