@@ -216,7 +216,7 @@ body, html {
 
 /* ===== Conteneur global ===== */
 .accueil-cards {
-  margin-top: 15px;
+  margin-top: 05px;
   display: flex;
   gap: 25px;
   justify-content: center;
