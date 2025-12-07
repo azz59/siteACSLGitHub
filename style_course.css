@@ -136,7 +136,7 @@ html, body {
 .accueil {
   position: relative;
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   background-color: #000;
   overflow: hidden;
   display: flex;
