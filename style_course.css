@@ -275,8 +275,19 @@ html, body {
 /* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .accueil-cards {
-    flex-direction: column;  /* 1 seule colonne sur mobile */
+    gap: 15px;
+    max-width: 95%;
+    margin: 0 auto;
   }
+
+  .accueil-col {
+    width: calc(50% - 7.5px); /* 2 colonnes sur mobile avec espace réduit */
+  }
+
+  .accueil-card {
+    width: 100%;
+  }
+}
 
   .accueil-card h3 {
     font-size: 1.1rem;
