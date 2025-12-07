@@ -393,9 +393,6 @@ body, html {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
-
-
-
 /* =========================================================
    📱 RESPONSIVE DESIGN
    ========================================================= */
@@ -437,6 +434,80 @@ body, html {
 
   .info-card {
     padding: 20px 15px;
+  }
+}
+
+
+/* ===============================
+   SECTION RESULTATS
+   =============================== */
+.section.resultats {
+  padding: 100px 20px 80px;
+  background: #000;
+  text-align: center;
+}
+
+.section.resultats .section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #e91147;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+/* Conteneur grid */
+.results-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Carte année */
+.result-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.result-card h3 {
+  font-size: 3rem;
+  margin: 0;
+  color: #ff0040;
+}
+
+.result-card p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .results-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .results-container {
+    grid-template-columns: 1fr;
+  }
+
+  .result-card h3 {
+    font-size: 2rem;
   }
 }
 
