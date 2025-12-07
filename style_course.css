@@ -214,7 +214,33 @@ body, html {
   animation: spin 8s linear infinite;
 }
 
+/* ===== Boutons accueil ===== */
+.accueil-buttons {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  z-index: 2;
+}
 
+.btn-accueil {
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #e91147, #ff0040);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+.btn-accueil:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #ff2a6a, #ff0040);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
@@ -257,6 +283,13 @@ body, html {
   }
 }
 
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .btn-accueil {
+    font-size: 0.95rem;
+    padding: 10px 18px;
+  }
+}
 
 
 /* =========================================================
