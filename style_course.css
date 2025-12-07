@@ -273,6 +273,13 @@ html, body {
 
 
 /* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .accueil {
+    min-height: 60vh;  /* ou auto si tu veux */
+    padding: 40px 10px; /* ajoute un peu de padding */
+  }
+  
 @media (max-width: 600px) {
   .accueil-cards {
     gap: 15px;
