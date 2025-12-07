@@ -214,21 +214,29 @@ body, html {
   animation: spin 8s linear infinite;
 }
 
-/* ===== Cartes accueil ===== */
+/* ===== Conteneur global ===== */
 .accueil-cards {
   margin-top: 25px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  width: 100%;
-  max-width: 900px;
+  display: flex;
+  gap: 25px;
   justify-content: center;
   z-index: 2;
+  width: 100%;
+  max-width: 900px;
 }
 
+/* ===== Colonnes ===== */
+.accueil-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ===== Cartes ===== */
 .accueil-card {
-  background: rgba(255, 255, 255, 0.08);  /* fond transparent */
-  border: 2px solid #e91147;             /* contour rouge */
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid #e91147;
   border-radius: 12px;
   padding: 18px;
   text-align: center;
@@ -241,25 +249,18 @@ body, html {
 .accueil-card h3 {
   margin: 0;
   font-size: 1.2rem;
-  font-weight: 600;
 }
 
 .accueil-card:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 900px) {
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
   .accueil-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 550px) {
-  .accueil-cards {
-    grid-template-columns: 1fr;  /* 1 carte par ligne sur mobile */
+    flex-direction: column;  /* 1 seule colonne sur mobile */
   }
 
   .accueil-card h3 {
