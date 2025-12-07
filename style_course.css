@@ -214,33 +214,59 @@ body, html {
   animation: spin 8s linear infinite;
 }
 
-/* ===== Boutons accueil ===== */
-.accueil-buttons {
+/* ===== Cartes accueil ===== */
+.accueil-cards {
   margin-top: 25px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
   justify-content: center;
   z-index: 2;
 }
 
-.btn-accueil {
-  padding: 12px 22px;
-  background: linear-gradient(135deg, #e91147, #ff0040);
-  color: #fff;
+.accueil-card {
+  background: rgba(255, 255, 255, 0.08);  /* fond transparent */
+  border: 2px solid #e91147;             /* contour rouge */
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  color: white;
   text-decoration: none;
-  font-weight: 600;
-  border-radius: 30px;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: 0.3s ease;
+  backdrop-filter: blur(5px);
 }
 
-.btn-accueil:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, #ff2a6a, #ff0040);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+.accueil-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
+
+.accueil-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .accueil-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  .accueil-cards {
+    grid-template-columns: 1fr;  /* 1 carte par ligne sur mobile */
+  }
+
+  .accueil-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
@@ -283,13 +309,6 @@ body, html {
   }
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  .btn-accueil {
-    font-size: 0.95rem;
-    padding: 10px 18px;
-  }
-}
 
 
 /* =========================================================
