@@ -230,7 +230,7 @@ body, html {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100wip%;
+  width: 100%;
 }
 
 /* ===== Cartes ===== */
