@@ -238,7 +238,8 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%;
+  width: auto;               /* prend la largeur de son contenu (cartes) */
+  align-items: center;       /* centre les cartes dans la colonne */
 }
 
 /* =========================================================
