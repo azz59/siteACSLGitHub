@@ -201,8 +201,17 @@ body, html {
   font-weight: 400;
 }
 
+.rotate-icon {
+  width: 80px;       /* taille de l'image */
+  margin: 15px auto; /* espacement + centrage */
+  display: block;
+
+  animation: spin 8s linear infinite;  /* vitesse + rotation continue */
+}
+
+
 /* ===== RESPONSIVE ===== */
-/* === Responsive === */
+
 @media (max-width: 768px) {
   .accueil-text {
     left: 50%;
@@ -228,6 +237,24 @@ body, html {
     font-size: 1rem;
   }
 }
+
+
+/* Animation rotation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .rotate-icon {
+    width: 60px; /* plus petit sur mobile */
+  }
+}
+
 
 
 /* =========================================================
