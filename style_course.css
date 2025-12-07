@@ -254,6 +254,8 @@ html, body {
   text-decoration: none;
   backdrop-filter: blur(5px);
   transition: 0.3s ease;
+  width: 180px;          /* largeur réduite des cartes */
+  flex: 0 0 auto;        /* empêche l'étirement horizontal */
 }
 
 .accueil-card h3 {
