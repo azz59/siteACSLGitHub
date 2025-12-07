@@ -426,17 +426,6 @@ body, html {
   }
 }
 
-@media (max-width: 600px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .info-card {
-    padding: 20px 15px;
-  }
-}
-
 
 /* ===============================
    SECTION RESULTATS
