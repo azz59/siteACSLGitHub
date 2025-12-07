@@ -202,11 +202,16 @@ body, html {
 }
 
 .rotate-icon {
-  width: 80px;       /* taille de l'image */
-  margin: 15px auto; /* espacement + centrage */
+  width: 80px;
+  height: 80px;            /* 👈 important pour un cercle parfait */
+  object-fit: cover;        /* évite la déformation */
+  margin: 15px auto;
   display: block;
 
-  animation: spin 8s linear infinite;  /* vitesse + rotation continue */
+  border-radius: 50%;       /* 👈 rend l’image ronde */
+  border: 3px solid #fff;   /* optionnel : petit contour blanc élégant */
+
+  animation: spin 8s linear infinite;
 }
 
 
@@ -241,17 +246,14 @@ body, html {
 
 /* Animation rotation */
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 @media (max-width: 600px) {
   .rotate-icon {
-    width: 60px; /* plus petit sur mobile */
+    width: 60px;
+    height: 60px;
   }
 }
 
