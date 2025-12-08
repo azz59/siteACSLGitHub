@@ -279,7 +279,7 @@ html, body {
     min-height: 60vh;  /* ou auto si tu veux */
     padding: 40px 10px; /* ajoute un peu de padding */
   }
-  
+
 @media (max-width: 600px) {
   .accueil-cards {
     gap: 15px;
@@ -297,7 +297,7 @@ html, body {
 }
 
   .accueil-card h3 {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 }
 
@@ -310,13 +310,6 @@ html, body {
     width: 90%;
   }
 
-  .accueil-text h1 {
-    font-size: 2rem;
-  }
-
-  .accueil-text h2 {
-    font-size: 1.1rem;
-  }
 }
 
 @media (max-width: 480px) {
