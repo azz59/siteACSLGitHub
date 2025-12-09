@@ -678,82 +678,113 @@ a.lien-card:hover {
 /* =========================================================
    SECTION — Retour en images
 ========================================================= */
-/* ===== Section ===== */
+/* ============================
+   SECTION — Retour en images
+============================ */
 .section.retour-en-images {
-  padding: 60px 20px;
-  background: #000;
+  padding: 80px 20px;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
   text-align: center;
 }
 
 .section.retour-en-images .section-title {
-  font-size: 2rem;
+  font-size: 2.2rem;
+  font-weight: bold;
   color: #e91147;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
-/* ===== Grille des cartes ===== */
+/* ============================
+   GRILLE DES CARTES
+============================ */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* ===== Cartes ===== */
+/* ============================
+   CARTE — Style
+============================ */
 .info-card {
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid #e91147;
-  border-radius: 10px;
-  padding: 25px 20px;
-  color: #fff;
-}
-
-.info-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  color: #ff003c;
-}
-
-/* ===== Boutons ===== */
-.card-buttons {
+  border: 2px solid #e91147;
+  border-radius: 12px;
+  padding: 30px 20px;
+  color: white;
+  backdrop-filter: blur(8px);
   display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.video-link,
-.photos-link {
-  padding: 8px 18px;
-  border-radius: 20px;
-  color: #fff;
-  font-size: 0.95rem;
-  text-decoration: none;
+  flex-direction: column;
+  justify-content: space-between;
   transition: 0.3s ease;
 }
 
-/* Couleurs */
-.video-link {
-  background: #009f6b;
-}
-.video-link:hover {
-  background: #00c786;
+.info-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.photos-link {
-  background: #a32020;
-}
-.photos-link:hover {
-  background: #c93535;
+.info-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ff305a;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  .section.retour-en-images .section-title {
-    font-size: 1.7rem;
+/* ============================
+   BOUTONS — identiques
+============================ */
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Boutons uniformes */
+.card-buttons a {
+  display: inline-block;
+  width: 120px;              /* mêmes dimensions */
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(135deg, #e91147, #b40d33);  /* même couleur partout */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  transition: 0.3s ease;
+}
+
+.card-buttons a:hover {
+  background: linear-gradient(135deg, #ff2c5f, #d31243);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
   .info-card h3 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
+  }
+
+  .card-buttons a {
+    width: 100px;
+    padding: 9px 0;
   }
 }
 
