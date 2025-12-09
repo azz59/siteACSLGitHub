@@ -573,13 +573,23 @@ html, body {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 600px) {
+
   .results-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr; /* 1 carte par ligne */
+    max-width: 350px;
+  }
+
+  .result-card {
+    padding: 18px 10px; /* ↓ encore plus compact */
   }
 
   .result-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .result-card p {
+    font-size: 0.85rem;
   }
 }
 
