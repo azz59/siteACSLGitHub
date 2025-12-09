@@ -468,14 +468,6 @@ html, body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Vidéo */
-.video-link {
-  background: linear-gradient(135deg, #e91147, #8a0027);
-}
-.video-link:hover {
-  background: linear-gradient(135deg, #ff3366, #e91147);
-}
-
 /* Inscription */
 .inscription-link {
   background: linear-gradient(135deg, #00b894, #009f6b);
@@ -651,23 +643,10 @@ a.lien-card:hover {
    SECTION — Retour en images
 ========================================================= */
 
-.section.retour-en-images {
-  padding: 80px 20px;
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
-  text-align: center;
-}
-
-.section.retour-en-images .section-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #e91147;
-  margin-bottom: 50px;
-}
-
-/* ============================
-   GRILLE DES CARTES
+.section.retour-en-images /* ============================
+   GRILLE DES CARTES — Retour en Images
 ============================ */
-.cards-container {
+.section.retour-en-images .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
@@ -678,7 +657,7 @@ a.lien-card:hover {
 /* ============================
    CARTE — Style
 ============================ */
-.info-card {
+.section.retour-en-images .info-card {
   background: rgba(255, 255, 255, 0.08);
   border: 2px solid #e91147;
   border-radius: 12px;
@@ -691,12 +670,12 @@ a.lien-card:hover {
   transition: 0.3s ease;
 }
 
-.info-card:hover {
+.section.retour-en-images .info-card:hover {
   transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.15);
 }
 
-.info-card h3 {
+.section.retour-en-images .info-card h3 {
   font-size: 1.8rem;
   margin-bottom: 20px;
   color: #ff305a;
@@ -705,32 +684,33 @@ a.lien-card:hover {
 /* ============================
    BOUTONS — identiques
 ============================ */
-.card-buttons {
+.section.retour-en-images .card-buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
 /* Boutons uniformes */
-.card-buttons a {
+.section.retour-en-images .card-buttons a {
   display: inline-block;
-  width: 120px;              /* mêmes dimensions */
+  width: 120px;
   padding: 10px 0;
   text-align: center;
   border-radius: 20px;
   color: #fff;
   font-weight: 600;
   text-decoration: none;
-  background: linear-gradient(135deg, #e91147, #b40d33);  /* même couleur partout */
+  background: linear-gradient(135deg, #e91147, #b40d33);
   box-shadow: 0 4px 12px rgba(0,0,0,0.35);
   transition: 0.3s ease;
 }
 
-.card-buttons a:hover {
+.section.retour-en-images .card-buttons a:hover {
   background: linear-gradient(135deg, #ff2c5f, #d31243);
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.45);
 }
+
 
 /* ============================
    RESPONSIVE
