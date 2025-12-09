@@ -276,43 +276,67 @@ html, body {
    ======================= */
 /* ----- Mobiles grands / petits ----- */
 @media (max-width: 600px) {
-  /* Conteneur des cartes */
-  .accueil-cards {
-    display: flex;
-    flex-wrap: wrap;       /* ✅ permet 2 colonnes sans chevauchement */
-    justify-content: center;
-    gap: 15px;
-    max-width: 95%;
-    margin: 0 auto;
+
+  /* ===== SECTION ACCUEIL ===== */
+
+  .accueil {
+    padding: 0;             /* empêche la vidéo d'être poussée vers le bas */
+    min-height: 100vh;      /* garantit la bonne hauteur */
   }
 
-  /* Colonnes */
-  .accueil-col {
-    width: calc(50% - 10px);   /* 2 colonnes */
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  /* Cartes ajustées */
-  .accueil-card {
+  .accueil video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
-    height: auto;             /* ✅ évite tout chevauchement */
-    box-sizing: border-box;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);  /* reste centrée */
   }
 
-  /* Rotation des icônes */
-  .rotate-icon {
-    width: 60px;
-    height: 60px;
+  .accueil-text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* recentrage vrai */
+    width: 90%;
   }
 
-   .accueil-text h1 {
+  .accueil-text h1 {
     font-size: 1.7rem;
   }
 
   .accueil-text h2 {
     font-size: 1rem;
+  }
+
+  .rotate-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+
+  /* ===== CARTES (2 colonnes) ===== */
+
+  .accueil-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centre réellement les 2 colonnes */
+    gap: 15px;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .accueil-col {
+    width: calc(50% - 10px); /* 2 colonnes sur mobile */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .accueil-card {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
   }
 
   .accueil-card h3 {
@@ -322,34 +346,6 @@ html, body {
   .accueil-card p {
     font-size: 0.85rem;
   }
-}
-
-@media (max-width: 600px) {
-  /* Empêche le décalage de la vidéo */
-  .accueil video {
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Empêche la section d'ajouter du padding qui pousse la vidéo vers le bas */
-  .accueil {
-    padding: 0;         /* ❗ supprime ce qui fait descendre la vidéo */
-    min-height: 100vh;  /* garantit que la vidéo remplit l'écran */
-  }
-
-  /* Recentre correctement le texte */
-  .accueil-text {
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-/* ===== Animation rotation ===== */
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
 }
 
 
@@ -679,10 +675,6 @@ a.lien-card:hover {
 }
 
 
-
-/* =========================================================
-   Section Retour en images
-   ========================================================= */
 /* =========================================================
    SECTION — Retour en images
 ========================================================= */
