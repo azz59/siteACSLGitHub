@@ -354,9 +354,7 @@ html, body {
 /* =========================================================
    🏁 SECTION INSCRIPTION
    ========================================================= */
-/* ================================
-   SECTION — Inscriptions
-================================ */
+
 .section.inscription {
   padding: 100px 20px 80px;
   background: radial-gradient(circle, #111 0%, #000 100%);
@@ -543,7 +541,7 @@ html, body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
