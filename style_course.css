@@ -678,125 +678,85 @@ a.lien-card:hover {
 /* =========================================================
    SECTION — Retour en images
 ========================================================= */
+/* ===== Section ===== */
 .section.retour-en-images {
-  padding: 100px 20px;
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  padding: 60px 20px;
+  background: #000;
   text-align: center;
 }
 
 .section.retour-en-images .section-title {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #e91147;
-  margin-bottom: 50px;
-}
-
-/* =========================================================
-   CARTES — Grille
-========================================================= */
-.section.retour-en-images .cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: stretch; /* même hauteur pour toutes les cartes */
-}
-
-/* =========================================================
-   CARTES — Style
-========================================================= */
-.section.retour-en-images .info-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 30px 20px;
-  color: white;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.section.retour-en-images .info-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.section.retour-en-images .info-card h3 {
   font-size: 2rem;
-  color: #ff0040;
-  margin-bottom: 15px;
+  color: #e91147;
+  margin-bottom: 40px;
 }
 
-/* =========================================================
-   BOUTONS — vidéos & photos
-========================================================= */
+/* ===== Grille des cartes ===== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ===== Cartes ===== */
+.info-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid #e91147;
+  border-radius: 10px;
+  padding: 25px 20px;
+  color: #fff;
+}
+
+.info-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ff003c;
+}
+
+/* ===== Boutons ===== */
 .card-buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 .video-link,
 .photos-link {
-  display: flex;               /* rend le contenu centré parfaitement */
-  justify-content: center;
-  align-items: center;
-
-  min-width: 130px;            /* largeur identique */
-  padding: 10px 0;             /* même hauteur */
-  border-radius: 25px;
-
+  padding: 8px 18px;
+  border-radius: 20px;
   color: #fff;
-  font-weight: bold;
+  font-size: 0.95rem;
   text-decoration: none;
-
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
-
-/* Vidéo */
+/* Couleurs */
 .video-link {
-  background: linear-gradient(135deg, #00b894, #009f6b);
+  background: #009f6b;
 }
 .video-link:hover {
-  background: linear-gradient(135deg, #00d19b, #00b894);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  background: #00c786;
 }
 
-/* Photos */
 .photos-link {
-  background: linear-gradient(135deg, #ad3535, #760909);
+  background: #a32020;
 }
 .photos-link:hover {
-  background: linear-gradient(135deg, #c93535, #bd1818);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+  background: #c93535;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-@media (max-width: 900px) {
-  .section.retour-en-images .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
-
+/* ===== Responsive ===== */
 @media (max-width: 600px) {
-  .section.retour-en-images .cards-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
+  .section.retour-en-images .section-title {
+    font-size: 1.7rem;
   }
-
-  .section.retour-en-images .info-card h3 {
-    font-size: 1.6rem;
+  .info-card h3 {
+    font-size: 1.4rem;
   }
 }
+
 
 
 /* =========================================================
