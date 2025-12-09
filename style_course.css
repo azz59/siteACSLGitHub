@@ -271,37 +271,16 @@ html, body {
 }
 
 
-
-/* ===== RESPONSIVE ===== */
 /* =======================
    RESPONSIVE ACCUEIL
    ======================= */
-
-/* ----- Tablettes et petits écrans ----- */
-@media (max-width: 768px) {
-  /* Section accueil */
-  .accueil {
-    min-height: 60vh;           /* réduit la hauteur de la section sur mobile */
-    padding: 40px 10px;         /* padding pour ne pas toucher les bords */
-  }
-
-  /* Texte centré */
-  .accueil-text {
-    left: 50%;
-    transform: translate(-50%, -50%); /* centrer horizontalement et verticalement */
-    width: 90%;                       /* largeur fluide */
-  }
-
-  /* Titres dans les cartes */
-  .accueil-card h3 {
-    font-size: 1rem;
-  }
-}
-
 /* ----- Mobiles grands / petits ----- */
 @media (max-width: 600px) {
   /* Conteneur des cartes */
   .accueil-cards {
+    display: flex;
+    flex-wrap: wrap;       /* ✅ permet 2 colonnes sans chevauchement */
+    justify-content: center;
     gap: 15px;
     max-width: 95%;
     margin: 0 auto;
@@ -309,12 +288,17 @@ html, body {
 
   /* Colonnes */
   .accueil-col {
-    width: calc(50% - 7.5px); /* 2 colonnes sur mobile avec espace réduit */
+    width: calc(50% - 10px);   /* 2 colonnes */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
-  /* Cartes */
+  /* Cartes ajustées */
   .accueil-card {
     width: 100%;
+    height: auto;             /* ✅ évite tout chevauchement */
+    box-sizing: border-box;
   }
 
   /* Rotation des icônes */
@@ -324,16 +308,6 @@ html, body {
   }
 }
 
-/* ----- Mobiles très petits ----- */
-@media (max-width: 480px) {
-  .accueil-text h1 {
-    font-size: 1.6rem;
-  }
-
-  .accueil-text h2 {
-    font-size: 1rem;
-  }
-}
 
 /* ===== Animation rotation ===== */
 @keyframes spin {
