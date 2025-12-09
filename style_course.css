@@ -324,6 +324,27 @@ html, body {
   }
 }
 
+@media (max-width: 600px) {
+  /* Empêche le décalage de la vidéo */
+  .accueil video {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Empêche la section d'ajouter du padding qui pousse la vidéo vers le bas */
+  .accueil {
+    padding: 0;         /* ❗ supprime ce qui fait descendre la vidéo */
+    min-height: 100vh;  /* garantit que la vidéo remplit l'écran */
+  }
+
+  /* Recentre correctement le texte */
+  .accueil-text {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 
 /* ===== Animation rotation ===== */
 @keyframes spin {
