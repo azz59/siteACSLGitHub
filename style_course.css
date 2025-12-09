@@ -568,7 +568,7 @@ html, body {
 
 .result-card p {
   margin-top: 8px;
-  font-size: 0.95rem;      /* 📌 réduit */
+  font-size: 1.2rem;      /* 📌 réduit */
   opacity: 0.9;
 }
 
@@ -589,7 +589,7 @@ html, body {
   }
 
   .result-card p {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 }
 
