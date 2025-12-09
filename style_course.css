@@ -662,19 +662,13 @@ a.lien-card:hover {
 /* =========================================================
    Section Retour en images
    ========================================================= */
-
+/* =========================================================
+   SECTION — Retour en images
+========================================================= */
 .section.retour-en-images {
   padding: 100px 20px;
   background: radial-gradient(circle at center, #111 0%, #000 100%);
   text-align: center;
-}
-
-#reglement h2 {
-  text-align: center;   /* centre le texte */
-  color: #e91147;       /* rouge ACSL */
-  margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
-  font-weight: 700;     /* gras pour bien ressortir */
 }
 
 .section.retour-en-images .section-title {
@@ -684,21 +678,25 @@ a.lien-card:hover {
   margin-bottom: 50px;
 }
 
-/* Cartes par année */
-/* Force toutes les cartes à avoir la même hauteur */
+/* =========================================================
+   CARTES — Grille
+========================================================= */
 .section.retour-en-images .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
-  align-items: stretch; /* ← assure que toutes les cartes aient la même hauteur */
+  align-items: stretch; /* même hauteur pour toutes les cartes */
 }
 
+/* =========================================================
+   CARTES — Style
+========================================================= */
 .section.retour-en-images .info-card {
-  display: flex;             /* permet de gérer l'alignement des contenus */
-  flex-direction: column;    /* texte au-dessus, boutons en bas */
-  justify-content: space-between; /* espace entre titre et boutons */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 30px 20px;
@@ -718,7 +716,9 @@ a.lien-card:hover {
   margin-bottom: 15px;
 }
 
-/* Boutons Vidéo et Photos */
+/* =========================================================
+   BOUTONS — vidéos & photos
+========================================================= */
 .card-buttons {
   display: flex;
   justify-content: center;
@@ -737,27 +737,29 @@ a.lien-card:hover {
   transition: all 0.3s ease;
 }
 
+/* Vidéo */
 .video-link {
   background: linear-gradient(135deg, #00b894, #009f6b);
 }
-
 .video-link:hover {
   background: linear-gradient(135deg, #00d19b, #00b894);
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
 
+/* Photos */
 .photos-link {
   background: linear-gradient(135deg, #ad3535, #760909);
 }
-
 .photos-link:hover {
   background: linear-gradient(135deg, #c93535, #bd1818);
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.4);
 }
 
-/* Responsive */
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 @media (max-width: 900px) {
   .section.retour-en-images .cards-container {
     grid-template-columns: repeat(2, 1fr);
@@ -769,6 +771,10 @@ a.lien-card:hover {
   .section.retour-en-images .cards-container {
     grid-template-columns: 1fr;
     gap: 15px;
+  }
+
+  .section.retour-en-images .info-card h3 {
+    font-size: 1.6rem;
   }
 }
 
