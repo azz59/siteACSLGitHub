@@ -306,6 +306,22 @@ html, body {
     width: 60px;
     height: 60px;
   }
+
+   .accueil-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .accueil-text h2 {
+    font-size: 1rem;
+  }
+
+  .accueil-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .accueil-card p {
+    font-size: 0.85rem;
+  }
 }
 
 
