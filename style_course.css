@@ -615,6 +615,13 @@ html, body {
 /* =========================================================
    SECTION — Retour en images
 ========================================================= */
+.retour-en-images h2 {
+  text-align: center;   /* centre le texte */
+  color: #c2103c;       /* rouge ACSL */
+  margin-bottom: 30px;  /* petit espace sous le titre */
+  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-weight: 700;     /* gras pour bien ressortir */
+}
 
 .retour-en-images .cards-container {
   display: grid;
