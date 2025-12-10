@@ -643,9 +643,6 @@ a.lien-card:hover {
    SECTION — Retour en images
 ========================================================= */
 
-.section.retour-en-images /* ============================
-   GRILLE DES CARTES — Retour en Images
-============================ */
 .section.retour-en-images .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -670,6 +667,13 @@ a.lien-card:hover {
   transition: 0.3s ease;
 }
 
+.section.retour-en-images h2 {
+  text-align: center;   /* centre le texte */
+  color: #e91147;       /* rouge ACSL */
+  margin-bottom: 30px;  /* petit espace sous le titre */
+  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-weight: 700;     /* gras pour bien ressortir */
+}
 .section.retour-en-images .info-card:hover {
   transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.15);
