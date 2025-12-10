@@ -709,7 +709,7 @@ html, body {
   /* -webkit-text-stroke: 3px rgb(122, 16, 16); épaisseur + couleur */
 
   /* Blur léger (optionnel) */
-  filter: blur(0.8px) brightness(1.4);
+  filter: blur(1px) brightness(1.8);
 
 }
 
