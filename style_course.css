@@ -641,7 +641,7 @@ html, body {
 
 /* Image légèrement arrondie */
 .retour-en-images .image-block img {
-  width: 100%;
+  width: 90%;
   display: block;
   border-radius: 15px;
   object-fit: cover;
