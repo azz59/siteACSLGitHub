@@ -646,6 +646,7 @@ html, body {
   border-radius: 15px;
   object-fit: cover;
   transition: transform 0.4s ease;
+  margin: 20px auto;
 }
 
 /* Overlay pour les boutons */
@@ -703,15 +704,6 @@ html, body {
 /* =============================
    Responsive
 ============================= */
-@media (max-width: 700px) {
-  .retour-en-images .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .retour-en-images .image-block h3 {
-    font-size: 1.8rem;
-  }
-}
 
 @media (max-width: 600px) {
   .retour-en-images .cards-container {
