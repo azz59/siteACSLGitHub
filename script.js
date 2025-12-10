@@ -63,14 +63,12 @@ document.querySelectorAll('.apropos-cards .card').forEach(card=>{
 /* =========================================================
    RETOUR EN IMAGES (images + menu déroulant)
 ========================================================= */
-// ===== CARTES "RETOUR EN IMAGES" =====
-document.querySelectorAll('.info-card').forEach(card => {
-  card.addEventListener('click', (e) => {
-    if (e.target.tagName.toLowerCase() === 'a') return;
+document.querySelectorAll('.retour-en-images .info-card').forEach(card => {
+  card.addEventListener('click', () => {
     card.classList.toggle('open');
   });
-
 });
+
 
 
 
