@@ -520,6 +520,13 @@ html, body {
   text-align: center;
 }
 
+.section.resultats h2 {
+  text-align: center;   /* centre le texte */
+  color: #c2103c;       /* rouge ACSL */
+  margin-bottom: 30px;  /* petit espace sous le titre */
+  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-weight: 700;     /* gras pour bien ressortir */
+}
 .section.resultats .section-title {
   font-size: 2rem;
   margin-bottom: 40px;
@@ -674,6 +681,7 @@ a.lien-card:hover {
   font-size: 2rem;      /* optionnel, pour le rendre plus visible */
   font-weight: 700;     /* gras pour bien ressortir */
 }
+
 .section.retour-en-images .info-card:hover {
   transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.15);
