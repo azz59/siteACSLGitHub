@@ -615,10 +615,11 @@ html, body {
 /* ===== Carte ===== */
 .retour-en-images .info-card {
   position: relative;
-  overflow: hidden;
+  height: 280px;      /* hauteur de la carte → tu peux ajuster */
   border-radius: 12px;
+  overflow: hidden;
   cursor: pointer;
-  transition: transform .3s ease;
+  transition: .3s;
 }
 
 .retour-en-images .info-card:hover {
@@ -627,10 +628,13 @@ html, body {
 
 /* Image */
 .retour-en-images .info-card img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 250px;
-  object-fit: cover;
-  display: block;
+  height: 100%;       /* <— prend toute la carte */
+  object-fit: cover;  /* <— couvre entièrement */
+  z-index: 1;
 }
 
 /* Overlay année */
