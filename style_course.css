@@ -649,102 +649,127 @@ a.lien-card:hover {
 /* =========================================================
    SECTION — Retour en images
 ========================================================= */
+/* SECTION */
+.section.retour-en-images {
+  padding: 80px 20px;
+  background: #000;
+  text-align: center;
+}
 
+.section.retour-en-images .section-title {
+  font-size: 2.4rem;
+  color: #e91147;
+  font-weight: bold;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
+/* GRILLE */
 .section.retour-en-images .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-/* ============================
-   CARTE — Style
-============================ */
+/* ======= CARTE ======= */
 .section.retour-en-images .info-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid #e91147;
-  border-radius: 12px;
-  padding: 30px 20px;
-  color: white;
-  backdrop-filter: blur(8px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  position: relative;
+  height: 260px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
   transition: 0.3s ease;
-}
-
-.section.retour-en-images h2 {
-  text-align: center;   /* centre le texte */
-  color: #e91147;       /* rouge ACSL */
-  margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
-  font-weight: 700;     /* gras pour bien ressortir */
 }
 
 .section.retour-en-images .info-card:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
 }
 
+/* Image dynamique */
+.section.retour-en-images .info-card {
+  background-image: url("");
+}
+.section.retour-en-images .info-card[data-img] {
+  background-image: attr(data-img url);
+}
+
+/* ======= ANNÉE — texte géant transparent ======= */
 .section.retour-en-images .info-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #ff305a;
-}
-
-/* ============================
-   BOUTONS — identiques
-============================ */
-.section.retour-en-images .card-buttons {
+  position: absolute;
+  inset: 0;
   display: flex;
   justify-content: center;
-  gap: 15px;
-}
+  align-items: center;
 
-/* Boutons uniformes */
-.section.retour-en-images .card-buttons a {
-  display: inline-block;
-  width: 120px;
-  padding: 10px 0;
-  text-align: center;
-  border-radius: 20px;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  background: linear-gradient(135deg, #e91147, #b40d33);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 900;
+  text-shadow: 0 0 15px rgba(0,0,0,0.4);
+  pointer-events: none;
   transition: 0.3s ease;
 }
 
-.section.retour-en-images .card-buttons a:hover {
-  background: linear-gradient(135deg, #ff2c5f, #d31243);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.45);
+/* ======= MENU DÉROULANT ======= */
+.section.retour-en-images .card-content {
+  position: absolute;
+  bottom: -120px;         /* caché */
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 15px 20px;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(5px);
+  transition: 0.35s ease;
 }
 
+/* Affichage au clic */
+.section.retour-en-images .info-card.open .card-content {
+  bottom: 0;
+}
 
-/* ============================
-   RESPONSIVE
-============================ */
+/* ======= BOUTONS ======= */
+.section.retour-en-images .card-content a {
+  padding: 10px 0;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  background: linear-gradient(135deg, #e91147, #b40d33);
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.section.retour-en-images .card-content a:hover {
+  background: linear-gradient(135deg, #ff2c5f, #d31243);
+}
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 900px) {
+  .section.retour-en-images .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 @media (max-width: 600px) {
-  .cards-container {
+  .section.retour-en-images .cards-container {
     grid-template-columns: 1fr;
-    gap: 15px;
   }
 
-  .info-card h3 {
-    font-size: 1.6rem;
+  .section.retour-en-images .info-card {
+    height: 220px;
   }
 
-  .card-buttons a {
-    width: 100px;
-    padding: 9px 0;
+  .section.retour-en-images .info-card h3 {
+    font-size: 3rem;
   }
 }
-
-
 
 /* =========================================================
    🏃‍♀️ SECTION INFOS PRATIQUES - version sans cartes
