@@ -533,7 +533,7 @@ html, body {
 }
 
 /* Conteneur grid */
-.results-container {
+.section.results-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;               /* réduit l’espace entre les cartes */
@@ -542,7 +542,7 @@ html, body {
 }
 
 /* Carte année */
-.result-card {
+.section.result-card {
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   border-radius: 12px;
@@ -554,18 +554,18 @@ html, body {
   border: 1px solid rgba(255,255,255,0.05);
 }
 
-.result-card:hover {
+.section.result-card:hover {
   transform: translateY(-4px);
   background: rgba(255,255,255,0.2);
 }
 
-.result-card h3 {
+.section.result-card h3 {
   font-size: 2.2rem;       /* 📌 plus petit */
   margin: 0;
   color: #ff0040;
 }
 
-.result-card p {
+.section.result-card p {
   margin-top: 8px;
   font-size: 1.2rem;      /* 📌 réduit */
   opacity: 0.9;
@@ -590,59 +590,6 @@ html, body {
   .result-card p {
     font-size: 1rem;
   }
-}
-
-
-/* =========================================================
-   REGLEMENT
-   ========================================================= */
-.reglement-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-   color: #e91147;
-}
-
-#reglement h2 {
-  text-align: center;   /* centre le texte */
-  color: #e91147;       /* rouge ACSL */
-  margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
-  font-weight: 700;     /* gras pour bien ressortir */
-}
-
-.card {
-  background: #a00909;
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 280px;
-  text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease;
-  text-decoration: none;
-  display: block;
-  cursor: pointer;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  background: #b41f1f;
-}
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Liens */
-a.lien-card {
-  text-decoration: none;
-  color: white;
-}
-a.lien-card:hover {
-  color: #fff;
 }
 
 
