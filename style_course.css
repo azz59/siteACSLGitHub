@@ -584,16 +584,18 @@ html, body {
 @media (max-width: 600px) {
 
   .results-container {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr; /* 1 carte par ligne */
     width: 100%;
-    max-width: 100%;      /* ← empêche le débordement */
-    padding: 0 10px;      /* petit espace intérieur */
+    padding: 0 15px; /* petit padding pour respirer */
+    box-sizing: border-box;
   }
 
   .result-card {
-    padding: 18px 10px;
-    margin: 0 auto;
-    width: 100%;          /* ← la carte s’adapte à l’écran */
+    width: 100%;        /* prend toute la largeur disponible */
+    margin: 0;          /* évite un léger décalage */
+    padding: 18px 12px;
+    box-sizing: border-box;
   }
 
   .result-card h3 {
