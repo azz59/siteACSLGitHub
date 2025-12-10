@@ -690,7 +690,7 @@ html, body {
   background-position: center;
   -webkit-background-clip: text; /* nécessaire pour Chrome/Safari */
   -webkit-text-fill-color: transparent; /* rend le texte transparent pour montrer l'image */
-  filter: blur(4px);
+  filter: blur(2px);
 
 }
 
