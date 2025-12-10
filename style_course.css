@@ -309,7 +309,7 @@ html, body {
     font-size: 1rem;
   }
 
-  .rotate-icon {
+  .accueil .rotate-icon {
     width: 60px;
     height: 60px;
   }
@@ -583,7 +583,7 @@ html, body {
 /* MOBILE */
 @media (max-width: 600px) {
 
-  .results-container {
+  .section.resultats .results-container {
     display: grid !important;
     grid-template-columns: 1fr !important; /* ⚡ Force 1 colonne */
     width: 100% !important;
@@ -593,18 +593,18 @@ html, body {
     box-sizing: border-box;
   }
 
-  .result-card {
+  .section.resultats .result-card {
     width: 100% !important;      /* prend toute la ligne */
     margin: 0 auto !important;
     padding: 18px 12px;
     box-sizing: border-box;
   }
 
-  .result-card h3 {
+  .section.resultats .result-card h3 {
     font-size: 1.6rem;
   }
 
-  .result-card p {
+  .section.resultats .result-card p {
     font-size: 1rem;
   }
 }
