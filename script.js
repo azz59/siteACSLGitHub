@@ -60,6 +60,19 @@ document.querySelectorAll('.apropos-cards .card').forEach(card=>{
 
 
 
+/* =========================================================
+   RETOUR EN IMAGES (images + menu déroulant)
+========================================================= */
+document.querySelectorAll('.info-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('open');
+  });
+});
+
+
+
+
+
 
 
 
