@@ -615,113 +615,106 @@ html, body {
 /* =========================================================
    SECTION — Retour en images
 ========================================================= */
-/* ===== Conteneur ===== */
+/* =============================
+   RETOUR EN IMAGES
+============================= */
 .retour-en-images .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.retour-en-images h2 {
-  text-align: center;   /* centre le texte */
-  color: #c2103c;       /* rouge ACSL */
-  margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
-  font-weight: 700;     /* gras pour bien ressortir */
-}
-/* ===== Carte ===== */
-.retour-en-images .info-card {
+/* Bloc image */
+.retour-en-images .image-block {
   position: relative;
-  height: 280px;      /* hauteur de la carte → tu peux ajuster */
-  border-radius: 12px;
   overflow: hidden;
-  cursor: pointer;
-  transition: .3s;
+  border-radius: 12px;
 }
 
-.retour-en-images .info-card:hover {
-  transform: translateY(-4px);
-}
-
-/* Image */
-.retour-en-images .info-card {
-  position: relative;
-  overflow: hidden; /* nécessaire pour que l’image ne déborde pas */
-}
-
-/* === Image de fond avec flou === */
-.retour-en-images .info-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Image = plein écran */
+.retour-en-images .image-block img {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-image: var(--img-url);
-  filter: blur(6px);          /* <— flou */
-  transform: scale(1.1);      /* <— évite les bords flous */
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom léger au survol */
+.retour-en-images .image-block:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay foncé en bas */
+.retour-en-images .image-block::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0));
   z-index: 1;
 }
 
-/* === Contenu (titre + boutons) au-dessus === */
-.retour-en-images .info-card h3,
-.retour-en-images .info-card .card-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-}
-
-/* === Taille du H3 (modifie ici) === */
-.retour-en-images .info-card h3 {
-  font-size: 5rem;   /* ⬅️ change la taille ici ! */
-  font-weight: 800;
-  margin-bottom: 15px;
-  text-shadow: 0 0 8px rgba(0,0,0,0.6);
-}
-
-/* ===== Contenu déroulant ===== */
-.retour-en-images .card-content {
+/* Titre */
+.retour-en-images .image-block h3 {
   position: absolute;
-  bottom: -100px; /* caché */
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.7);
-  padding: 15px 0;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  transition: bottom .3s ease;
-}
-
-.retour-en-images .info-card.open .card-content {
-  bottom: 0; /* visible */
+  bottom: 70px;
+  left: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  z-index: 2;
 }
 
 /* Boutons */
-.retour-en-images .card-content a {
-  background: #e91147;
-  padding: 8px 15px;
-  border-radius: 8px;
+.retour-en-images .image-block .buttons {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.retour-en-images .image-block .buttons a {
+  padding: 8px 16px;
+  border-radius: 20px;
   color: #fff;
-  text-decoration: none;
   font-weight: bold;
-  transition: .3s;
+  background: rgba(233, 17, 71, 0.85);
+  backdrop-filter: blur(4px);
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-.retour-en-images .card-content a:hover {
-  background: #ff2c5f;
+.retour-en-images .image-block .buttons a:hover {
+  background: rgba(233, 17, 71, 1);
+  transform: translateY(-2px);
 }
 
-/* Responsive */
+/* =============================
+   Responsive
+============================= */
 @media (max-width: 700px) {
   .retour-en-images .cards-container {
     grid-template-columns: 1fr;
   }
+
+  .retour-en-images .image-block h3 {
+    font-size: 1.6rem;
+  }
+
+  .retour-en-images .image-block .buttons a {
+    font-size: 0.9rem;
+    padding: 6px 14px;
+  }
 }
+
 
 
 /* =========================================================
