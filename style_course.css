@@ -680,6 +680,7 @@ html, body {
   transform: translate(-50%, -50%);
   margin: 0;
   font-size: 8rem;
+  font-family: 'Poppins', sans-serif;
   font-weight: bold;
   z-index: 3;
   text-align: center;
@@ -689,7 +690,7 @@ html, body {
   background-position: center;
   -webkit-background-clip: text; /* nécessaire pour Chrome/Safari */
   -webkit-text-fill-color: transparent; /* rend le texte transparent pour montrer l'image */
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* optionnel pour relief */
+  /* text-shadow: 0 2px 6px rgba(0,0,0,0.6); optionnel pour relief */
 }
 
 
