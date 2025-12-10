@@ -615,9 +615,7 @@ html, body {
 /* =========================================================
    SECTION — Retour en images
 ========================================================= */
-/* =============================
-   RETOUR EN IMAGES
-============================= */
+
 .retour-en-images .cards-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -698,7 +696,7 @@ html, body {
 /* =============================
    Responsive
 ============================= */
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .retour-en-images .cards-container {
     grid-template-columns: repeat(2, 1fr);
   }
