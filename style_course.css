@@ -657,7 +657,7 @@ a.lien-card:hover {
 }
 
 .section.retour-en-images .section-title {
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: #e91147;
   font-weight: bold;
   margin-bottom: 50px;
@@ -705,7 +705,7 @@ a.lien-card:hover {
   justify-content: center;
   align-items: center;
 
-  font-size: 4rem;
+  font-size: 5rem;
   color: rgba(255, 255, 255, 0.85);
   font-weight: 900;
   text-shadow: 0 0 15px rgba(0,0,0,0.4);
