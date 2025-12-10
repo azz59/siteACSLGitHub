@@ -59,14 +59,14 @@ document.querySelectorAll('.apropos-cards .card').forEach(card=>{
 });
 
 
-// ===== RETOUR EN IMAGE =====
-<script>
+// ===== RETOUR EN IMAGES =====
+
 document.querySelectorAll('.info-card').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('open');
   });
 });
-</script>
+
 
 
 
