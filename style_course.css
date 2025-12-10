@@ -533,7 +533,7 @@ html, body {
 }
 
 /* Conteneur grid */
-.section.results-container {
+.section.resultats .results-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;               /* réduit l’espace entre les cartes */
@@ -542,7 +542,7 @@ html, body {
 }
 
 /* Carte année */
-.section.result-card {
+.section.resultats .result-card {
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   border-radius: 12px;
@@ -554,18 +554,18 @@ html, body {
   border: 1px solid rgba(255,255,255,0.05);
 }
 
-.section.result-card:hover {
+.section.resultats .result-card:hover {
   transform: translateY(-4px);
   background: rgba(255,255,255,0.2);
 }
 
-.section.result-card h3 {
+.section.resultats .result-card h3 {
   font-size: 2.2rem;       /* 📌 plus petit */
   margin: 0;
   color: #ff0040;
 }
 
-.section.result-card p {
+.section.resultats .result-card p {
   margin-top: 8px;
   font-size: 1.2rem;      /* 📌 réduit */
   opacity: 0.9;
@@ -605,6 +605,13 @@ html, body {
   margin: 0 auto;
 }
 
+.retour-en-images h2 {
+  text-align: center;   /* centre le texte */
+  color: #c2103c;       /* rouge ACSL */
+  margin-bottom: 30px;  /* petit espace sous le titre */
+  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-weight: 700;     /* gras pour bien ressortir */
+}
 /* ===== Carte ===== */
 .retour-en-images .info-card {
   position: relative;
