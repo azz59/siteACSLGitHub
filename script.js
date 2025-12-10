@@ -64,21 +64,11 @@ document.querySelectorAll('.apropos-cards .card').forEach(card=>{
    RETOUR EN IMAGES (images + menu déroulant)
 ========================================================= */
 document.querySelectorAll('.info-card').forEach(card => {
-  
-  /* --- Ajouter l’image de fond depuis data-img --- */
-  const img = card.getAttribute('data-img');
-  if (img) {
-    card.style.backgroundImage = `url(${img})`;
-    card.style.backgroundSize = "cover";
-    card.style.backgroundPosition = "center";
-    card.style.backgroundRepeat = "no-repeat";
-  }
-
-  /* --- Ouvrir / fermer la carte --- */
   card.addEventListener('click', () => {
     card.classList.toggle('open');
   });
 });
+
 
 
 
