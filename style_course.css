@@ -677,15 +677,21 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* centre horizontalement et verticalement */
+  transform: translate(-50%, -50%);
   margin: 0;
-  color: #fff;
-  font-size: 5rem; /* taille plus grande */
+  font-size: 8rem;
   font-weight: bold;
   z-index: 3;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-  text-align: center; /* au cas où le texte fasse plusieurs lignes */
+  text-align: center;
+  /* Clipping Mask */
+  background-image: url('images/qlc25filles.jpg'); /* image de remplissage */
+  background-size: cover; /* adapte l'image à la taille du texte */
+  background-position: center;
+  -webkit-background-clip: text; /* nécessaire pour Chrome/Safari */
+  -webkit-text-fill-color: transparent; /* rend le texte transparent pour montrer l'image */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6); /* optionnel pour relief */
 }
+
 
 
 /* Boutons */
