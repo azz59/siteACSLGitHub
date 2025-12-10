@@ -679,7 +679,7 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  font-size: 12rem;
+  font-size: 8rem;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
   z-index: 3;
@@ -690,7 +690,8 @@ html, body {
   background-position: center;
   -webkit-background-clip: text; /* nécessaire pour Chrome/Safari */
   -webkit-text-fill-color: transparent; /* rend le texte transparent pour montrer l'image */
-  /* text-shadow: 0 2px 6px rgba(0,0,0,0.6); optionnel pour relief */
+  filter: blur(4px);
+
 }
 
 
@@ -721,7 +722,7 @@ html, body {
   }
 
   .retour-en-images .image-block h3 {
-    font-size: 1.5rem;
+    font-size: 4rem;
   }
 
   .retour-en-images .image-block .buttons a {
