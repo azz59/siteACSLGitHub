@@ -697,15 +697,21 @@ html, body {
   font-weight: bold;
   z-index: 3;
   text-align: center;
-  /* Clipping Mask */
-  background-image: url('images/qlc25.jpg'); /* image de remplissage */
-  background-size: cover; /* adapte l'image à la taille du texte */
-  background-position: center;
-  -webkit-background-clip: text; /* nécessaire pour Chrome/Safari */
-  -webkit-text-fill-color: transparent; /* rend le texte transparent pour montrer l'image */
-  filter: blur(0.8px);
 
+  /* Clipping Mask */
+  background-image: url('images/qlc25.jpg');
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Contour du texte */
+  -webkit-text-stroke: 3px rgb(122, 16, 16); /* épaisseur + couleur */
+
+  /* Blur léger (optionnel) */
+  filter: blur(0.8px);
 }
+
 
 
 
