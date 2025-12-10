@@ -59,6 +59,17 @@ document.querySelectorAll('.apropos-cards .card').forEach(card=>{
 });
 
 
+// ===== RETOUR EN IMAGE =====
+<script>
+document.querySelectorAll('.info-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('open');
+  });
+});
+</script>
+
+
+
 
 
 
