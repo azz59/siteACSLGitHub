@@ -627,7 +627,7 @@ html, body {
 }
 
 /* Bloc image */
-.retour-en-images .info-card {
+.retour-en-images .image-block {
   position: relative;
   border-radius: 15px;
   overflow: hidden;
@@ -635,17 +635,16 @@ html, body {
 }
 
 /* Image légèrement arrondie */
-.retour-en-images .info-card img {
+.retour-en-images .image-block img {
   width: 100%;
-  height: auto;
   display: block;
   border-radius: 15px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
-/* Overlay pour boutons */
-.retour-en-images .info-card .overlay {
+/* Overlay pour les boutons */
+.retour-en-images .image-block .buttons {
   position: absolute;
   top: 0;
   left: 0;
@@ -663,12 +662,12 @@ html, body {
 }
 
 /* Affiche overlay quand la carte est active */
-.retour-en-images .info-card.open .overlay {
+.retour-en-images .image-block.open .buttons {
   opacity: 1;
 }
 
 /* Titre de l'année sur l'image */
-.retour-en-images .info-card h3 {
+.retour-en-images .image-block h3 {
   position: absolute;
   top: 10px;
   left: 15px;
@@ -681,7 +680,7 @@ html, body {
 }
 
 /* Boutons */
-.retour-en-images .info-card .overlay a {
+.retour-en-images .image-block .buttons a {
   padding: 10px 20px;
   border-radius: 25px;
   background: rgba(233, 17, 71, 0.85);
@@ -691,7 +690,7 @@ html, body {
   transition: all 0.3s ease;
 }
 
-.retour-en-images .info-card .overlay a:hover {
+.retour-en-images .image-block .buttons a:hover {
   background: rgba(233,17,71,1);
   transform: translateY(-2px);
 }
@@ -704,7 +703,7 @@ html, body {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .retour-en-images .info-card h3 {
+  .retour-en-images .image-block h3 {
     font-size: 1.8rem;
   }
 }
@@ -714,11 +713,11 @@ html, body {
     grid-template-columns: 1fr;
   }
 
-  .retour-en-images .info-card h3 {
+  .retour-en-images .image-block h3 {
     font-size: 1.5rem;
   }
 
-  .retour-en-images .info-card .overlay a {
+  .retour-en-images .image-block .buttons a {
     font-size: 0.9rem;
     padding: 8px 16px;
   }
