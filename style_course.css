@@ -274,10 +274,8 @@ html, body {
 /* =======================
    RESPONSIVE ACCUEIL
    ======================= */
-/* ----- Mobiles grands / petits ----- */
-@media (max-width: 600px) {
 
-  /* ===== SECTION ACCUEIL ===== */
+@media (max-width: 600px) {
 
   .accueil {
     padding: 0;             /* empêche la vidéo d'être poussée vers le bas */

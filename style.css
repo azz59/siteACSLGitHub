@@ -191,16 +191,16 @@ body, html {
 /* === Responsive === */
 
 @media (max-width: 768px) {
-   .accueil video {
-    width: 100vw;      /* largeur de l’écran */
-    height: auto;      /* hauteur ajustée automatiquement */
-    max-height: 70vh;  /* limite la hauteur pour éviter de dépasser */
+    .accueil video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    transform: translate(-50%, -50%);  /* reste centrée */
   }
-}
 
-
-@media (max-width: 768px) {
   .accueil-text {
     left: 50%;
     transform: translateX(-55%) translateY(-50%); /* assure le centrage horizontal */
@@ -215,9 +215,8 @@ body, html {
   .accueil-text h2 {
     font-size: 1.1rem;
   }
-}
 
-@media (max-width: 480px) {
+
   .accueil-text h1 {
     font-size: 1.6rem;
   }
@@ -225,7 +224,7 @@ body, html {
   .accueil-text h2 {
     font-size: 1rem;
   }
-}
+
 
 /* =========================================================
    SECTION : CLUBS
