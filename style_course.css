@@ -694,6 +694,7 @@ html, body {
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 4;
+  pointer-events: none; /* ignore les clics quand invisible */
 }
 
 /* Affiche overlay quand la carte est active */
