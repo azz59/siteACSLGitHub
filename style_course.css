@@ -677,7 +677,7 @@ html, body {
   gap: 12px;
   opacity: 0;
   transition: opacity 0.3s ease;
-  z-index: 2;
+  z-index: 4;
 }
 
 /* Affiche overlay quand la carte est active */
