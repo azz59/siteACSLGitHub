@@ -116,37 +116,29 @@ body {
 /* =============================================================== */
 /* ============================ ACCUEIL ========================== */
 /* =============================================================== */
-
 .accueil {
   position: relative;
   width: 100%;
-  min-height: 120vh;
-  background-color: #000;
+  min-height: 70vh;         /* prend toute la hauteur de la fenêtre */
+  background-color: #000;    
   overflow: hidden;
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  justify-content: center;
+  display: flex;              /* permet un centrage parfait */
+  align-items: center;        /* centre verticalement */
+  justify-content: center;    /* centre horizontalement */
+  flex-direction: column;     /* garde le texte centré en colonne */
 }
 
-/* Vidéo de fond */
 .accueil video {
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
-  width: 100%;
-  height: 120vh;
-  object-fit: cover;
+  width: 100vw;       /* largeur de la fenêtre */
+  height: 100vh;      /* hauteur de la fenêtre */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;  /* recadre pour remplir sans distorsion */
   transform: translate(-50%, -50%);
   z-index: 0;
-}
-
-/* Overlay sombre */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
 }
 
 /* ===== Supprime les ascenseurs du body ===== */
@@ -196,39 +188,44 @@ body, html {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
+/* === Responsive === */
 
-  /* ===== SECTION ACCUEIL ===== */
-
-  .accueil {
-    padding: 0;             /* empêche la vidéo d'être poussée vers le bas */
-    min-height: 100vh;      /* garantit la bonne hauteur */
-  }
-
-  .accueil video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
+@media (max-width: 768px) {
+   .accueil video {
+    width: 100vw;      /* largeur de l’écran */
+    height: auto;      /* hauteur ajustée automatiquement */
+    max-height: 70vh;  /* limite la hauteur pour éviter de dépasser */
     object-fit: cover;
-    transform: translate(-50%, -50%);  /* reste centrée */
   }
+}
 
+
+@media (max-width: 768px) {
   .accueil-text {
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);  /* recentrage vrai */
+    transform: translateX(-55%) translateY(-50%); /* assure le centrage horizontal */
     width: 90%;
   }
+  
 
   .accueil-text h1 {
-    font-size: 1.7rem;
+    font-size: 2rem;
+  }
+
+  .accueil-text h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .accueil-text h1 {
+    font-size: 1.6rem;
   }
 
   .accueil-text h2 {
     font-size: 1rem;
   }
+}
 
 /* =========================================================
    SECTION : CLUBS
