@@ -701,6 +701,7 @@ html, body {
 /* Affiche overlay quand la carte est active */
 .retour-en-images .image-block.open .buttons {
   opacity: 1;
+  pointer-events: auto;   /* capte les clics quand visible */
 }
 
 .retour-en-images .image-block .buttons a {
