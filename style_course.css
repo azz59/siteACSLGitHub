@@ -692,7 +692,7 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  font-size: 9rem;
+  font-size: 8rem;
   font-family: 'Paris Forbel','Poppins', sans-serif;
   font-weight: bold;
   z-index: 3;
