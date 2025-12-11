@@ -315,7 +315,7 @@ html, body {
 
   /* ===== CARTES (2 colonnes) ===== */
 
-  .accueil-cards {
+  .accueil .accueil-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* centre réellement les 2 colonnes */
@@ -324,24 +324,24 @@ html, body {
     margin: 0 auto;
   }
 
-  .accueil-col {
+  .accueil .accueil-col {
     width: calc(50% - 10px); /* 2 colonnes sur mobile */
     display: flex;
     flex-direction: column;
     gap: 15px;
   }
 
-  .accueil-card {
+  .accueil .accueil-card {
     width: 100%;
     height: auto;
     box-sizing: border-box;
   }
 
-  .accueil-card h3 {
+  .accueil .accueil-card h3 {
     font-size: 0.95rem;
   }
 
-  .accueil-card p {
+  .accueil .accueil-card p {
     font-size: 0.85rem;
   }
 }
