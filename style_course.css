@@ -691,10 +691,11 @@ html, body {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  opacity: 0;
+  opacity: 1;
+  pointer-events: auto; /* capte les clics quand visible */
   transition: opacity 0.3s ease;
   z-index: 4;
-  pointer-events: none; /* ignore les clics quand invisible */
+  
 }
 
 /* Affiche overlay quand la carte est active */
