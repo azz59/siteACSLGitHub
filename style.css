@@ -116,29 +116,37 @@ body {
 /* =============================================================== */
 /* ============================ ACCUEIL ========================== */
 /* =============================================================== */
+
 .accueil {
   position: relative;
   width: 100%;
-  min-height: 70vh;         /* prend toute la hauteur de la fenêtre */
-  background-color: #000;    
+  min-height: 120vh;
+  background-color: #000;
   overflow: hidden;
-  display: flex;              /* permet un centrage parfait */
-  align-items: center;        /* centre verticalement */
-  justify-content: center;    /* centre horizontalement */
-  flex-direction: column;     /* garde le texte centré en colonne */
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
 }
 
+/* Vidéo de fond */
 .accueil video {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
-  width: 100vw;       /* largeur de la fenêtre */
-  height: 100vh;      /* hauteur de la fenêtre */
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;  /* recadre pour remplir sans distorsion */
+  width: 100%;
+  height: 120vh;
+  object-fit: cover;
   transform: translate(-50%, -50%);
   z-index: 0;
+}
+
+/* Overlay sombre */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
 }
 
 /* ===== Supprime les ascenseurs du body ===== */
