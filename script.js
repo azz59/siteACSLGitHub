@@ -64,10 +64,13 @@ document.querySelectorAll('.apropos-cards .card').forEach(card=>{
    RETOUR EN IMAGES (images + menu déroulant)
 ========================================================= */
 document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
-  card.addEventListener('click', () => {
+  card.addEventListener('click', (e) => {
+    // Si on clique sur un bouton, ne pas toggle
+    if (e.target.closest('.buttons a')) return;
     card.classList.toggle('open');
   });
 });
+
 
 
 
