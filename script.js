@@ -63,7 +63,7 @@ document.querySelectorAll('.apropos-cards .card').forEach(card=>{
 /* =========================================================
    RETOUR EN IMAGES (images + menu déroulant)
 ========================================================= */
-document.querySelectorAll('.retour-en-images .info-card').forEach(card => {
+document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('open');
   });
