@@ -195,6 +195,28 @@ body, html {
   font-weight: 400;
 }
 
+/* Réseaux sociaux */
+.social-links {
+  position: absolute;
+  bottom: 30px;           /* position en bas */
+  display: flex;
+  gap: 20px;              /* espace entre les icônes */
+  z-index: 2;             /* au-dessus de la vidéo */
+}
+
+.social-links a img {
+  width: 36px;
+  height: 36px;
+  filter: brightness(0) invert(1); /* blanc sur fond sombre */
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
@@ -231,6 +253,17 @@ body, html {
   .accueil-text h2 {
     font-size: 1rem;
   }
+
+  .social-links {
+    bottom: 20px;
+  }
+
+  .social-links a img {
+    width: 30px;
+    height: 30px;
+  }
+
+
    }
 
 
