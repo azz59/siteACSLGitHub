@@ -19,8 +19,8 @@
     <a href="#clubs">Clubs</a>
     <a href="#evenements">Événements</a>
     <a href="#quand-lomme-court">Quand Lomme Court</a>
-    <a href="#Devenir Bénévole">Devenir Bénévole</a>
-    <a href="#apropos">À propos</a>
+    <a href="#DevenirBenevole">Devenir Bénévole</a>
+    <a href="reglement.html">À propos de l'ACSL</a>
     <a href="#partenaires">Partenaires</a>
   </nav>
 </header>
@@ -31,7 +31,7 @@
 
   <!-- 🎥 Vidéo de fond -->
   <video autoplay muted loop playsinline class="accueil-video">
-    <source src="videos/boxe2.mp4" type="video/mp4">
+    <source src="videos/Benevolat_1.mp4" type="video/mp4">
     Votre navigateur ne supporte pas la vidéo HTML5.
   </video>
 
@@ -48,9 +48,9 @@
 
   <!-- Premier bandeau : vidéos pleine largeur -->
   <div class="carousel static fullwidth">
-    <video src="videos/boxe2.mp4" autoplay muted loop></video>
-    <video src="videos/BenevolatAvecLogo.mp4" autoplay muted loop></video>
-    <video src="videos/foot.mp4" autoplay muted loop></video>
+    <video src="videos/LLMHvsNimesSansACSL.mp4" autoplay muted loop></video>
+    <video src="videos/Benevolat_2.mp4" autoplay muted loop></video>
+    <video src="videos/BatisseursExtr.mp4" autoplay muted loop></video>
   </div>
 
  
@@ -335,15 +335,15 @@
   <div class="events">
     <div class="event">
       <img src="images/noel.png" alt="event1">
-      <p>Événement 1 : Description rapide</p>
+      <p>Spectacle musical pour enfants</p>
     </div>
     <div class="event">
       <img src="images/qlc.jpg" alt="event2">
-      <p>Événement 2 : Description rapide</p>
+      <p>Quand Lomme Court</p>
     </div>
     <div class="event">
       <img src="images/ecosport.jpg" alt="event3">
-      <p>Événement 3 : Description rapide</p>
+      <p>Inauguration de l'école du sport</p>
     </div>
   </div>
 </section>
@@ -378,55 +378,6 @@
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-<!-- SECTION A PROPOS -->
-<section id="apropos" class="section apropos">
-  <h2>À propos de l'ACSL</h2>
-  <div class="apropos-cards">
-
-    <!-- 1️⃣ Carte : lien vers règlement -->
-    <a href="reglement.html" target="_blank" class="card lien-card">
-      <h3>Le règlement intérieur</h3>
-    </a>
-
-    <!-- 2️⃣ Carte : affiche la liste au clic -->
-    <div class="card" id="toggleMembres">
-      <h3>Les membres du conseil d'administration</h3>
-    </div>
-
-  </div>
-
-  <!-- 🧾 Liste dépliable (en dehors de la carte) -->
-  <ul class="liste-membres" id="listeMembres">
-        <li>Christiant Montay — Président</li>
-        <li>Bernard LECLERCQ — Vice-présidente chargé de la vie Sportive</li>
-        <li>Jean-Pierre ALEXANDRE — Vice-présidente chargé des animations</li>
-        <li>Pierre BOONE — Trésorier</li>
-        <li>Stéphane SUET — Secrétaire</li>
-         <li>Jessy TURPIN — Trésorier adjoint</li>
-        <li>Francine ALDOUDOU — Secrétaire adjoint</li>
-  </ul>
-</section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const toggleMembres = document.getElementById('toggleMembres');
-  const listeMembres = document.getElementById('listeMembres');
-
-  if (toggleMembres && listeMembres) {
-    toggleMembres.addEventListener('click', function() {
-      listeMembres.classList.toggle('show');
-    });
-  }
-});
-</script>
-
 
 
 

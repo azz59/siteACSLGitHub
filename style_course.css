@@ -132,60 +132,64 @@ html, body {
 /* =========================================================
    🏁 SECTION ACCUEIL – Animation séquentielle centrée
    ========================================================= */
+
 .accueil {
   position: relative;
   width: 100%;
-  min-height: 90vh;         /* prend toute la hauteur de la fenêtre */
-  background-color: #000;    
+  min-height: 120vh;
+  background-color: #000;
   overflow: hidden;
-  display: flex;              /* permet un centrage parfait */
-  align-items: center;        /* centre verticalement */
-  justify-content: center;    /* centre horizontalement */
-  flex-direction: column;     /* garde le texte centré en colonne */
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
 }
 
+/* Vidéo de fond */
 .accueil video {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   width: 100%;
-  height: 100%;
-  object-fit: cover;       /* remplit sans distorsion */
-  transform: translate(-50%, -50%); /* centre parfaitement la vidéo */
+  height: 120vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
   z-index: 0;
 }
 
-/* ===== Supprime les ascenseurs du body ===== */
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* bloque le défilement horizontal */
-}
-
-
-/* 🔹 Superposition sombre par-dessus la vidéo */
+/* Overlay sombre */
 .overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
 
-/* Texte centré au-dessus de la vidéo */
+/* Supprime le scroll horizontal global */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   TEXTE ACCUEIL
+   ========================================================= */
 .accueil-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* centre pile au milieu */
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  align-items: center; /* centre horizontalement */
+  align-items: center;
   justify-content: center;
   text-align: center;
-  z-index: 2;
-  width: 90%; /* évite le dépassement sur mobile */
+  width: 90%;
   max-width: 800px;
   box-sizing: border-box;
+  z-index: 2;
 }
 
 .accueil-text h1 {
@@ -195,47 +199,163 @@ body, html {
 }
 
 .accueil-text h2 {
-  color: #ffffff;
+  color: #fff;
   font-size: 1.5em;
   margin-top: 10px;
   font-weight: 400;
 }
 
-/* ===== RESPONSIVE ===== */
-/* === Responsive === */
-@media (max-width: 768px) {
-  .accueil-text {
+
+/* =========================================================
+   ICÔNE ROTATIVE
+   ========================================================= */
+.rotate-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin: 15px auto;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  animation: spin 8s linear infinite;
+}
+
+
+/* =========================================================
+   CARTES ACCUEIL — Conteneur & layout
+   ========================================================= */
+.accueil-cards {
+  margin-top: 5px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
+  z-index: 2;
+}
+
+/* Colonnes verticales */
+.accueil-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: auto;               /* prend la largeur de son contenu (cartes) */
+  align-items: center;       /* centre les cartes dans la colonne */
+}
+
+/* =========================================================
+   CARTES — Style
+   ========================================================= */
+.accueil-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid #e91147;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  backdrop-filter: blur(5px);
+  transition: 0.3s ease;
+  width: 180px;          /* largeur réduite des cartes */
+  flex: 0 0 auto;        /* empêche l'étirement horizontal */
+}
+
+.accueil-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.accueil-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =======================
+   RESPONSIVE ACCUEIL
+   ======================= */
+
+@media (max-width: 600px) {
+
+  .accueil {
+    padding: 0;             /* empêche la vidéo d'être poussée vers le bas */
+    min-height: 100vh;      /* garantit la bonne hauteur */
+  }
+
+  .accueil video {
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-55%) translateY(-50%); /* assure le centrage horizontal */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);  /* reste centrée */
+  }
+
+  .accueil-text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /* recentrage vrai */
     width: 90%;
   }
 
   .accueil-text h1 {
-    font-size: 2rem;
-  }
-
-  .accueil-text h2 {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .accueil-text h1 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
   }
 
   .accueil-text h2 {
     font-size: 1rem;
   }
+
+  .accueil .rotate-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+
+  /* ===== CARTES (2 colonnes) ===== */
+
+  .accueil .accueil-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* centre réellement les 2 colonnes */
+    gap: 15px;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+
+  .accueil .accueil-col {
+    width: calc(50% - 10px); /* 2 colonnes sur mobile */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .accueil .accueil-card {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .accueil .accueil-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .accueil .accueil-card p {
+    font-size: 0.85rem;
+  }
 }
+
+
 
 
 /* =========================================================
    🏁 SECTION INSCRIPTION
    ========================================================= */
+
 .section.inscription {
   padding: 100px 20px 80px;
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  background: radial-gradient(circle, #111 0%, #000 100%);
   text-align: center;
 }
 
@@ -246,55 +366,24 @@ body, html {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 50px;
-  position: relative;
-  display: inline-block;
-}
-
-.section.inscription .section-title::after {
-  content: "";
-  display: none; /* désactive la ligne sous le titre */
-  width: 80px;
-  height: 3px;
-  background: #e91147;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
-
-/* === Lien vidéo dans une carte (optionnel) === */
-.info-card .video-link {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #e91147, #8a0027);
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.info-card .video-link:hover {
-  background: linear-gradient(135deg, #ff3366, #e91147);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 
-/* =========================================================
-   🃏 CARTES D’INFORMATION GÉNÉRALES
-   ========================================================= */
+/* ================================
+   GRILLE DES CARTES
+================================ */
 .cards-container {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
+
+/* ================================
+   CARTES — Style commun
+================================ */
 .info-card {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
@@ -302,7 +391,8 @@ body, html {
   text-align: center;
   color: white;
   backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: 0.3s ease;
+  overflow: hidden;
 }
 
 .info-card:hover {
@@ -310,31 +400,33 @@ body, html {
   background: rgba(255, 255, 255, 0.2);
 }
 
-.info-card h3 {
+/* Bandeau noir */
+.card-title {
+  background: linear-gradient(to bottom, rgba(214,214,214,0.4), rgba(62,58,58,0.1));
+  margin: -30px -20px 20px;
+  padding: 12px 0;
+  border-radius: 12px 12px 0 0;
+}
+
+.card-title h3 {
+  margin: 0;
   font-size: 2rem;
   color: #ff0040;
-  margin-bottom: 10px;
 }
 
+/* Textes */
 .info-card p {
   margin: 8px 0;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
-/* — Variantes de texte — */
-.info-card .lieu {
-  font-size: 1.1rem;
-  color: #fff;
-}
-
+.info-card .lieu,
 .info-card .heure {
-  font-size: 1rem;
   color: #ccc;
-  font-style: italic;
 }
 
 .info-card .parcours {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   color: #e91147;
   margin-top: 10px;
@@ -344,53 +436,42 @@ body, html {
 .info-card .label {
   font-size: 0.9rem;
   color: #aaa;
-  margin-top: 5px;
 }
 
-./* Conteneur des boutons pour alignement horizontal */
-.card-buttons {
-  display: flex;
-  justify-content: center;   /* centrer horizontalement */
-  gap: 15px;                 /* espace entre les boutons */
-  margin-top: 15px;
-}
 
-/* Bouton S'inscrire (déjà existant) */
+/* ================================
+   BOUTONS
+================================ */
+.card-buttons,
+.video-link,
 .inscription-link {
   display: inline-block;
+}
+
+.card-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Boutons uniformisés */
+.info-card a {
   padding: 10px 20px;
-  background: linear-gradient(135deg, #00b894, #009f6b);
+  border-radius: 25px;
   color: #fff;
   font-weight: bold;
   text-decoration: none;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
+/* Inscription */
+.inscription-link {
+  background: linear-gradient(135deg, #00b894, #009f6b);
+}
 .inscription-link:hover {
   background: linear-gradient(135deg, #00d19b, #00b894);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* Bouton Résultats */
-.resultats-link {
-  display: inline-block;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #ad3535, #760909);
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.resultats-link:hover {
-  background: linear-gradient(135deg, #c93535, #bd1818);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -399,7 +480,7 @@ body, html {
    ========================================================= */
 @media (max-width: 900px) {
   .cards-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -427,185 +508,236 @@ body, html {
   }
 }
 
+
+/* ===============================
+   SECTION RESULTATS
+   =============================== */
+.section.resultats {
+  padding: 80px 20px 60px; /* réduit la hauteur globale */
+  background: #000;
+  text-align: center;
+}
+
+.section.resultats h2 {
+  text-align: center;   /* centre le texte */
+  color: #c2103c;       /* rouge ACSL */
+  margin-bottom: 30px;  /* petit espace sous le titre */
+  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-weight: 700;     /* gras pour bien ressortir */
+}
+.section.resultats .section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* Conteneur grid */
+.section.resultats .results-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;               /* réduit l’espace entre les cartes */
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Carte année */
+.section.resultats .result-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 25px 15px;      /* 📌 réduit la carte */
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.section.resultats .result-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.2);
+}
+
+.section.resultats .result-card h3 {
+  font-size: 2.2rem;       /* 📌 plus petit */
+  margin: 0;
+  color: #ff0040;
+}
+
+.section.resultats .result-card p {
+  margin-top: 8px;
+  font-size: 1.2rem;      /* 📌 réduit */
+  opacity: 0.9;
+}
+
+/* Empêche tout débordement horizontal */
+.section.resultats,
+.results-container,
+.result-card {
+  max-width: 100% !important;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* MOBILE */
 @media (max-width: 600px) {
-  .cards-container {
-    grid-template-columns: 1fr;
-    gap: 15px;
+
+  .section.resultats .results-container {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* ⚡ Force 1 colonne */
+    width: 100% !important;
+    max-width: 100% !important; 
+    padding: 0 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
   }
 
-  .info-card {
-    padding: 20px 15px;
+  .section.resultats .result-card {
+    width: 100% !important;      /* prend toute la ligne */
+    margin: 0 auto !important;
+    padding: 18px 12px;
+    box-sizing: border-box;
+  }
+
+  .section.resultats .result-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .section.resultats .result-card p {
+    font-size: 1.2rem;
   }
 }
+
+
 
 
 /* =========================================================
-   REGLEMENT
-   ========================================================= */
-.reglement-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-   color: #e91147;
-}
-
-#reglement h2 {
+   SECTION — Retour en images
+========================================================= */
+.retour-en-images h2 {
   text-align: center;   /* centre le texte */
-  color: #e91147;       /* rouge ACSL */
+  color: #c2103c;       /* rouge ACSL */
   margin-bottom: 30px;  /* petit espace sous le titre */
   font-size: 2rem;      /* optionnel, pour le rendre plus visible */
   font-weight: 700;     /* gras pour bien ressortir */
 }
 
-.card {
-  background: #a00909;
-  color: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 280px;
-  text-align: center;
-  transition: transform 0.3s ease, background 0.3s ease;
-  text-decoration: none;
-  display: block;
+.retour-en-images .cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 900px;
+  margin: 10px auto;
+}
+
+/* Bloc image */
+.retour-en-images .image-block {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
   cursor: pointer;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  background: #b41f1f;
+/* Overlay sombre */
+.retour-en-images .image-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4); /* 0.4 = niveau d'assombrissement */
+  z-index: 2; /* doit être sous ton texte mais au-dessus de l'image */
 }
 
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Image légèrement arrondie */
+.retour-en-images .image-block img {
+  width: 90%;
+  display: block;
+  border-radius: 15px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  margin: 20px auto;
 }
 
-/* Liens */
-a.lien-card {
-  text-decoration: none;
-  color: white;
-}
-a.lien-card:hover {
-  color: #fff;
-}
-
-
-
-/* =========================================================
-   Section Retour en images
-   ========================================================= */
-
-.section.retour-en-images {
-  padding: 100px 20px;
-  background: radial-gradient(circle at center, #111 0%, #000 100%);
-  text-align: center;
-}
-
-#reglement h2 {
-  text-align: center;   /* centre le texte */
-  color: #e91147;       /* rouge ACSL */
-  margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
-  font-weight: 700;     /* gras pour bien ressortir */
-}
-
-.section.retour-en-images .section-title {
-  font-size: 2.2rem;
+/* Titre de l'année sur l'image */
+.retour-en-images .image-block h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  font-size: 8rem;
+  font-family: 'Paris Forbel','Poppins', sans-serif;
   font-weight: bold;
-  color: #e91147;
-  margin-bottom: 50px;
+  z-index: 3;
+  text-align: center;
+  pointer-events: none;
+   color: rgba(255, 255, 255, 0.8); /* blanc + transparence */
 }
 
-/* Cartes par année */
-/* Force toutes les cartes à avoir la même hauteur */
-.section.retour-en-images .cards-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: stretch; /* ← assure que toutes les cartes aient la même hauteur */
-}
-
-.section.retour-en-images .info-card {
-  display: flex;             /* permet de gérer l'alignement des contenus */
-  flex-direction: column;    /* texte au-dessus, boutons en bas */
-  justify-content: space-between; /* espace entre titre et boutons */
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 30px 20px;
-  color: white;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.section.retour-en-images .info-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.section.retour-en-images .info-card h3 {
-  font-size: 2rem;
-  color: #ff0040;
-  margin-bottom: 15px;
-}
-
-/* Boutons Vidéo et Photos */
-.card-buttons {
+/* Overlay pour les boutons */
+.retour-en-images .image-block .buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  gap: 15px;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  pointer-events: none; /* capte les clics quand visible */
+  transition: opacity 0.3s ease;
+  z-index: 4;
+  
 }
 
-.video-link,
-.photos-link {
-  display: inline-block;
+/* Affiche overlay quand la carte est active */
+.retour-en-images .image-block.open .buttons {
+  opacity: 1;
+  pointer-events: auto;   /* capte les clics quand visible */
+}
+
+.retour-en-images .image-block .buttons a {
   padding: 10px 20px;
   border-radius: 25px;
+  background: rgba(233, 17, 71, 0.85);
   color: #fff;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   transition: all 0.3s ease;
 }
 
-.video-link {
-  background: linear-gradient(135deg, #00b894, #009f6b);
+.retour-en-images .image-block .buttons a:hover {
+  background: rgba(233,17,71,1);
+  transform: translateY(-2px);
 }
 
-.video-link:hover {
-  background: linear-gradient(135deg, #00d19b, #00b894);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-}
 
-.photos-link {
-  background: linear-gradient(135deg, #ad3535, #760909);
-}
 
-.photos-link:hover {
-  background: linear-gradient(135deg, #c93535, #bd1818);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-}
 
-/* Responsive */
-@media (max-width: 900px) {
-  .section.retour-en-images .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-}
+/* =============================
+   Responsive
+============================= */
 
 @media (max-width: 600px) {
-  .section.retour-en-images .cards-container {
+  .retour-en-images .cards-container {
     grid-template-columns: 1fr;
-    gap: 15px;
+  }
+
+  .retour-en-images .image-block h3 {
+    font-size: 9rem;
+  }
+
+  .retour-en-images .image-block .buttons a {
+    font-size: 0.9rem;
+    padding: 8px 16px;
   }
 }
-
 
 /* =========================================================
    🏃‍♀️ SECTION INFOS PRATIQUES - version sans cartes
