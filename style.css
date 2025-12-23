@@ -240,13 +240,6 @@ body, html {
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
-
-   .accueil-card {
-    width: 80%;        /* 🔥 évite les arrondis */
-    max-width: 360px;   /* largeur cohérente mobile */
-    margin-left: auto;
-    margin-right: auto;
-  }
    
   .accueil-text h1 {
     font-size: 2rem;
