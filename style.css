@@ -169,8 +169,8 @@ body, html {
 /* Texte centré au-dessus de la vidéo */
 .accueil-text { 
   position: absolute; 
-  top: 20%; 
-  left: 50%; 
+  top: 30%; 
+  left: 55%; 
   transform: translate(-50%, -50%); /* centre pile au milieu */ 
   display: flex; 
   flex-direction: column; 
