@@ -121,6 +121,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 120vh;
+  padding-top: 40px;   /* 👈 zone de sécurité */
   background-color: #000;
   overflow: hidden;
   display: flex;
