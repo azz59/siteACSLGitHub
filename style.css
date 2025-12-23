@@ -168,9 +168,8 @@ body, html {
 /* Texte centré au-dessus de la vidéo */
 .accueil-text {
   position: relative;
-  top: 40px;                 /* distance depuis le haut */
-  left: 50%;
-  transform: translateX(-50%);
+  top: 40px;
+  margin: 0 auto;        /* centre horizontalement */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -179,6 +178,7 @@ body, html {
   width: 90%;
   max-width: 800px;
 }
+
 
 
 .accueil-text h1 {
