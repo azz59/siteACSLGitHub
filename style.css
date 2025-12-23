@@ -251,6 +251,13 @@ body, html {
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
+
+    .accueil-text {
+    top: 15%;                 /* 🔥 réduit l’espace en haut */
+    left: 50%;
+    transform: translate(-50%, 0); /* supprime le -50% vertical */
+    width: 95%;
+  }
    
   .accueil-text h1 {
     font-size: 2rem;
