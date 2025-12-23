@@ -119,6 +119,7 @@ body {
 
 .accueil {
   position: relative;
+  justify-content: flex-start;
   width: 100%;
   min-height: 120vh;
   background-color: #000;
@@ -126,7 +127,6 @@ body {
   display: flex;
   flex-direction: column; 
   align-items: center;
-  justify-content: center;
 }
 
 /* Vidéo de fond */
