@@ -186,7 +186,7 @@ body, html {
 
 /* 🔥 ACTUALITÉ (NOUVEAU) */
 .accueil-card {
-  position: relative;
+  position: absolute;
   z-index: 2;
   margin: 20px auto;        /* espace vertical, centré horizontalement */
   width: 80%;              /* prend toute la largeur disponible */
