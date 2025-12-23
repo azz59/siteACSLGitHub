@@ -208,8 +208,8 @@ body, html {
 .accueil-card {
   flex: 1; /* prend le reste de la largeur */
 
-  background: rgba(255, 255, 255, 0.25);
-  color: #000;
+  background: rgba(255, 255, 255, 0.0);
+  color: #ffffff;
   padding: 20px;
   border-radius: 12px;
   box-sizing: border-box;
@@ -269,7 +269,7 @@ body, html {
   }
 
     .accueil-text {
-    top: 15%;                 /* 🔥 réduit l’espace en haut */
+    top: 20%;                 /* 🔥 réduit l’espace en haut */
     left: 46%; 
     transform: translate(-50%, -50%); /* centre pile au milieu */ 
     width: 90%;
