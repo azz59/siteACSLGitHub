@@ -197,17 +197,16 @@ body, html {
 
 /* Réseaux sociaux */
 .social-links {
-  position: absolute;
-  bottom: 30px;           /* position en bas */
+  margin-top: 20px;      /* espace sous le h2 */
   display: flex;
-  gap: 20px;              /* espace entre les icônes */
-  z-index: 2;             /* au-dessus de la vidéo */
+  gap: 20px;
+  z-index: 2;
 }
 
 .social-links a img {
   width: 36px;
   height: 36px;
-  filter: brightness(0) invert(1); /* blanc sur fond sombre */
+  filter: brightness(0) invert(1);
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -215,6 +214,7 @@ body, html {
   transform: scale(1.1);
   opacity: 0.8;
 }
+
 
 
 /* ===== RESPONSIVE ===== */
@@ -255,7 +255,7 @@ body, html {
   }
 
   .social-links {
-    bottom: 20px;
+    margin-top: 15px;
   }
 
   .social-links a img {
