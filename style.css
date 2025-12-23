@@ -168,19 +168,18 @@ body, html {
 /* Texte centré au-dessus de la vidéo */
 .accueil-text {
   position: absolute;
-  top: 50%;
+  top: 40px;                 /* distance depuis le haut */
   left: 50%;
-  transform: translate(-50%, -50%); /* centre pile au milieu */
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center; /* centre horizontalement */
-  justify-content: center;
+  align-items: center;
   text-align: center;
   z-index: 2;
-  width: 90%; /* évite le dépassement sur mobile */
+  width: 90%;
   max-width: 800px;
-  box-sizing: border-box;
 }
+
 
 .accueil-text h1 {
   color: #e91147;
@@ -243,19 +242,6 @@ body, html {
 
   .accueil-text h2 {
     font-size: 1.1rem;
-  }
-
-
-  .accueil-text h1 {
-    font-size: 1.6rem;
-  }
-
-  .accueil-text h2 {
-    font-size: 1rem;
-  }
-
-  .social-links {
-    margin-top: 15px;
   }
 
   .social-links a img {
