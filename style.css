@@ -170,7 +170,7 @@ body, html {
 .accueil-text { 
   position: absolute; 
   top: 30%; 
-  left: 45%; 
+  left: 48%; 
   transform: translate(-50%, -50%); /* centre pile au milieu */ 
   display: flex; 
   flex-direction: column; 
@@ -189,8 +189,8 @@ body, html {
   position: relative;
   z-index: 2;
   margin: 20px auto;        /* espace vertical, centré horizontalement */
-  width: 100%;              /* prend toute la largeur disponible */
-  max-width: 100%;          /* jamais plus que l’écran */
+  width: 80%;              /* prend toute la largeur disponible */
+  max-width: 80%;          /* jamais plus que l’écran */
   box-sizing: border-box;   /* inclut padding dans la largeur */
 
   background: rgba(255, 255, 255, 0.65); /* fond blanc transparent */
