@@ -254,9 +254,9 @@ body, html {
 
     .accueil-text {
     top: 15%;                 /* 🔥 réduit l’espace en haut */
-    left: 50%;
-    transform: translate(-50%, 0); /* supprime le -50% vertical */
-    width: 95%;
+    left: 46%; 
+    transform: translate(-50%, -50%); /* centre pile au milieu */ 
+    width: 90%;
   }
    
   .accueil-text h1 {
