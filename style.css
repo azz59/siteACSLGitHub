@@ -167,29 +167,26 @@ body, html {
 }
 
 /* Texte centré au-dessus de la vidéo */
-.accueil-card {
-  position: relative;      /* prend place dans le flux normal */
-  z-index: 2;
-  margin: 20px auto;       /* centrage horizontal et espace vertical */
-  width: 90%;              /* prend presque toute la largeur */
-  max-width: 600px;
+.accueil-text { 
+  position: absolute; 
+  top: 30%; 
+  left: 46%; 
+  transform: translate(-50%, -50%); /* centre pile au milieu */ 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; /* centre horizontalement */ 
+  justify-content: center; 
+  text-align: center; 
+  z-index: 2; 
+  width: 90%; /* évite le dépassement sur mobile */ 
+  max-width: 800px; 
   box-sizing: border-box;
-
-  background: rgba(255, 255, 255, 0.45);
-  color: #000;
-  padding: 20px;
-  border-radius: 12px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  margin-bottom: 40px; /* espace avant l’actualité */ 
 }
-
 
 /* 🔥 ACTUALITÉ (NOUVEAU) */
 .accueil-card {
-  position: relative;
+  position: absolute;
   z-index: 2;
   margin: 20px auto;        /* espace vertical, centré horizontalement */
   width: 80%;              /* prend toute la largeur disponible */
