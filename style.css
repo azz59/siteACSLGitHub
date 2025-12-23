@@ -185,30 +185,36 @@ body, html {
 }
 
 /* 🔥 ACTUALITÉ (NOUVEAU) */
-.accueil-card {
-  position: absolute;
-  z-index: 2;
-  margin: 20px auto;       
+.accueil-actu-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
   width: 80%;
-  max-width: 80%;
-  box-sizing: border-box;
+  max-width: 900px;
+  margin: 20px auto;
+  z-index: 2;
+}
+
+.accueil-actu-img {
+  width: 100px;
+  height: auto;
+  flex-shrink: 0;
+
+  border-radius: 8px;
+}
+
+.accueil-card {
+  flex: 1; /* prend le reste de la largeur */
 
   background: rgba(255, 255, 255, 0.25);
   color: #000;
+  padding: 20px;
   border-radius: 12px;
-  display: flex;              /* 🔥 layout horizontal */
-  align-items: center;        /* aligne verticalement */
-  gap: 20px;                  /* espace image / texte */
-  left: 48%;  /* 🔥 décalage horizontal vers la droite */
-  transform: translateX(-50%); /* garde le centrage relatif */
+  box-sizing: border-box;
 }
 
-.accueil-card img {
-  width: 100px;        /* 🔥 ajuste la taille ici */
-  height: auto;        /* garde les proportions */
-  display: block;
-  margin: 0 auto 15px; /* centre l’image + espace dessous */
-}
 
 
 
@@ -251,6 +257,16 @@ body, html {
 /* ===== RESPONSIVE ===== */
 
 @media (max-width: 768px) {
+
+    .accueil-actu-wrapper {
+    flex-direction: column;
+    width: 95%;
+    text-align: center;
+  }
+
+  .accueil-actu-img {
+    width: 80px;
+  }
 
     .accueil-text {
     top: 15%;                 /* 🔥 réduit l’espace en haut */
