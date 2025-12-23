@@ -192,7 +192,7 @@ body, html {
   width: 80%;              /* prend toute la largeur disponible */
   max-width: 80%;          /* jamais plus que l’écran */
   box-sizing: border-box;   /* inclut padding dans la largeur */
-
+  left: 47%; 
   background: rgba(255, 255, 255, 0.85); /* fond blanc transparent */
   color: #000;
   padding: 20px;
@@ -691,12 +691,6 @@ body, html {
   }
   .video-circle { font-size: 0.55rem; padding: 6px; }
 }
-
-
-
-
-
-
 
 
 
