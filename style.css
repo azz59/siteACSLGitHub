@@ -198,7 +198,7 @@ body, html {
   padding: 20px;
   border-radius: 12px;
 
-  left: 80%;  /* 🔥 décalage horizontal vers la droite */
+  left: 40%;  /* 🔥 décalage horizontal vers la droite */
   transform: translateX(-50%); /* garde le centrage relatif */
 }
 
