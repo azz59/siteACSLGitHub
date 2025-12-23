@@ -229,11 +229,11 @@ body, html {
     transform: translate(-50%, -50%);  /* reste centrée */
   }
 
-  .accueil-text {
+  /* .accueil-text {
     left: 50%;
     transform: translateX(-55%) translateY(-50%); /* assure le centrage horizontal */
     width: 90%;
-  }
+  } */
   
 
   .accueil-text h1 {
