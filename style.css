@@ -186,9 +186,10 @@ body, html {
 
 /* 🔥 ACTUALITÉ (NOUVEAU) */
 .accueil-actu-wrapper {
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
+  left: 46%; 
   gap: 20px;
 
   width: 80%;
