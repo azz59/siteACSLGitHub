@@ -71,7 +71,9 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
   });
 });
 
-<script>
+
+
+// ===== ANIMATION SCROLL ACTUALITÉ =====
   const scrollActu = document.querySelector('.scroll-actu');
 
   const observer = new IntersectionObserver(
@@ -90,7 +92,7 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
   );
 
   observer.observe(scrollActu);
-</script>
+
 
 
 
