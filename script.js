@@ -71,6 +71,27 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
   });
 });
 
+<script>
+  const scrollActu = document.querySelector('.scroll-actu');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        } else {
+          entry.target.classList.remove('is-visible');
+        }
+      });
+    },
+    {
+      threshold: 0.4   // visible à 40%
+    }
+  );
+
+  observer.observe(scrollActu);
+</script>
+
 
 
 
