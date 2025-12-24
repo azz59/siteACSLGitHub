@@ -189,8 +189,8 @@ body, html {
   position: absolute;
   display: flex;
   align-items: center;
-  top: 20%; 
-  left: 60%; 
+  top: 40%; 
+  left: 20%; 
   gap: 20px;
 
   width: 80%;
