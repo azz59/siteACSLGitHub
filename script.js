@@ -71,28 +71,6 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
   });
 });
 
-// ===== ANIMATION SCROLL ACTUALITÉ =====
-const scrollActu = document.querySelector('.scroll-actu');
-
-if (scrollActu) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        } else {
-          entry.target.classList.remove('is-visible');
-        }
-      });
-    },
-    {
-      threshold: 0.4
-    }
-  );
-
-  observer.observe(scrollActu);
-}
-
 
 
 
