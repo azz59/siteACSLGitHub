@@ -189,7 +189,8 @@ body, html {
   position: absolute;
   display: flex;
   align-items: center;
-  left: 46%; 
+  top: 20%; 
+  left: 60%; 
   gap: 20px;
 
   width: 80%;
