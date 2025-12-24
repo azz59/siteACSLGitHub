@@ -71,11 +71,10 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
   });
 });
 
-
-
 // ===== ANIMATION SCROLL ACTUALITÉ =====
-  const scrollActu = document.querySelector('.scroll-actu');
+const scrollActu = document.querySelector('.scroll-actu');
 
+if (scrollActu) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach(entry => {
@@ -87,11 +86,12 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
       });
     },
     {
-      threshold: 0.4   // visible à 40%
+      threshold: 0.4
     }
   );
 
   observer.observe(scrollActu);
+}
 
 
 
