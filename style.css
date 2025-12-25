@@ -295,7 +295,7 @@ body, html {
   }
 
   .accueil .info-card-accueil {
-    transform: translate(-60%, 30px); /* centre horizontalement + bas */
+    transform: translate(-50%, 30px); /* centre horizontalement + bas */
     width: 95%;
     max-width: none;
   }
