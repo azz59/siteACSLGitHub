@@ -294,11 +294,6 @@ body, html {
     height: 30px;
   }
 
-  .accueil .info-card-accueil {
-    transform: translateY(20px); /* 🔥 uniquement vers le bas */
-    width: 90%;
-    max-width: none;
-  }
 
  }
 /* =========================================================
