@@ -217,17 +217,9 @@ body, html {
   opacity: 0.8;
 }
 
-.accueil h2 {
-  text-align: center;   /* centre le texte */
-  color: #c2103c;       /* rouge ACSL */
-  margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
-  font-weight: 700;     /* gras pour bien ressortir */
-}
-
 .accueil .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 25px;
   max-width: 900px;
   margin: 10px auto;
@@ -262,22 +254,6 @@ body, html {
   object-fit: cover;
   transition: transform 0.4s ease;
   margin: 20px auto;
-}
-
-/* Titre de l'année sur l'image */
-.accueil .image-block h3 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font-size: 8rem;
-  font-family: 'Paris Forbel','Poppins', sans-serif;
-  font-weight: bold;
-  z-index: 3;
-  text-align: center;
-  pointer-events: none;
-   color: rgba(255, 255, 255, 0.8); /* blanc + transparence */
 }
 
 /* Overlay pour les boutons */
@@ -317,7 +293,7 @@ body, html {
 }
 
 .accueil .image-block .buttons a:hover {
-  background: rgba(233,17,71,1);
+  background: rgb(99, 12, 34);
   transform: translateY(-2px);
 }
 

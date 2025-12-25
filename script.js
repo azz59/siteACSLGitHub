@@ -71,3 +71,16 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
   });
 });
 
+
+/* =========================================================
+   ACCUEIL Actualités (images + menu déroulant)
+========================================================= */
+document.querySelectorAll('.accueil .image-block').forEach(card => {
+  card.addEventListener('click', (e) => {
+    // Si on clique sur un bouton, ne pas toggle
+    if (e.target.closest('.buttons a')) return;
+    card.classList.toggle('open');
+  });
+});
+
+
