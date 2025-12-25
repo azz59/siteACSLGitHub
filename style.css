@@ -294,6 +294,11 @@ body, html {
     height: 30px;
   }
 
+.accueil .info-card-accueil {
+  transform: translate(-20px, 20px); /* gauche + bas */
+  width: 90%;
+  max-width: none;
+}
 
  }
 /* =========================================================
