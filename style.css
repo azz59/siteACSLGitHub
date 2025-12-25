@@ -222,6 +222,7 @@ body, html {
 .accueil .cards-container {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
   margin: 40px auto;
   width: 100%;
   z-index: 2;
