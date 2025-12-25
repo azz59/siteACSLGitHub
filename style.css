@@ -277,7 +277,7 @@ body, html {
 
     .accueil-text {
     top: 20%;                 /* 🔥 réduit l’espace en haut */
-    transform: translate(-50%, -50%); /* centre pile au milieu */ 
+    transform: translate(-49%, -51%); /* centre pile au milieu */ 
     width: 90%;
   }
    
