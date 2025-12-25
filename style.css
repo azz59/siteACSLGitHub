@@ -249,12 +249,12 @@ body, html {
   color: #302e2e;
 }
 
-.accueil .info-card .desc {
+.accueil .info-card-accueil .desc {
   font-size: 1rem;
   margin-bottom: 10px;
 }
 
-.accueil .info-card .lieu {
+.accueil .info-card-accueil .lieu {
   font-size: 0.9rem;
   color: #000;
   margin-bottom: 18px;
