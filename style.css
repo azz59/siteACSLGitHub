@@ -170,7 +170,7 @@ body, html {
 .accueil-text { 
   position: absolute; 
   top: 30%; 
-  left: 47%; 
+  left: 48%; 
   transform: translate(-50%, -50%); /* centre pile au milieu */ 
   display: flex; 
   flex-direction: column; 
@@ -231,7 +231,7 @@ body, html {
   width: 90%;
   max-width: 420px;
   padding: 24px;
-  transform: translate(-41px, 40px); /* gauche + bas */
+  transform: translate(-42px, 40px); /* gauche + bas */
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.55);
   border-radius: 14px;
