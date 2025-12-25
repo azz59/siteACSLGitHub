@@ -492,7 +492,7 @@ body, html {
   .carousel.fullwidth::-webkit-scrollbar {
     display: none;
   }
-}
+
 
   /* Les bandes clubs plus petites et bien espacées */
   .carousel.clubs .club-link {
