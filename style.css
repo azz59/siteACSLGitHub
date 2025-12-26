@@ -516,9 +516,7 @@ body, html {
 
 /* =========================================================
    SECTION : QUAND LOMME COURT
-   ========================================================= *//* =========================================================
-   SECTION QUAND LOMME COURT
-========================================================= */
+   ========================================================= */
 .quand-lomme-court {
   position: relative;
   width: 100vw;
@@ -580,13 +578,6 @@ body, html {
   margin-bottom: 10px;
   font-size: 1.8rem;
   font-weight: 500;
-}
-
-.quand-lomme-court .date-highlight {
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #e91147;
 }
 
 /* =========================================================
@@ -717,10 +708,8 @@ body, html {
 @media (max-width: 768px) {
   .quand-lomme-court 
   { 
-    height: 45vh; 
     min-height: 70vh;
     padding: 40px 16px;
-    min-height: 70vh;
   }
   .quand-lomme-court .section-title { font-size: 1.5rem; }
   .quand-lomme-court .content h3 { font-size: 1rem; }
