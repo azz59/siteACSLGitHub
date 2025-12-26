@@ -468,39 +468,29 @@ body, html {
 
 /* 📱 VERSION MOBILE : alignement sur une seule ligne horizontale */
 @media (max-width: 600px) {
+
+  /* ===== CAROUSEL VIDÉOS PLEINE LARGEUR ===== */
   .carousel.fullwidth {
-    flex-wrap: nowrap; /* force les vidéos sur une seule ligne */
-    overflow-x: auto; /* permet le scroll horizontal */
+    flex-wrap: nowrap;                 /* vidéos sur une seule ligne */
+    overflow-x: auto;                  /* scroll horizontal */
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* pour iOS */
+    -webkit-overflow-scrolling: touch; /* iOS */
     padding-bottom: 10px;
   }
 
   .carousel.fullwidth video {
-    width: 40%; /* largeur de chaque vidéo (elles dépasseront légèrement) */
-    flex: 0 0 auto; /* empêche la réduction automatique */
+    flex: 0 0 auto;        /* empêche la réduction */
+    width: 100%;
+    max-height: 160px;
     border-radius: 10px;
   }
 
-  /* Optionnel : masquer la scrollbar horizontale */
+  /* Masque la scrollbar horizontale */
   .carousel.fullwidth::-webkit-scrollbar {
     display: none;
   }
 
-
-  /* Les bandes clubs plus petites et bien espacées */
-  .carousel.clubs .club-link {
-    width: 100px;
-    height: 80px;
-  }
-}
-
-@media (max-width: 600px) {
-  .carousel.fullwidth video {
-    width: 100%;
-    max-height: 160px;
-  }
-
+  /* ===== CAROUSEL CLUBS ===== */
   .carousel.clubs .club-link {
     width: 90px;
     height: 70px;
