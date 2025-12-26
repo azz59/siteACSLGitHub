@@ -516,94 +516,108 @@ body, html {
 
 /* =========================================================
    SECTION : QUAND LOMME COURT
-   ========================================================= */
+   ========================================================= *//* =========================================================
+   SECTION QUAND LOMME COURT
+========================================================= */
 .quand-lomme-court {
   position: relative;
   width: 100vw;
   height: 70vh;
-  background: url('images/qlcaccueil.png') center/cover no-repeat;
   margin-left: calc(50% - 50vw);
   overflow: hidden;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background: url('images/qlcaccueil.png') center / cover no-repeat;
 }
 
-/* === Titre principal === */
+/* =========================================================
+   TITRE
+========================================================= */
 .quand-lomme-court .section-title {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  color: #e91147;
+  z-index: 3;
+
+  margin: 0;
   font-size: 2rem;
   font-weight: bold;
-  z-index: 3;
+  color: #e91147;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-  margin: 0;
 }
 
-/* === Superposition sombre === */
+/* =========================================================
+   OVERLAY
+========================================================= */
 .quand-lomme-court .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background: rgba(0, 0, 0, 0.55);
 }
 
-/* === Contenu central === */
+/* =========================================================
+   CONTENU CENTRAL
+========================================================= */
 .quand-lomme-court .content {
-  text-align: center;
-  color: white;
+  position: relative;
   z-index: 2;
+
   padding: 20px;
+  text-align: center;
+  color: #fff;
 }
 
 .quand-lomme-court .content h3 {
-  font-size: 1.8rem;
   margin-bottom: 10px;
+  font-size: 1.8rem;
   font-weight: 500;
 }
 
 .quand-lomme-court .date-highlight {
+  margin-bottom: 20px;
   font-size: 2.5rem;
   font-weight: bold;
   color: #e91147;
-  margin-bottom: 20px;
 }
 
-/* === Conteneur des cercles === */
+/* =========================================================
+   LABELS / CERCLES
+========================================================= */
 .label-container {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 25px;
   margin: 15px 0 25px;
 }
 
-/* === Styles communs pour tous les cercles === */
+/* --- styles communs --- */
 .label-bronze,
 .event-circle,
 .video-circle {
   width: 120px;
   height: 120px;
   border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+
   font-weight: bold;
-  color: white;
+  color: #fff;
+
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.label-bronze {
-  object-fit: cover;
-  background: transparent;
-  filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
 }
 
 .label-bronze:hover,
@@ -612,77 +626,90 @@ body, html {
   transform: scale(1.05);
 }
 
+/* --- label bronze --- */
+.label-bronze {
+  background: transparent;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+}
+
+/* --- cercle événement --- */
 .event-circle {
   background: linear-gradient(135deg, #e91147, #8a0027);
 }
 
-.event-circle .event-date { font-size: 0.9rem; margin: 0; }
-.event-circle .event-lieu { font-size: 0.7rem; margin-top: 3px; }
+.event-circle .event-date {
+  font-size: 0.9rem;
+  margin: 0;
+}
 
-/* === Cercle vidéo (comme le label-bronze) === */
+.event-circle .event-lieu {
+  font-size: 0.7rem;
+  margin-top: 3px;
+}
+
+/* --- cercle vidéo --- */
 .video-circle {
   position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   text-decoration: none;
-  color: white;
-  font-weight: bold;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-circle:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 .video-circle .video-img {
   position: absolute;
+  inset: 0;
+
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5; /* ajuste la transparence ici (0 = invisible, 1 = opaque) */
-  top: 0;
-  left: 0;
+  opacity: 0.5;
+
+  transition: opacity 0.3s ease;
   z-index: 1;
 }
 
-.video-circle:hover img {
-  opacity: 1; /* image redevient complètement visible au survol */
+.video-circle:hover .video-img {
+  opacity: 1;
 }
+
 .video-circle .video-text {
   position: relative;
   z-index: 2;
+
   padding: 5px;
-  background: rgba(0,0,0,0.6); /* pour que le texte soit lisible */
-  border-radius: 10px;
   font-size: 0.8rem;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
 }
 
-
-/* === Carte d'infos === */
+/* =========================================================
+   BOUTON / CARTE INFOS
+========================================================= */
 .info-card {
   display: inline-block;
-  background: white;
-  color: #e91147;
   padding: 12px 24px;
-  border-radius: 8px;
+
+  background: #fff;
+  color: #e91147;
+
   font-weight: bold;
   text-decoration: none;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 
 .info-card:hover {
   background: #e91147;
-  color: white;
+  color: #fff;
   transform: scale(1.05);
 }
+
 
 /* =========================================================
    RESPONSIVE DESIGN
