@@ -569,6 +569,13 @@ body, html {
   font-weight: 500;
 }
 
+.quand-lomme-court .date-highlight {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #e91147;
+  margin-bottom: 20px;
+}
+
 /* === Conteneur des cercles === */
 .label-container {
   display: flex;
@@ -579,6 +586,21 @@ body, html {
 }
 
 /* === Styles communs pour tous les cercles === */
+.label-bronze,
+.event-circle,
+.video-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
 .label-bronze {
   object-fit: cover;
@@ -587,7 +609,10 @@ body, html {
 }
 
 .label-bronze:hover,
-
+.event-circle:hover,
+.video-circle:hover {
+  transform: scale(1.05);
+}
 
 .event-circle {
   background: linear-gradient(135deg, #e91147, #8a0027);
@@ -595,8 +620,6 @@ body, html {
 
 .event-circle .event-date { font-size: 0.9rem; margin: 0; }
 .event-circle .event-lieu { font-size: 0.7rem; margin-top: 3px; }
-
-.event-circle:hover,
 
 /* === Cercle vidéo (comme le label-bronze) === */
 .video-circle {
@@ -616,6 +639,11 @@ body, html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.video-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+}
+
 .video-circle .video-img {
   position: absolute;
   width: 100%;
@@ -627,14 +655,9 @@ body, html {
   z-index: 1;
 }
 
-.video-circle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-}
 .video-circle:hover img {
   opacity: 1; /* image redevient complètement visible au survol */
 }
-
 .video-circle .video-text {
   position: relative;
   z-index: 2;
@@ -645,7 +668,7 @@ body, html {
 }
 
 
-/* === Carte toutes les infos ici === */
+/* === Carte d'infos === */
 .info-card {
   display: inline-block;
   background: white;
@@ -656,7 +679,6 @@ body, html {
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
 
 .info-card:hover {
   background: #e91147;
