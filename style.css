@@ -697,8 +697,8 @@ body, html {
    ========================================================= */
 @media (max-width: 768px) {
   .quand-lomme-court { height: 45vh; }
-  .quand-lomme-court .section-title { font-size: 1.6rem; }
-  .quand-lomme-court .content h3 { font-size: 1.3rem; }
+  .quand-lomme-court .section-title { font-size: 1.5rem; }
+  .quand-lomme-court .content h3 { font-size: 1rem; }
   .quand-lomme-court .date-highlight { font-size: 2rem; }
 
   .event-circle .event-date { font-size: 0.75rem; }
@@ -714,18 +714,6 @@ body, html {
     overflow-x: hidden; /* couper léger débordement si nécessaire */
   }
 
-  /* Ajuster la taille des cercles pour qu’ils tiennent */
-  .label-bronze,
-  .event-circle,
-  .video-circle {
-    width: 90px;
-    height: 90px;
-  }
-
-  .video-circle { font-size: 0.65rem; padding: 8px; }
-}
-
-@media (max-width: 480px) {
   .label-bronze,
   .event-circle,
   .video-circle {
