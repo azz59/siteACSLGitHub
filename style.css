@@ -231,6 +231,7 @@ body, html {
   width: 90%;
   max-width: 420px;
   padding: 24px;
+  margin-top: 40px;
   transform: translate(-35px, 50px); /* gauche + bas */
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.55);
@@ -275,7 +276,7 @@ body, html {
 
 @media (max-width: 600px) {
 
-    .accueil-text {
+  .accueil-text {
     top: 20%;                 /* 🔥 réduit l’espace en haut */
     transform: translate(-53%, -47%); /* centre pile au milieu */ 
     width: 90%;
@@ -294,11 +295,12 @@ body, html {
     height: 30px;
   }
 
-.accueil .info-card-accueil {
+  .accueil .info-card-accueil {
   transform: translate(-20px, 20px); /* gauche + bas */
+  margin-top: 20px;
   width: 90%;
   max-width: none;
-}
+  }
 
  }
 /* =========================================================
