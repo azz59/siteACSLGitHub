@@ -520,7 +520,7 @@ body, html {
 .quand-lomme-court {
   position: relative;
   width: 100vw;
-  height: 70vh;
+  height: 90vh;
   margin-left: calc(50% - 50vw);
   overflow: hidden;
 
@@ -713,7 +713,6 @@ body, html {
   }
   .quand-lomme-court .section-title { font-size: 1.5rem; }
   .quand-lomme-court .content h3 { font-size: 1rem; }
-  .quand-lomme-court .date-highlight { font-size: 2rem; }
 
   .event-circle .event-date 
   { 
