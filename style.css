@@ -569,13 +569,6 @@ body, html {
   font-weight: 500;
 }
 
-.quand-lomme-court .date-highlight {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #e91147;
-  margin-bottom: 20px;
-}
-
 /* === Conteneur des cercles === */
 .label-container {
   display: flex;
@@ -588,20 +581,6 @@ body, html {
 /* === Styles communs pour tous les cercles === */
 .label-bronze,
 .event-circle,
-.video-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 .label-bronze {
   object-fit: cover;
   background: transparent;
