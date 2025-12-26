@@ -521,6 +521,8 @@ body, html {
   position: relative;
   width: 100vw;
   height: 70vh;
+  min-height: 90vh;
+  padding: 60px 20px;
   background: url('images/qlcaccueil.png') center/cover no-repeat;
   margin-left: calc(50% - 50vw);
   overflow: hidden;
@@ -688,7 +690,12 @@ body, html {
    RESPONSIVE DESIGN
    ========================================================= */
 @media (max-width: 768px) {
-  .quand-lomme-court { height: 45vh; }
+  .quand-lomme-court 
+  { 
+    height: 45vh; 
+    min-height: 70vh;
+    padding: 40px 16px;
+  }
   .quand-lomme-court .section-title { font-size: 1.5rem; }
   .quand-lomme-court .content h3 { font-size: 1rem; }
   .quand-lomme-court .date-highlight { font-size: 2rem; }
