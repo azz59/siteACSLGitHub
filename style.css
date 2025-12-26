@@ -693,6 +693,7 @@ body, html {
     height: 45vh; 
     min-height: 70vh;
     padding: 40px 16px;
+    min-height: 70vh;
   }
   .quand-lomme-court .section-title { font-size: 1.5rem; }
   .quand-lomme-court .content h3 { font-size: 1rem; }
