@@ -719,9 +719,7 @@ body, html {
     min-height: 30vh;
     padding: 40px 16px;
   }
-  .quand-lomme-court .section-title { font-size: 1.5rem; }
-  .quand-lomme-court .content h3 { font-size: 1rem; }
-
+  
   .event-circle .event-date 
   { 
     font-size: 0.75rem; 
