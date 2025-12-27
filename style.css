@@ -146,9 +146,10 @@ body {
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.6); /* blanc transparent */
   z-index: 1;
 }
+
 
 /* ===== Supprime les ascenseurs du body ===== */
 body, html {
