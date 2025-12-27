@@ -11,8 +11,8 @@
 body {
   margin: 0;
   font-family: 'Paris Forbel', 'Poppins', sans-serif;
-  background: #000000;
-  color:  #ffffff;
+  background: #ffffff;
+  color:  #000000;
   scroll-behavior: smooth;
 }
 
@@ -56,7 +56,7 @@ body {
 
 .hamburger span {
   height: 3px;
-  background: #ffffff;
+  background: #000000;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
@@ -308,7 +308,7 @@ body, html {
    ========================================================= */
 
 .clubs {
-  background: #f7dfe9;
+  background: #ffffff;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
   overflow: hidden;
@@ -317,7 +317,7 @@ body, html {
 
 .clubs h2 {
   text-align: center;
-  color: #e91147;
+  color: #71021e;
   margin-bottom: 20px;
   font-size: 2.2rem; /* augmente la taille */
 }
@@ -503,8 +503,8 @@ body, html {
    SECTION : EVENEMENTS
    ========================================================= */
 
-.evenements { background:#111; }
-.evenements h2 { color:#e91147; text-align:center; margin-bottom:20px; }
+.evenements { background:#ffffff; }
+.evenements h2 { color:#71021e; text-align:center; margin-bottom:20px; }
 .events {
   display:flex;
   flex-wrap: wrap;
@@ -519,7 +519,7 @@ body, html {
    ========================================================= */
 .quand-lomme-court {
   position: relative;
-  width: 100vw;
+  width: 90vw;
   height: 90vh;
   margin-left: calc(50% - 50vw);
   overflow: hidden;
@@ -544,7 +544,7 @@ body, html {
   margin: 0;
   font-size: 2rem;
   font-weight: bold;
-  color: #e91147;
+  color: #71021e;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -575,7 +575,7 @@ body, html {
 }
 
 .quand-lomme-court .content h2 {
-  color: #cc0c3c; /* rouge bordeaux */
+  color: #71021e; /* rouge bordeaux */
   text-align: center;
   margin-bottom: 30px;
   font-size: 1.8rem;
@@ -766,7 +766,7 @@ body, html {
 
 #apropos h2 {
   text-align: center;   /* centre le texte */
-  color: #e91147;       /* rouge ACSL */
+  color: #71021e;       /* rouge ACSL */
   margin-bottom: 30px;  /* petit espace sous le titre */
   font-size: 2rem;      /* optionnel, pour le rendre plus visible */
   font-weight: 700;     /* gras pour bien ressortir */
@@ -833,7 +833,7 @@ a.lien-card:hover {
 }
 
 .partners h2 {
-  color: #cc0c3c; /* rouge bordeaux */
+  color: #71021e; /* rouge bordeaux */
   text-align: center;
   margin-bottom: 30px;
   font-size: 1.8rem;
