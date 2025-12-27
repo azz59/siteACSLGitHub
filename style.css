@@ -862,8 +862,22 @@ a.lien-card:hover {
 
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  .cards { flex-direction: column; align-items:center; }
-  .apropos-cards { flex-direction: column; align-items:center; }
-  .events { flex-direction: column; align-items:center;  grid-template-columns: repeat(3, 1fr); /* 🔥 3 colonnes */}
+@media (max-width: 768px) {
+  .cards,
+  .apropos-cards,
+  .events {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 🔥 3 colonnes */
+    gap: 12px;
+    justify-items: center;
+  }
 }
+
+@media (max-width: 480px) {
+  .cards,
+  .apropos-cards,
+  .events {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
