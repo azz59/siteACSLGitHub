@@ -830,7 +830,7 @@ a.lien-card:hover {
 .partners {
   text-align: center;
   padding: 40px 20px;
-  background: #111; /* fond sombre */
+  background: #ffffff; /* fond sombre */
 }
 
 .partners h2 {
@@ -865,5 +865,5 @@ a.lien-card:hover {
 @media(max-width:768px){
   .cards { flex-direction: column; align-items:center; }
   .apropos-cards { flex-direction: column; align-items:center; }
-  .events { flex-direction: column; align-items:center; }
+  .events { flex-direction: column; align-items:center;  grid-template-columns: repeat(3, 1fr); /* 🔥 3 colonnes */}
 }
