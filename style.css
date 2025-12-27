@@ -427,7 +427,7 @@ body, html {
   object-fit: cover;
    transform: scale(1); /* ← dézoom à 90 % */
   opacity: 0.3;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.3s ease, opacity 1.0s ease;
 }
 
 .carousel.clubs .club-link:hover img {
