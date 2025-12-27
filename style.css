@@ -121,7 +121,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 120vh;
-  background-color: #000;
+  background-color: #ffffff;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -520,7 +520,7 @@ body, html {
    ========================================================= */
 .quand-lomme-court {
   position: relative;
-  width: 90vw;
+  width: 100vw;
   height: 90vh;
   margin-left: calc(50% - 50vw);
   overflow: hidden;
@@ -528,9 +528,32 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: url('images/qlcaccueil.png') center / cover no-repeat;
 }
+
+/* 🔹 Image floutée (fond) */
+.quand-lomme-court .bg-blur {
+  position: absolute;
+  inset: 0;
+  background: url('images/qlcaccueil.png') center / cover no-repeat;
+  filter: blur(20px);
+  transform: scale(1.1); /* évite les bords transparents */
+  z-index: 0;
+}
+
+/* 🔹 Image nette centrée */
+.quand-lomme-court .bg-image {
+  position: absolute;
+  inset: 0;
+  background: url('images/qlcaccueil.png') center / contain no-repeat;
+  z-index: 1;
+}
+
+/* 🔹 Contenu au-dessus */
+.quand-lomme-court > *:not(.bg-blur):not(.bg-image) {
+  position: relative;
+  z-index: 2;
+}
+
 
 /* =========================================================
    TITRE
@@ -547,20 +570,6 @@ body, html {
   font-weight: bold;
   color: #000000;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-}
-
-/* =========================================================
-   OVERLAY
-========================================================= */
-.quand-lomme-court .overlay {
-  position: absolute;
-  inset: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(0, 0, 0, 0.55);
 }
 
 /* =========================================================
