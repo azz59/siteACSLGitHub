@@ -162,7 +162,7 @@ body, html {
   width: 90%; /* évite le dépassement sur mobile */ 
   max-width: 800px; 
   box-sizing: border-box;
-  margin-bottom: 30px; /* espace avant l’actualité */ 
+  margin-bottom: 50px; /* espace avant l’actualité */ 
   padding-top: 30px; /* 🔥 crée de l’espace au-dessus */
 }
 
