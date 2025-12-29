@@ -136,7 +136,7 @@ body {
   width: 200px;      /* 🔽 taille réduite */
   max-width: 100%;
   margin-bottom: 16px;
-  margin-top: 16px;
+  margin-top: 25px;
 }
 
 
@@ -283,11 +283,13 @@ body, html {
     height: 30px;
   }
 
-  .accueil .info-card-accueil {
-  transform: translate(-20px, 20px); /* gauche + bas */
-  margin-top: 20px;
-  width: 90%;
-  max-width: none;
+ 
+  .accueil-actu-card {
+    padding: 14px;
+  }
+
+  .accueil-actu-card h3 {
+    font-size: 1rem;
   }
 
   .accueil-image {
