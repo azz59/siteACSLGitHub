@@ -131,17 +131,13 @@ body {
 }
 
 
-/* Vidéo de fond */
-.accueil video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 120vh;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+/* Image de ACSL */
+.accueil-image {
+  width: 140px;      /* 🔽 taille réduite */
+  max-width: 70%;
+  margin-bottom: 16px;
 }
+
 
 /* ===== Supprime les ascenseurs du body ===== */
 body, html {
