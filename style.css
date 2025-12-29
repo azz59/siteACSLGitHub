@@ -143,29 +143,11 @@ body {
   z-index: 0;
 }
 
-/* Overlay sombre */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.6); /* blanc transparent */
-  z-index: 1;
-}
-
-
 /* ===== Supprime les ascenseurs du body ===== */
 body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden; /* bloque le défilement horizontal */
-}
-
-
-/* 🔹 Superposition sombre par-dessus la vidéo */
-.accueil.overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* noir semi-transparent */
-  z-index: 1;
 }
 
 /* Texte centré au-dessus de la vidéo */
@@ -210,8 +192,6 @@ body, html {
 .social-links a img {
   width: 36px;
   height: 36px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .social-links a:hover img {
@@ -233,7 +213,7 @@ body, html {
   width: 90%;
   max-width: 420px;
   padding: 24px;
-  margin-top: 40px;
+  margin-top: 20px;
   transform: translate(-35px, 50px); /* gauche + bas */
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.55);
