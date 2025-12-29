@@ -833,21 +833,27 @@ a.lien-card:hover {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
-  .cards,
-  .apropos-cards,
-  .events {
+  .partners {
+    padding: 30px 12px;
+  }
+
+  .partners h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .partners-logos {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 🔥 3 colonnes */
     gap: 12px;
     justify-items: center;
   }
-}
 
-@media (max-width: 480px) {
-  .cards,
-  .apropos-cards,
-  .events {
-    grid-template-columns: repeat(2, 1fr);
+  .partners-logos img {
+    width: 100%;
+    max-width: 90px;
+    height: auto;
   }
 }
+
 
