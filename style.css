@@ -280,6 +280,11 @@ body, html {
   max-width: none;
   }
 
+  .accueil-image {
+  width: 100px;    /* 🔥 encore plus petit sur mobile */
+  margin-bottom: 12px;
+  }
+
  }
 /* =========================================================
    SECTION : CLUBS
