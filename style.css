@@ -133,8 +133,8 @@ body {
 
 /* Image de ACSL */
 .accueil-image {
-  width: 140px;      /* 🔽 taille réduite */
-  max-width: 70%;
+  width: 200px;      /* 🔽 taille réduite */
+  max-width: 100%;
   margin-bottom: 16px;
 }
 
