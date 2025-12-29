@@ -163,7 +163,7 @@ body, html {
   max-width: 800px; 
   box-sizing: border-box;
   margin-bottom: 50px; /* espace avant l’actualité */ 
-  padding-top: 30px; /* 🔥 crée de l’espace au-dessus */
+  padding-top: 50px; /* 🔥 crée de l’espace au-dessus */
 }
 
 .accueil-text h1 {
