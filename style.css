@@ -529,8 +529,9 @@ body, html {
   align-items: center;
   justify-content: center;
 
-  background: url('images/qlcaccueil.png') center / cover no-repeat;
+  background: none; /* 🔥 supprime l’image de fond */
 }
+
 
 /* =========================================================
    TITRE
