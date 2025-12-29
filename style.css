@@ -197,44 +197,53 @@ body, html {
 
 
 /* ===== Cartes d’information ===== */
-.accueil .cards-container {
-  display: flex;
-  justify-content: center;
-  margin: 40px auto;
-  width: 100%;
-  z-index: 2;
+/* Trait fin */
+.accueil-separator {
+  width: 80%;
+  max-width: 300px;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  margin: 20px auto;
 }
 
-.accueil .info-card-accueil {
+/* Carte Actualité */
+.accueil-actu-card {
+  margin-top: 10px;
+  padding: 16px 20px;
   width: 90%;
-  max-width: 420px;
-  padding: 24px;
-  margin-top: 20px;
-  transform: translate(-35px, 50px); /* gauche + bas */
-  box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.55);
+  max-width: 360px;
+
+  background: rgba(255, 255, 255, 0.25); /* très transparent */
+  backdrop-filter: blur(6px);
+
   border-radius: 14px;
   text-align: center;
   color: #000;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-.accueil .card-title h3 {
-  margin: 0 0 12px;
-  font-size: 1.4rem;
-  color: #302e2e;
+/* Titre */
+.accueil-actu-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
-.accueil .info-card-accueil .desc {
-  font-size: 1rem;
-  margin-bottom: 10px;
+/* Texte */
+.accueil-actu-card p {
+  font-size: 0.95rem;
+  margin-bottom: 14px;
 }
 
-.accueil .info-card-accueil .lieu {
-  font-size: 0.9rem;
+/* Bouton discret */
+.actu-link {
+  display: inline-block;
+  font-size: 0.85rem;
+  text-decoration: none;
   color: #000;
-  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+  padding-bottom: 2px;
 }
+
 .accueil .inscription-link {
   display: inline-block;
   padding: 10px 18px;
