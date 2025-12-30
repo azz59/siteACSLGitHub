@@ -172,13 +172,6 @@ body, html {
   margin: 0;
 }
 
-.accueil-text h2 {
-  color: #ffffff;
-  font-size: 1.5em;
-  margin-top: 10px;
-  font-weight: 400;
-}
-
 /* Réseaux sociaux */
 .social-links {
   margin-top: 10px;      /* espace sous le h2 */
