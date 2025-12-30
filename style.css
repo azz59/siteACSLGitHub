@@ -203,41 +203,92 @@ body, html {
 
 /* Carte Actualité */
 .accueil-actu-card {
-  margin-top: 10px;
-  padding: 16px 20px;
   width: 90%;
   max-width: 360px;
+  margin: 20px auto;
 
-  background: rgba(255, 255, 255, 0.25); /* très transparent */
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
-
-  border-radius: 14px;
-  text-align: center;
-  color: #000;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
-/* Titre */
-.accueil-actu-card h3 {
-  margin: 0 0 8px;
+/* Image */
+.actu-image {
+  position: relative;
+}
+
+.actu-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Voile sombre dégradé + titre */
+.actu-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: 14px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0)
+  );
+}
+
+.actu-overlay h3 {
+  margin: 0;
+  color: #fff;
   font-size: 1.1rem;
-  font-weight: 600;
 }
 
-/* Texte */
-.accueil-actu-card p {
-  font-size: 0.95rem;
-  margin-bottom: 14px;
-}
+/* Date */
+.actu-date {
+  position: absolute;
+  bottom: 44px;
+  left: 14px;
 
-/* Bouton discret */
-.actu-link {
-  display: inline-block;
-  font-size: 0.85rem;
-  text-decoration: none;
+  background: rgba(255,255,255,0.9);
   color: #000;
-  border-bottom: 1px solid rgba(0,0,0,0.4);
-  padding-bottom: 2px;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
 }
+
+.actu-date span {
+  font-size: 1.1rem;
+}
+
+.actu-date small {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+/* Lien */
+.actu-more {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+
+  font-size: 0.8rem;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0,0,0,0.6);
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
 
 .accueil .inscription-link {
   display: inline-block;
