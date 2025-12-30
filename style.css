@@ -265,7 +265,7 @@ body, html {
 /* Date */
 .actu-date {
   position: absolute;
-  bottom: 44px;
+  bottom: 10px;
   left: 14px;
 
   background: rgba(255,255,255,0.9);
