@@ -150,7 +150,7 @@ body, html {
 /* Texte centré au-dessus de la vidéo */
 .accueil-text { 
   position: absolute; 
-  top: 50%; 
+  top: 45%; 
   left: 48%; 
   transform: translate(-50%, -50%); /* centre pile au milieu */ 
   display: flex; 
@@ -162,7 +162,7 @@ body, html {
   width: 90%; /* évite le dépassement sur mobile */ 
   max-width: 800px; 
   box-sizing: border-box;
-  margin-bottom: 50px; /* espace avant l’actualité */ 
+  margin-bottom: 60px; /* espace avant l’actualité */ 
   padding-top: 100px; /* 🔥 crée de l’espace au-dessus */
 }
 
