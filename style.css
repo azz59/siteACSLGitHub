@@ -233,13 +233,18 @@ body, html {
   position: relative;
 }
 
+/* Trait fin sous l’image */
 .actu-image::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45); /* 🔥 assombrissement global */
-  z-index: 1;
+  left: 10%;
+  right: 10%;
+  bottom: -1px;
+
+  height: 1px;
+  background: rgba(0, 0, 0, 0.25);
 }
+
 
 
 .actu-image img {
