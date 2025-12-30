@@ -339,21 +339,49 @@ body, html {
 /* =============================
    Responsive
 ============================= */
+/* =========================
+   VERSION MOBILE
+========================= */
+@media (max-width: 768px) {
 
-@media (max-width: 600px) {
-
-  .accueil-text {
-    top: 20%;                 /* 🔥 réduit l’espace en haut */
-    transform: translate(-53%, -47%); /* centre pile au milieu */ 
-    width: 90%;
+  /* ===== SECTION ACCUEIL ===== */
+  .accueil {
+    min-height: auto;
+    padding: 120px 16px 40px;
+    justify-content: flex-start;
   }
-   
+
+  /* Texte accueil */
+  .accueil-text {
+    position: relative;        /* 🔥 on enlève absolute */
+    top: auto;
+    left: auto;
+    transform: none;
+
+    padding-top: 0;
+    margin-bottom: 30px;
+    width: 100%;
+  }
+
+  /* Image ACSL */
+  .accueil-image {
+    width: 140px;
+    margin: 20px auto 12px;
+  }
+
+  /* Titres */
   .accueil-text h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .accueil-text h2 {
     font-size: 1.1rem;
+  }
+
+  /* Réseaux sociaux */
+  .social-links {
+    margin-top: 14px;
+    gap: 16px;
   }
 
   .social-links a img {
@@ -361,21 +389,48 @@ body, html {
     height: 30px;
   }
 
- 
+  /* ===== CARTE ACTUALITÉ ===== */
   .accueil-actu-card {
-    padding: 14px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 30px;
+    border-radius: 14px;
   }
 
-  .accueil-actu-card h3 {
-    font-size: 1rem;
+  /* Image actu plus immersive */
+  .actu-image img {
+    height: 260px;  /* 🔥 plus grande sur mobile */
   }
 
-  .accueil-image {
-  width: 120px;    /* 🔥 encore plus petit sur mobile */
-  margin-bottom: 12px;
+  /* Titre sur image */
+  .actu-overlay h4 {
+    font-size: 1.1rem;
+    top: 16px;
   }
 
- }
+  /* Date */
+  .actu-date {
+    width: 44px;
+    height: 44px;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  /* Bouton */
+  .actu-more {
+    bottom: 12px;
+    right: 12px;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  /* Séparateur */
+  .accueil-separator {
+    width: 70%;
+    margin: 16px auto;
+  }
+}
+
 /* =========================================================
    SECTION : CLUBS
    ========================================================= */
