@@ -266,7 +266,20 @@ body, html {
   padding: 14px;
 }
 
-.actu-overlay h4,
+
+.actu-overlay h4 {
+  position: absolute;
+  top: 12px;                 /* 🔼 remonte le titre */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
 .actu-date,
 .actu-more {
   position: absolute;
