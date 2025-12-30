@@ -336,7 +336,6 @@ body, html {
   align-items: center;
   gap: 20px;
   width: 100vw;
-  height: 100vw;
   margin-left: calc(50% - 50vw);
   margin-bottom: 5px;
   overflow: hidden;
@@ -344,7 +343,7 @@ body, html {
 
 .carousel.fullwidth video {
   flex: 1;
-  height: 35vw;
+  height: 40vw;
   max-height: 300px;
   object-fit: cover;
   border-radius: 16px;
