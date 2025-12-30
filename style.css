@@ -594,7 +594,13 @@ body, html {
    SECTION : EVENEMENTS
    ========================================================= */
 
-.evenements { background:#ffffff; }
+.evenements {
+  background: #ffffff;      /* fond blanc */
+  width: 100vw;             /* pleine largeur de l'écran */
+  padding: 40px 0;          /* padding vertical, horizontal à 0 pour full width */
+  box-sizing: border-box;   /* inclut padding dans la largeur */
+  overflow: hidden;         /* évite le débordement horizontal */
+}
 .evenements h2 { color:#000000; text-align:center; margin-bottom:20px; }
 .events {
   display:flex;
@@ -607,9 +613,12 @@ body, html {
 
 @media (max-width: 768px) {
   .evenements {
-    background: #ffffff; /* garde le même fond */
-    padding: 20px 10px;  /* espace autour */
-  }
+  background: #ffffff;
+  width: 100vw;       /* pleine largeur de l’écran */
+  padding: 20px 0;    /* padding horizontal à 0 pour ne pas créer d’espace */
+  box-sizing: border-box; /* inclut le padding dans la largeur */
+}
+
 
   .evenements h2 {
     font-size: 1.5rem;
