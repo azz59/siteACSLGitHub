@@ -1,7 +1,7 @@
 /* ===== GLOBAL ===== */
 
 @font-face {
-  font-family: 'Paris Forbel';
+  font-family: 'Insaniburger';
   src: url('fonts/Vogue.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
@@ -10,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: 'Paris Forbel', 'Poppins', sans-serif;
+  font-family: 'Insaniburger', 'Poppins', sans-serif;
   background: #ffffff;
   color:  #000000;
   scroll-behavior: smooth;
