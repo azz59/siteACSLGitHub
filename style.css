@@ -136,7 +136,7 @@ body {
   width: 300px;      /* 🔽 taille réduite */
   max-width: 100%;
   margin-bottom: 16px;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 
@@ -239,7 +239,7 @@ body, html {
   width: 100%;
   height: 1px;
   background: rgba(0, 0, 0, 0.25);
-  margin-top: 6px;
+  margin-top: 20px;
 }
 
 
