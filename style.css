@@ -213,6 +213,21 @@ body, html {
   overflow: hidden;
 }
 
+/* Titre ACTUALITE */
+.actu-card-title {
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.actu-card-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: rgba(0,0,0,0.3);
+  margin: 8px auto 0;
+}
+
 /* Image */
 .actu-image {
   position: relative;
@@ -240,7 +255,7 @@ body, html {
   );
 }
 
-.actu-overlay h3 {
+.actu-overlay h4 {
   margin: 0;
   color: #fff;
   font-size: 1.1rem;
