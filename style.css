@@ -581,7 +581,7 @@ body, html {
    ========================================================= */
 
 .evenements {
-  background: #ffffff;      /* fond blanc */
+  background: #e7e7e7;      /* fond blanc */
   width: 100vw;             /* pleine largeur de l'écran */
   padding: 40px 0;          /* padding vertical, horizontal à 0 pour full width */
   box-sizing: border-box;   /* inclut padding dans la largeur */
