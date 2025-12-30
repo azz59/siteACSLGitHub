@@ -229,25 +229,10 @@ body, html {
 }
 
 /* Image */
-.actu-container {
-  display: flex;
-  gap: 20px;             /* espace entre les images */
-  justify-content: center;
-  flex-wrap: wrap;        /* pour que ça passe en ligne ou colonne sur mobile */
-}
-
 .actu-image {
   position: relative;
-  width: 48%;             /* 2 images côte à côte avec un petit gap */
-  box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25); /* 🔥 trait visible */
 }
-
-.actu-image img {
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-}
-
 
 /* Trait fin sous l’image */
 .actu-separator {
@@ -258,6 +243,15 @@ body, html {
   margin-top: 20px;
 }
 
+
+
+
+.actu-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
 
 /* Voile sombre dégradé + titre */
 .actu-overlay {
@@ -401,7 +395,7 @@ body, html {
    ========================================================= */
 
 .clubs {
-  background: #edf3f5;
+  background: #eff7f7;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
   overflow: hidden;
@@ -607,236 +601,39 @@ body, html {
 .event { display:flex; flex-direction:column; width:250px; text-align:center; }
 .event img { width:100%; border-radius:6px; }
 
-/* =========================================================
-   SECTION : QUAND LOMME COURT
-   ========================================================= */
-.quand-lomme-court {
-  position: relative;
-  width: 90vw;
-  height: 90vh;
-  margin-left: calc(50% - 50vw);
-  overflow: hidden;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: none; /* 🔥 supprime l’image de fond */
-}
-
-
-/* =========================================================
-   TITRE
-========================================================= */
-.quand-lomme-court .section-title {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-
-  margin: 0;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #000000;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-}
-
-/* =========================================================
-   CONTENU CENTRAL
-========================================================= */
-.quand-lomme-court .content {
-  position: relative;
-  z-index: 2;
-
-  padding: 20px;
-  text-align: center;
-  color: #fff;
-}
-
-.quand-lomme-court .content h2 {
-  color: #000000; /* rouge bordeaux */
-  text-align: center;
-  margin-bottom: 30px;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.quand-lomme-court .content h3 {
-  color: #000000; /* rouge bordeaux */
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-/* =========================================================
-   LABELS / CERCLES
-========================================================= */
-.label-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 25px;
-  margin: 15px 0 25px;
-}
-
-/* --- styles communs --- */
-.label-bronze,
-.event-circle,
-.video-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  font-weight: bold;
-  color: #fff;
-
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.label-bronze:hover,
-.event-circle:hover,
-.video-circle:hover {
-  transform: scale(1.05);
-}
-
-/* --- label bronze --- */
-.label-bronze {
-  background: transparent;
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
-}
-
-/* --- cercle événement --- */
-.event-circle {
-  background: linear-gradient(135deg, #e91147, #8a0027);
-}
-
-.event-circle .event-date {
-  font-size: 0.9rem;
-  margin: 0;
-}
-
-.event-circle .event-lieu {
-  font-size: 0.7rem;
-  margin-top: 3px;
-}
-
-/* --- cercle vidéo --- */
-.video-circle {
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.video-circle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-}
-
-.video-circle .video-img {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.5;
-
-  transition: opacity 0.3s ease;
-  z-index: 1;
-}
-
-.video-circle:hover .video-img {
-  opacity: 1;
-}
-
-.video-circle .video-text {
-  position: relative;
-  z-index: 2;
-
-  padding: 5px;
-  font-size: 0.8rem;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-/* =========================================================
-   BOUTON / CARTE INFOS
-========================================================= */
-.info-card {
-  display: inline-block;
-  padding: 12px 24px;
-
-  background: #fff;
-  color: #e91147;
-
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
-}
-
-.info-card:hover {
-  background: #e91147;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-
-/* =========================================================
-   RESPONSIVE DESIGN
-   ========================================================= */
 @media (max-width: 768px) {
-  .quand-lomme-court 
-  { 
-    min-height: 30vh;
-    padding: 40px 16px;
-  }
-  
-  .event-circle .event-date 
-  { 
-    font-size: 0.75rem; 
+  .evenements {
+    background: #ffffff; /* garde le même fond */
+    padding: 20px 10px;  /* espace autour */
   }
 
-  .event-circle .event-lieu 
-  { 
-    font-size: 0.6rem; 
+  .evenements h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
   }
 
-  /* Conserver les cercles sur une ligne sans débordement */
-  .label-container 
-  {
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px; /* réduire légèrement l’espace */
-    flex-wrap: nowrap; /* éviter que ça passe à la ligne suivante */
-    max-width: 100%; /* s’assurer que ça reste dans le conteneur */
-    overflow-x: hidden; /* couper léger débordement si nécessaire */
+  .events {
+    flex-direction: column; /* une seule colonne */
+    gap: 20px;              /* espace entre les events */
+    align-items: center;    /* centre horizontalement */
   }
 
-  .label-bronze,
-  .event-circle,
-  .video-circle 
-  {
-    width: 70px;
-    height: 70px;
-    font-size: 0.55rem; 
-    padding: 6px;
+  .event {
+    width: 90%;             /* prend presque toute la largeur */
+    max-width: 300px;       /* limite max pour que ce soit lisible */
   }
 
+  .event img {
+    width: 100%;
+    border-radius: 6px;
+  }
 }
 
+/* =========================================================
+   SECTION : A PROPOS DE L'ACSL
+   ========================================================= */
 
 
-/* ===== A PROPOS ===== */
 .apropos-cards {
   display: flex;
   flex-wrap: wrap;
