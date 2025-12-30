@@ -272,6 +272,13 @@ body, html {
   font-weight: 600;
 }
 
+.actu-date,
+.actu-more {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+}
+
 /* Date */
 .actu-date {
   position: absolute;
