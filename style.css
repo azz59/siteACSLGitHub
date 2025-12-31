@@ -436,7 +436,7 @@ body, html {
    ========================================================= */
 
 .clubs {
-  background: #eff7f7;
+  background: #eceded;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
   overflow: hidden;
@@ -771,7 +771,6 @@ a.lien-card:hover {
 /* ===== PARTENAIRES ===== */
 .partners {
   text-align: center;
-  padding: 40px 20px;
   background: #ffffff; /* fond sombre */
 }
 
