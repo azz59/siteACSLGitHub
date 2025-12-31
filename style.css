@@ -120,35 +120,27 @@ body {
 
 .accueil {
   width: 100%;
-  min-height: 100vh;
+  min-height: 180vh;
   background-color: #ffffff;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  padding: 80px 20px 40px; /* espace header + bas */
+  justify-content: flex-start; /* 🔥 contenu en haut */
+  padding: 200px 20px 100px;   /* espace haut + bas */
   box-sizing: border-box;
 }
 
 
-
 /* Image de ACSL */
 .accueil-image {
-  width: 300px;      /* 🔽 taille réduite */
-  max-width: 100%;
-  margin-bottom: 16px;
-  margin-top: 10px;
+  width: 300px;   /* ou max-width: 100% */
+  margin: 0 auto 16px;  /* centre horizontalement et espace en bas */
+  margin-top: 400px;      /* pousse l’image vers le bas */
+  display: block;
+  position: relative;    /* NE PAS mettre absolute */
 }
 
-
-/* ===== Supprime les ascenseurs du body ===== */
-body, html {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* bloque le défilement horizontal */
-}
 
 /* Texte centré au-dessus de la vidéo */
 .accueil-text { 
@@ -239,7 +231,7 @@ body, html {
 
 .actu-image img {
   width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   display: block;
 }
@@ -645,65 +637,209 @@ body, html {
 /* =========================================================
    SECTION : EVENEMENTS
    ========================================================= */
-
+/* ===== SECTION EVENEMENTS ===== */
 .evenements {
-  background: #ffffff;      /* fond blanc */
-  width: 100vw;             /* pleine largeur de l'écran */
-  padding: 40px 0;          /* padding vertical, horizontal à 0 pour full width */
-  box-sizing: border-box;   /* inclut padding dans la largeur */
-  overflow: hidden;         /* évite le débordement horizontal */
-}
-.evenements h2 { 
-  color:#000000; 
-  text-align:center; 
-  margin-bottom:20px; 
-}
-
-.events {
-  display:flex;
-  flex-wrap: wrap;
-  gap:15px;
-  justify-content:center;
-}
-.event { 
-  display:flex; 
-  flex-direction:column; 
-  width:250px; 
-  text-align:center; 
-}
-
-.event img { width:100%; border-radius:6px; }
-
-@media (max-width: 768px) {
-  .evenements {
   background: #ffffff;
-  width: 100vw;       /* pleine largeur de l’écran */
-  padding: 20px 0;    /* padding horizontal à 0 pour ne pas créer d’espace */
+  padding: 40px 0;
+  text-align: center;
+
+  width: 100vw;           /* prend toute la largeur de la fenêtre */
+  margin-left: calc(50% - 50vw); /* centre la section si conteneur parent centré */
   box-sizing: border-box; /* inclut le padding dans la largeur */
 }
 
 
-  .evenements h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-  }
+/* CARROUSEL */
+.events-carousel {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+}
 
-  .events {
-    flex-direction: column; /* une seule colonne */
-    gap: 20px;              /* espace entre les events */
-    align-items: center;    /* centre horizontalement */
-  }
+.events-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
 
-  .event {
-    width: 90%;             /* prend presque toute la largeur */
-    max-width: 300px;       /* limite max pour que ce soit lisible */
-  }
+.events-track::-webkit-scrollbar {
+  display: none;
+}
 
+/* UNE IMAGE VISIBLE */
+/* EVENT */
+.event {
+  flex: 0 0 100vw;
+  scroll-snap-align: start;
+  position: relative; /* nécessaire pour que l'overlay soit relatif à l'image */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event img {
+  width: 100%;
+  max-width: 500px;
+  height: 80vh;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  position: relative; /* nécessaire si overlay absolu */
+}
+
+/* overlay sombre au-dessus de l'image */
+.event img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25); /* ajuste l'opacité pour l'assombrir */
+  border-radius: 8px;
+}
+
+
+/* OVERLAY sombre ajusté à l'image */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;               /* centre horizontalement */
+  transform: translateX(-50%); /* ajuste le centrage */
+  width: 100%;             /* prend toute la largeur de l'image */
+  max-width: 500px;        /* limite max si besoin */
+  height: 40%;             /* zone sombre en bas */
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Date en bas à gauche de l'image */
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  background: rgba(209, 31, 31, 0.9);
+  color: #fff;
+  border-radius: 8px;
+
+  font-weight: bold;
+  font-size: 1rem;
+
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 3;
+}
+
+.event-date span {
+  font-size: 1.2rem;
+}
+
+.event-date small {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+
+/* boutons droite */
+.event-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.event-btn {
+  padding: 6px 12px;
+  background: rgba(209, 31, 31, 0.9);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+
+
+/* ===== CARROUSEL ===== */
+.events-carousel {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* prend toute la largeur de l'écran */
+  overflow: hidden;
+}
+
+.events-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; /* snap pour chaque image */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth; /* scroll fluide */
+}
+
+.events-track::-webkit-scrollbar {
+  display: none; /* cache la scrollbar */
+}
+
+
+
+/* ===== TEXTE EN DESSOUS DE L'IMAGE ===== */
+.event p {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ===== VERSION MOBILE ===== */
+@media (max-width: 768px) {
   .event img {
-    width: 100%;
-    border-radius: 6px;
+    width: 90%;       /* prend 90% de la largeur de l'écran */
+    max-width: 300px; /* limite la taille sur grand écran */
+    height: 50vh;     /* hauteur réduite déjà définie */
+    margin: 0 auto;   /* centre horizontalement */
+  }
+
+  .overlay {
+    width: 90%;       /* même largeur que l'image */
+    max-width: 300px; /* même limite que l'image */
+    padding: 8px 10px;
+    left: 50%;
+    transform: translateX(-50%); /* centre l'overlay sur l'image */
+  }
+
+  .event-date {
+    width: 50px;
+    height: 50px;
+  }
+  .event-more, 
+  .event-photos {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
+
+  .event-buttons 
+  .event-btn {
+    padding: 4px 6px;
+    font-size: 0.65rem;
+  }
+
+  .event-square {
+    width: 24px;
+    height: 24px;
   }
 }
+
+
+
 
 /* =========================================================
    SECTION : A PROPOS DE L'ACSL
@@ -791,7 +927,7 @@ a.lien-card:hover {
   margin-bottom: 30px;
   font-size: 1.8rem;
   font-weight: 700;
-  font-family: 'Gabana Outline Regular', sans-serif;
+  font-family: 'Insaniburger', sans-serif;
 }
 
 .partners-logos {
