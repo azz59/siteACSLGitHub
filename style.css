@@ -636,7 +636,7 @@ body, html {
    ========================================================= */
 
 .evenements {
-  background: #e7e7e7;      /* fond blanc */
+  background: #ffffff;      /* fond blanc */
   width: 100vw;             /* pleine largeur de l'écran */
   padding: 40px 0;          /* padding vertical, horizontal à 0 pour full width */
   box-sizing: border-box;   /* inclut padding dans la largeur */
@@ -771,7 +771,7 @@ a.lien-card:hover {
 /* ===== PARTENAIRES ===== */
 .partners {
   text-align: center;
-  background: #ffffff; /* fond sombre */
+  background: #eceded; /* fond sombre */
 }
 
 .partners h2 {
