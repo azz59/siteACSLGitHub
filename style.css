@@ -119,16 +119,19 @@ body {
 /* =============================================================== */
 
 .accueil {
-  position: relative;
   width: 100%;
-  min-height: 140vh;
+  min-height: 100vh;
   background-color: #ffffff;
-  overflow: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* 🔥 centre verticalement */
+  justify-content: center;
+
+  padding: 80px 20px 40px; /* espace header + bas */
+  box-sizing: border-box;
 }
+
 
 
 /* Image de ACSL */
@@ -136,7 +139,7 @@ body {
   width: 300px;      /* 🔽 taille réduite */
   max-width: 100%;
   margin-bottom: 16px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 
@@ -266,7 +269,7 @@ body, html {
   transform: translateX(-50%);
   margin: 0;
 
-  color: #fff;
+  color: #fcfcfc;
   text-align: center;
   font-size: 1rem;
   font-weight: 600;
@@ -340,31 +343,36 @@ body, html {
    VERSION MOBILE
 ========================= */
 @media (max-width: 768px) {
-
-  /* ===== SECTION ACCUEIL ===== */
   .accueil {
-    min-height: auto;
-    padding: 120px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: flex-start;
-    align-items: center;   /* 🔥 centre tout horizontalement */
+
+    padding: 70px 16px 40px; /* 🔥 espace suffisant sous le menu */
+    margin-top: 0;          /* ❌ supprimé */
   }
 
   /* Texte accueil */
   .accueil-text {
-    position: relative;        /* 🔥 on enlève absolute */
-    top: auto;
-    left: auto;
+    position: relative;
+    inset: auto;
     transform: none;
 
-    padding-top: 0;
-    margin-bottom: 30px;
     width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   /* Image ACSL */
   .accueil-image {
     width: 140px;
-    margin: 20px auto 12px;
+    margin: 8px auto 12px; /* 🔥 léger espace seulement */
   }
 
   /* Titres */
@@ -388,12 +396,11 @@ body, html {
   }
 
   /* ===== CARTE ACTUALITÉ ===== */
-  .accueil-actu-card {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto 30px;
-    border-radius: 14px;
+    .accueil-actu-card {
+    margin-left: auto;
+    margin-right: auto;
   }
+
 
   /* Image actu plus immersive */
   .actu-image img {
@@ -599,23 +606,29 @@ body, html {
 /* 📱 VERSION MOBILE : alignement sur une seule ligne horizontale */
 @media (max-width: 768px) {
 
-  /* ===== CAROUSEL VIDÉOS PLEINE LARGEUR ===== */
   .carousel.fullwidth {
-    flex-wrap: nowrap;                 /* vidéos sur une seule ligne */
-    overflow-x: auto;                  /* scroll horizontal */
+    justify-content: flex-start;     /* 🔥 pas de centrage */
+    gap: 12px;
+
+    overflow-x: auto;               /* scroll horizontal */
+    overflow-y: hidden;
+
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* iOS */
-    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+
+    padding: 0 16px 10px;            /* respiration sur les côtés */
   }
 
   .carousel.fullwidth video {
-    flex: 0 0 auto;        /* empêche la réduction */
-    width: 100%;
-    max-height: 160px;
-    border-radius: 10px;
+    flex: 0 0 85%;                   /* 🔥 1 vidéo visible + aperçu suivante */
+    height: 48vw;                    /* plus immersive */
+    max-height: 220px;
+
+    border-radius: 12px;
+    pointer-events: none;            /* évite le zoom involontaire */
   }
 
-  /* Masque la scrollbar horizontale */
+  /* Masque la scrollbar */
   .carousel.fullwidth::-webkit-scrollbar {
     display: none;
   }
