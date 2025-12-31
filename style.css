@@ -336,9 +336,6 @@ body, html {
 }
 
 
-/* =============================
-   Responsive
-============================= */
 /* =========================
    VERSION MOBILE
 ========================= */
@@ -349,6 +346,7 @@ body, html {
     min-height: auto;
     padding: 120px 16px 40px;
     justify-content: flex-start;
+    align-items: center;   /* 🔥 centre tout horizontalement */
   }
 
   /* Texte accueil */
