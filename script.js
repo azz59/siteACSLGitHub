@@ -72,26 +72,6 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
 });
 
 
-// ===== CAROUSEL ÉVÉNEMENTS =====
-<script>
-const track = document.querySelector('.events-track');
-const slides = document.querySelectorAll('.event-slide');
-const dotsContainer = document.querySelector('.carousel-dots');
-
-slides.forEach((_, i) => {
-  const dot = document.createElement('span');
-  if (i === 0) dot.classList.add('active');
-  dotsContainer.appendChild(dot);
-});
-
-const dots = dotsContainer.querySelectorAll('span');
-
-track.addEventListener('scroll', () => {
-  const index = Math.round(track.scrollLeft / track.offsetWidth);
-  dots.forEach(dot => dot.classList.remove('active'));
-  if (dots[index]) dots[index].classList.add('active');
-});
-</script>
 
 
 
