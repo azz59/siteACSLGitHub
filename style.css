@@ -1,8 +1,8 @@
 /* ===== GLOBAL ===== */
 
 @font-face {
-  font-family: 'Paris Forbel';
-  src: url('fonts/Vogue.ttf') format('truetype');
+  font-family: 'Insaniburger';
+  src: url('fonts/Insanibu.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -10,9 +10,9 @@
 
 body {
   margin: 0;
-  font-family: 'Paris Forbel', 'Poppins', sans-serif;
-  background: #000000;
-  color:  #ffffff;
+  font-family: 'Insaniburger', 'Poppins', sans-serif;
+  background: #ffffff;
+  color:  #000000;
   scroll-behavior: smooth;
 }
 
@@ -41,6 +41,7 @@ body {
   text-align: left;
   font-size: 1.5rem;
   font-family: 'Gemola';
+  color:  #fdfdfd;
 }
 
 .hamburger {
@@ -118,36 +119,29 @@ body {
 /* =============================================================== */
 
 .accueil {
-  position: relative;
   width: 100%;
-  min-height: 120vh;
-  background-color: #000;
-  overflow: hidden;
+  min-height: 100vh;
+  background-color: #ffffff;
+
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  padding: 80px 20px 40px; /* espace header + bas */
+  box-sizing: border-box;
 }
 
-/* Vidéo de fond */
-.accueil video {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  width: 100%;
-  height: 120vh;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+
+
+/* Image de ACSL */
+.accueil-image {
+  width: 300px;      /* 🔽 taille réduite */
+  max-width: 100%;
+  margin-bottom: 16px;
+  margin-top: 10px;
 }
 
-/* Overlay sombre */
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
 
 /* ===== Supprime les ascenseurs du body ===== */
 body, html {
@@ -156,99 +150,311 @@ body, html {
   overflow-x: hidden; /* bloque le défilement horizontal */
 }
 
-
-/* 🔹 Superposition sombre par-dessus la vidéo */
-.accueil.overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* noir semi-transparent */
-  z-index: 1;
-}
-
 /* Texte centré au-dessus de la vidéo */
-.accueil-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* centre pile au milieu */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* centre horizontalement */
-  justify-content: center;
-  text-align: center;
-  z-index: 2;
-  width: 90%; /* évite le dépassement sur mobile */
-  max-width: 800px;
+.accueil-text { 
+  position: absolute; 
+  top: 45%; 
+  left: 48%; 
+  transform: translate(-50%, -50%); /* centre pile au milieu */ 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; /* centre horizontalement */ 
+  justify-content: center; 
+  text-align: center; 
+  z-index: 2; 
+  width: 90%; /* évite le dépassement sur mobile */ 
+  max-width: 800px; 
   box-sizing: border-box;
+  margin-bottom: 60px; /* espace avant l’actualité */ 
+  padding-top: 100px; /* 🔥 crée de l’espace au-dessus */
 }
 
 .accueil-text h1 {
-  color: #e91147;
+  color: #d30c3e;
   font-size: 2.8em;
   margin: 0;
 }
 
-.accueil-text h2 {
-  color: #ffffff;
-  font-size: 1.5em;
-  margin-top: 10px;
-  font-weight: 400;
+/* Réseaux sociaux */
+.social-links {
+  margin-top: 10px;      /* espace sous le h2 */
+  display: flex;
+  gap: 20px;
+  z-index: 2;
 }
 
-/* ===== RESPONSIVE ===== */
+.social-links a img {
+  width: 36px;
+  height: 36px;
+}
 
+.social-links a:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+
+/* ===== Cartes d’information ===== */
+/* Trait fin */
+.accueil-separator {
+  width: 80%;
+  max-width: 300px;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.2);
+  margin: 20px auto;
+}
+
+/* Carte Actualité */
+.accueil-actu-card {
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Titre ACTUALITE */
+.actu-card-title {
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.actu-card-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: rgba(0,0,0,0.3);
+  margin: 8px auto 0;
+}
+
+/* Image */
+.actu-image {
+  position: relative;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25); /* 🔥 trait visible */
+}
+
+.actu-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Voile sombre dégradé + titre */
+.actu-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.85) 0%,     /* haut très sombre */
+    rgba(0,0,0,0.2) 35%,    /* centre plus clair */
+    rgba(0,0,0,0.2) 65%,    /* centre */
+    rgba(0,0,0,0.85) 100%   /* bas très sombre */
+  );
+
+  padding: 14px;
+}
+
+
+.actu-overlay h4 {
+  position: absolute;
+  top: 12px;                 /* 🔼 remonte le titre */
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+
+  color: #fcfcfc;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.actu-date,
+.actu-more {
+  position: absolute;
+  z-index: 3;
+  color: #fff;
+}
+
+/* Date */
+.actu-date {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+
+  background: rgba(209, 31, 31, 0.9);
+  color: #ffffff;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+}
+
+.actu-date span {
+  font-size: 1.1rem;
+}
+
+.actu-date small {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+/* Lien */
+.actu-more {
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+
+  font-size: 0.8rem;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(209, 31, 31, 0.9);
+  padding: 6px 10px;
+  border-radius: 12px;
+}
+
+
+.accueil .inscription-link {
+  display: inline-block;
+  padding: 10px 18px;
+
+  background: #2e0000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+
+  border-radius: 20px;
+}
+
+
+/* =========================
+   VERSION MOBILE
+========================= */
 @media (max-width: 768px) {
-    .accueil video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);  /* reste centrée */
+  .accueil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    padding: 70px 16px 40px; /* 🔥 espace suffisant sous le menu */
+    margin-top: 0;          /* ❌ supprimé */
   }
 
+  /* Texte accueil */
   .accueil-text {
-    left: 50%;
-    transform: translateX(-55%) translateY(-50%); /* assure le centrage horizontal */
-    width: 90%;
-  }
-  
+    position: relative;
+    inset: auto;
+    transform: none;
 
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Image ACSL */
+  .accueil-image {
+    width: 140px;
+    margin: 8px auto 12px; /* 🔥 léger espace seulement */
+  }
+
+  /* Titres */
   .accueil-text h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 
   .accueil-text h2 {
     font-size: 1.1rem;
   }
 
-
-  .accueil-text h1 {
-    font-size: 1.6rem;
+  /* Réseaux sociaux */
+  .social-links {
+    margin-top: 14px;
+    gap: 16px;
   }
 
-  .accueil-text h2 {
-    font-size: 1rem;
+  .social-links a img {
+    width: 30px;
+    height: 30px;
   }
-   }
 
+  /* ===== CARTE ACTUALITÉ ===== */
+    .accueil-actu-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  /* Image actu plus immersive */
+  .actu-image img {
+    height: 260px;  /* 🔥 plus grande sur mobile */
+  }
+
+  /* Titre sur image */
+  .actu-overlay h4 {
+    font-size: 1.1rem;
+    top: 16px;
+  }
+
+  /* Date */
+  .actu-date {
+    width: 44px;
+    height: 44px;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  /* Bouton */
+  .actu-more {
+    bottom: 12px;
+    right: 12px;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  /* Séparateur */
+  .accueil-separator {
+    width: 70%;
+    margin: 16px auto;
+  }
+}
 
 /* =========================================================
    SECTION : CLUBS
    ========================================================= */
 
 .clubs {
-  background: #222;
-  color: white;
+  background: #eceded;
+  color: rgb(0, 0, 0);
   padding: 10px 20px;
   overflow: hidden;
   position: relative;
+  /* limite la hauteur automatiquement */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .clubs h2 {
   text-align: center;
-  color: #e91147;
+  color: #000000;
   margin-bottom: 20px;
   font-size: 2.2rem; /* augmente la taille */
 }
@@ -285,7 +491,7 @@ body, html {
 
 .carousel.fullwidth video {
   flex: 1;
-  height: 25vw;
+  height: 40vw;
   max-height: 300px;
   object-fit: cover;
   border-radius: 16px;
@@ -356,9 +562,9 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-   transform: scale(1); /* ← dézoom à 90 % */
-  opacity: 0.3;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: scale(1); /* ← dézoom à 90 % */
+  opacity: 1.0;
+  transition: transform 0.3s ease, opacity 1.0s ease;
 }
 
 .carousel.clubs .club-link:hover img {
@@ -398,40 +604,36 @@ body, html {
    ========================================================= */
 
 /* 📱 VERSION MOBILE : alignement sur une seule ligne horizontale */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
   .carousel.fullwidth {
-    flex-wrap: nowrap; /* force les vidéos sur une seule ligne */
-    overflow-x: auto; /* permet le scroll horizontal */
+    justify-content: flex-start;     /* 🔥 pas de centrage */
+    gap: 12px;
+
+    overflow-x: auto;               /* scroll horizontal */
+    overflow-y: hidden;
+
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* pour iOS */
-    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+
+    padding: 0 16px 10px;            /* respiration sur les côtés */
   }
 
   .carousel.fullwidth video {
-    width: 40%; /* largeur de chaque vidéo (elles dépasseront légèrement) */
-    flex: 0 0 auto; /* empêche la réduction automatique */
-    border-radius: 10px;
+    flex: 0 0 85%;                   /* 🔥 1 vidéo visible + aperçu suivante */
+    height: 48vw;                    /* plus immersive */
+    max-height: 220px;
+
+    border-radius: 12px;
+    pointer-events: none;            /* évite le zoom involontaire */
   }
 
-  /* Optionnel : masquer la scrollbar horizontale */
+  /* Masque la scrollbar */
   .carousel.fullwidth::-webkit-scrollbar {
     display: none;
   }
-}
 
-  /* Les bandes clubs plus petites et bien espacées */
-  .carousel.clubs .club-link {
-    width: 100px;
-    height: 80px;
-  }
-}
-
-@media (max-width: 600px) {
-  .carousel.fullwidth video {
-    width: 100%;
-    max-height: 160px;
-  }
-
+  /* ===== CAROUSEL CLUBS ===== */
   .carousel.clubs .club-link {
     width: 90px;
     height: 70px;
@@ -444,239 +646,70 @@ body, html {
    SECTION : EVENEMENTS
    ========================================================= */
 
-.evenements { background:#111; }
-.evenements h2 { color:#e91147; text-align:center; margin-bottom:20px; }
+.evenements {
+  background: #ffffff;      /* fond blanc */
+  width: 100vw;             /* pleine largeur de l'écran */
+  padding: 40px 0;          /* padding vertical, horizontal à 0 pour full width */
+  box-sizing: border-box;   /* inclut padding dans la largeur */
+  overflow: hidden;         /* évite le débordement horizontal */
+}
+.evenements h2 { 
+  color:#000000; 
+  text-align:center; 
+  margin-bottom:20px; 
+}
+
 .events {
   display:flex;
   flex-wrap: wrap;
   gap:15px;
   justify-content:center;
 }
-.event { display:flex; flex-direction:column; width:250px; text-align:center; }
+.event { 
+  display:flex; 
+  flex-direction:column; 
+  width:250px; 
+  text-align:center; 
+}
+
 .event img { width:100%; border-radius:6px; }
 
-/* =========================================================
-   SECTION : QUAND LOMME COURT
-   ========================================================= */
-.quand-lomme-court {
-  position: relative;
-  width: 100vw;
-  height: 70vh;
-  background: url('images/qlcaccueil.png') center/cover no-repeat;
-  margin-left: calc(50% - 50vw);
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* === Titre principal === */
-.quand-lomme-court .section-title {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #e91147;
-  font-size: 2rem;
-  font-weight: bold;
-  z-index: 3;
-  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-  margin: 0;
-}
-
-/* === Superposition sombre === */
-.quand-lomme-court .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* === Contenu central === */
-.quand-lomme-court .content {
-  text-align: center;
-  color: white;
-  z-index: 2;
-  padding: 20px;
-}
-
-.quand-lomme-court .content h3 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.quand-lomme-court .date-highlight {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #e91147;
-  margin-bottom: 20px;
-}
-
-/* === Conteneur des cercles === */
-.label-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin: 15px 0 25px;
-}
-
-/* === Styles communs pour tous les cercles === */
-.label-bronze,
-.event-circle,
-.video-circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.label-bronze {
-  object-fit: cover;
-  background: transparent;
-  filter: drop-shadow(0 0 8px rgba(0,0,0,0.5));
-}
-
-.label-bronze:hover,
-.event-circle:hover,
-.video-circle:hover {
-  transform: scale(1.05);
-}
-
-.event-circle {
-  background: linear-gradient(135deg, #e91147, #8a0027);
-}
-
-.event-circle .event-date { font-size: 0.9rem; margin: 0; }
-.event-circle .event-lieu { font-size: 0.7rem; margin-top: 3px; }
-
-/* === Cercle vidéo (comme le label-bronze) === */
-.video-circle {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.video-circle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(0,0,0,0.6);
-}
-
-.video-circle .video-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.5; /* ajuste la transparence ici (0 = invisible, 1 = opaque) */
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.video-circle:hover img {
-  opacity: 1; /* image redevient complètement visible au survol */
-}
-.video-circle .video-text {
-  position: relative;
-  z-index: 2;
-  padding: 5px;
-  background: rgba(0,0,0,0.6); /* pour que le texte soit lisible */
-  border-radius: 10px;
-  font-size: 0.8rem;
-}
-
-
-/* === Carte d'infos === */
-.info-card {
-  display: inline-block;
-  background: white;
-  color: #e91147;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.info-card:hover {
-  background: #e91147;
-  color: white;
-  transform: scale(1.05);
-}
-
-/* =========================================================
-   RESPONSIVE DESIGN
-   ========================================================= */
 @media (max-width: 768px) {
-  .quand-lomme-court { height: 45vh; }
-  .quand-lomme-court .section-title { font-size: 1.6rem; }
-  .quand-lomme-court .content h3 { font-size: 1.3rem; }
-  .quand-lomme-court .date-highlight { font-size: 2rem; }
-
-  .event-circle .event-date { font-size: 0.75rem; }
-  .event-circle .event-lieu { font-size: 0.6rem; }
-
-  /* Conserver les cercles sur une ligne sans débordement */
-  .label-container {
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px; /* réduire légèrement l’espace */
-    flex-wrap: nowrap; /* éviter que ça passe à la ligne suivante */
-    max-width: 100%; /* s’assurer que ça reste dans le conteneur */
-    overflow-x: hidden; /* couper léger débordement si nécessaire */
-  }
-
-  /* Ajuster la taille des cercles pour qu’ils tiennent */
-  .label-bronze,
-  .event-circle,
-  .video-circle {
-    width: 90px;
-    height: 90px;
-  }
-
-  .video-circle { font-size: 0.65rem; padding: 8px; }
-}
-
-@media (max-width: 480px) {
-  .label-bronze,
-  .event-circle,
-  .video-circle {
-    width: 70px;
-    height: 70px;
-  }
-  .video-circle { font-size: 0.55rem; padding: 6px; }
+  .evenements {
+  background: #ffffff;
+  width: 100vw;       /* pleine largeur de l’écran */
+  padding: 20px 0;    /* padding horizontal à 0 pour ne pas créer d’espace */
+  box-sizing: border-box; /* inclut le padding dans la largeur */
 }
 
 
+  .evenements h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .events {
+    flex-direction: column; /* une seule colonne */
+    gap: 20px;              /* espace entre les events */
+    align-items: center;    /* centre horizontalement */
+  }
+
+  .event {
+    width: 90%;             /* prend presque toute la largeur */
+    max-width: 300px;       /* limite max pour que ce soit lisible */
+  }
+
+  .event img {
+    width: 100%;
+    border-radius: 6px;
+  }
+}
+
+/* =========================================================
+   SECTION : A PROPOS DE L'ACSL
+   ========================================================= */
 
 
-
-
-
-
-
-/* ===== A PROPOS ===== */
 .apropos-cards {
   display: flex;
   flex-wrap: wrap;
@@ -687,7 +720,7 @@ body, html {
 
 #apropos h2 {
   text-align: center;   /* centre le texte */
-  color: #e91147;       /* rouge ACSL */
+  color: #000000;       /* rouge ACSL */
   margin-bottom: 30px;  /* petit espace sous le titre */
   font-size: 2rem;      /* optionnel, pour le rendre plus visible */
   font-weight: 700;     /* gras pour bien ressortir */
@@ -749,16 +782,16 @@ a.lien-card:hover {
 /* ===== PARTENAIRES ===== */
 .partners {
   text-align: center;
-  padding: 40px 20px;
-  background: #111; /* fond sombre */
+  background: #eceded; /* fond sombre */
 }
 
 .partners h2 {
-  color: #cc0c3c; /* rouge bordeaux */
+  color: #000000; /* rouge bordeaux */
   text-align: center;
   margin-bottom: 30px;
   font-size: 1.8rem;
   font-weight: 700;
+  font-family: 'Gabana Outline Regular', sans-serif;
 }
 
 .partners-logos {
@@ -782,8 +815,28 @@ a.lien-card:hover {
 
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:768px){
-  .cards { flex-direction: column; align-items:center; }
-  .apropos-cards { flex-direction: column; align-items:center; }
-  .events { flex-direction: column; align-items:center; }
+@media (max-width: 768px) {
+  .partners {
+    padding: 30px 12px;
+  }
+
+  .partners h2 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+
+  .partners-logos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 🔥 3 colonnes */
+    gap: 12px;
+    justify-items: center;
+  }
+
+  .partners-logos img {
+    width: 100%;
+    max-width: 90px;
+    height: auto;
+  }
 }
+
+

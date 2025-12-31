@@ -74,10 +74,3 @@ document.querySelectorAll('.retour-en-images .image-block').forEach(card => {
 
 
 
-
-
-
-
-
-
-
