@@ -594,41 +594,81 @@ body {
 /* =========================================================
    RESPONSIVE DESIGN
    ========================================================= */
-
-/* 📱 VERSION MOBILE : alignement sur une seule ligne horizontale */
 @media (max-width: 768px) {
 
-  .carousel.fullwidth {
-    justify-content: flex-start;     /* 🔥 pas de centrage */
-    gap: 12px;
-
-    overflow-x: auto;               /* scroll horizontal */
-    overflow-y: hidden;
-
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-
-    padding: 0 16px 10px;            /* respiration sur les côtés */
+  /* ===== SECTION CLUBS ===== */
+  .clubs {
+    padding: 20px 10px;
   }
 
-  .carousel.fullwidth video {
-    flex: 0 0 85%;                   /* 🔥 1 vidéo visible + aperçu suivante */
-    height: 48vw;                    /* plus immersive */
-    max-height: 220px;
-
-    border-radius: 12px;
-    pointer-events: none;            /* évite le zoom involontaire */
+  .clubs h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
   }
 
-  /* Masque la scrollbar */
-  .carousel.fullwidth::-webkit-scrollbar {
-    display: none;
+  .carousel {
+  margin: 2px 0;
+}
+
+
+  /* =========================================================
+     VIDÉOS (BANDEAU 1)
+     ========================================================= */
+
+    .carousel.fullwidth {
+    width: 100%;
+    margin-left: 0;        /* 🔥 supprime le décalage */
+    padding: 0 10px;       /* un peu d’air sur les côtés */
+    gap: 8px;              /* espace réduit entre vidéos */
   }
 
-  /* ===== CAROUSEL CLUBS ===== */
-  .carousel.clubs .club-link {
-    width: 90px;
-    height: 70px;
+   .carousel.fullwidth video {
+    width: calc((100% - 16px) / 3); /* 🔥 3 vidéos visibles */
+    height: 140px;                  /* hauteur réduite */
+    width: 160px;
+    max-height: none;
+    border-radius: 10px;
+  }
+
+  /* =========================================================
+     CAROUSELS CLUBS (BANDEAUX 2 & 3)
+     ========================================================= */
+
+  .carousel.clubs {
+  gap: 6px;          /* 🔽 espace global réduit */
+  margin: 4px 0;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 8px;          /* 🔥 espace réel entre les images */
+}
+
+/* Blocs clubs plus petits */
+.carousel.clubs .club-link {
+  width: 90px;
+  height: 90px;
+  margin-right: 0;   /* 🔥 IMPORTANT : supprime le surplus */
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 10px;
+}
+
+
+  .carousel.clubs .club-text {
+    font-size: 0.85rem;
+    padding: 4px;
+  }
+
+  /* =========================================================
+     ANIMATIONS PLUS DOUCES SUR MOBILE
+     ========================================================= */
+
+  .carousel-left .carousel-track,
+  .carousel-right .carousel-track {
+    animation-duration: 55s; /* 🔥 plus lent */
   }
 }
 
