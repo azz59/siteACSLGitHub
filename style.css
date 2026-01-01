@@ -706,20 +706,29 @@ body {
 /* OVERLAY sombre ajusté à l'image */
 .overlay {
   position: absolute;
-  bottom: 0;
-  left: 50%;               /* centre horizontalement */
-  transform: translateX(-50%); /* ajuste le centrage */
-  width: 100%;             /* prend toute la largeur de l'image */
-  max-width: 500px;        /* limite max si besoin */
-  height: 40%;             /* zone sombre en bas */
-  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  inset: 0; /* 🔥 couvre toute l’image */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.7) 0%,     /* 🔥 haut sombre */
+    rgba(0,0,0,0.25) 30%,  /* centre plus clair */
+    rgba(0,0,0,0.25) 70%,  /* centre */
+    rgba(0,0,0,0.7) 100%   /* 🔥 bas sombre */
+  );
+
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   padding: 10px 15px;
   box-sizing: border-box;
-  border-radius: 0 0 8px 8px;
+
+  border-radius: 8px; /* même arrondi que l’image */
 }
+
 
 /* Date en bas à gauche de l'image */
 .event-date {
