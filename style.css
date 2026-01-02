@@ -134,7 +134,7 @@ body {
 
 /* FILIGRANE */
 .accueil::before {
-  content: "🏃🏀ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚾ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚽ACSL🏃🏀🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋🏀ACSL🏃⚾ACSL🏃🏸ACSL⚽ACSL🏀ACSL🏀🏃ACSL🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏀🏃ACSL🏃🏐ACSL🏃🏋";
+  content: "🏃🏀ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚾ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚽ACSL🏃🏀🏸ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋🏀ACSL🏃⚾ACSL🏃🏸ACSL⚽🏸ACSL🏸🏀ACSL🏀🏃ACSL🏐🏸ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏀🏃ACSL🏃🏐ACSL🏃🏋";
   position: absolute;
   inset: 0;
 
@@ -374,6 +374,11 @@ body {
 
     padding: 70px 16px 40px; /* 🔥 espace suffisant sous le menu */
     margin-top: 0;          /* ❌ supprimé */
+  }
+
+  .accueil::before {
+    font-size: 3rem;      /* 👈 réduit */
+    letter-spacing: 15px; /* optionnel mais recommandé */
   }
 
   /* Texte accueil */
