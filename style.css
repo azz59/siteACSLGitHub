@@ -132,6 +132,37 @@ body {
 }
 
 
+/* FILIGRANE */
+.accueil::before {
+  content: "🏃🏀ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚾ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚽ACSL🏃🏀🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋🏀ACSL🏃⚾ACSL🏃🏸ACSL⚽ACSL🏀ACSL🏀🏃ACSL🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏀🏃ACSL🏃🏐ACSL🏃🏋";
+  position: absolute;
+  inset: 0;
+
+  font-size: 6rem;              /* taille du motif */
+  font-weight: 700;
+  letter-spacing: 30px;
+  line-height: 1.5;           /* espace entre les lignes */ 
+
+  color: rgba(0, 0, 0, 0.05);   /* 🔥 TRÈS DISCRET */
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(-20deg);    /* effet filigrane */
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Contenu au-dessus du fond */
+.accueil > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+
 /* Image de ACSL */
 .accueil-image {
   width: 300px;   /* ou max-width: 100% */
@@ -433,7 +464,7 @@ body {
    ========================================================= */
 
 .clubs {
-  background: #eceded;
+  background: #f5f5f5;
   color: rgb(0, 0, 0);
   padding: 10px 20px;
   overflow: hidden;
@@ -958,7 +989,7 @@ body {
 /* ======================================================= */
 .partners {
   text-align: center;
-  background: #eceded; /* fond sombre */
+  background: #f4f4f4; /* fond sombre */
 }
 
 .partners h2 {
