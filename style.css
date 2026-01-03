@@ -14,6 +14,31 @@ body {
   background: #ffffff;
   color:  #000000;
   scroll-behavior: smooth;
+  
+}
+
+/* FILIGRANE GLOBAL */
+body::before {
+  content: "🏃🏀ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚾ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚽ACSL🏃🏀🏸ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋🏀ACSL🏃⚾ACSL🏃🏸ACSL⚽🏸ACSL🏸🏀ACSL🏀🏃ACSL🏐🏸ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏀🏃ACSL🏃🏐ACSL🏃🏋";
+  
+  position: fixed;
+  inset: -20%;                 /* déborde volontairement */
+  
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 30px;
+  line-height: 1.5;
+
+  color: rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(-20deg);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .section {
@@ -119,6 +144,7 @@ body {
 /* =============================================================== */
 
 .accueil {
+  overflow: hidden; /* 🔒 empêche le scroll horizontal */
   width: 100%;
   min-height: 180vh;
   background-color: #ffffff;
@@ -129,30 +155,6 @@ body {
   justify-content: flex-start; /* 🔥 contenu en haut */
   padding: 200px 20px 100px;   /* espace haut + bas */
   box-sizing: border-box;
-}
-
-
-/* FILIGRANE */
-.accueil::before {
-  content: "🏃🏀ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚾ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚽ACSL🏃🏀🏸ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋🏀ACSL🏃⚾ACSL🏃🏸ACSL⚽🏸ACSL🏸🏀ACSL🏀🏃ACSL🏐🏸ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏀🏃ACSL🏃🏐ACSL🏃🏋";
-  position: absolute;
-  inset: 0;
-
-  font-size: 6rem;              /* taille du motif */
-  font-weight: 700;
-  letter-spacing: 30px;
-  line-height: 1.5;           /* espace entre les lignes */ 
-
-  color: rgba(0, 0, 0, 0.05);   /* 🔥 TRÈS DISCRET */
-  text-align: center;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transform: rotate(-20deg);    /* effet filigrane */
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* Contenu au-dessus du fond */
@@ -376,10 +378,7 @@ body {
     margin-top: 0;          /* ❌ supprimé */
   }
 
-  .accueil::before {
-    font-size: 3rem;      /* 👈 réduit */
-    letter-spacing: 15px; /* optionnel mais recommandé */
-  }
+ 
 
   /* Texte accueil */
   .accueil-text {
@@ -469,16 +468,17 @@ body {
    ========================================================= */
 
 .clubs {
-  background: #f5f5f5;
+  background-color: rgba(245, 245, 245, 0.6); /* 👈 60% opaque */
   color: rgb(0, 0, 0);
   padding: 10px 20px;
   overflow: hidden;
   position: relative;
-  /* limite la hauteur automatiquement */
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .clubs h2 {
   text-align: center;
@@ -715,14 +715,41 @@ body {
    ========================================================= */
 
 .evenements {
-  background: #ffffff;
+  background-color: rgba(255, 255, 255, 0.0); /* 👈 blanc transparent */
   padding: 40px 0;
   text-align: center;
 
-  width: 100vw;           /* prend toute la largeur de la fenêtre */
-  margin-left: calc(50% - 50vw); /* centre la section si conteneur parent centré */
-  box-sizing: border-box; /* inclut le padding dans la largeur */
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  box-sizing: border-box;
 }
+
+.event {
+  position: relative;       /* nécessaire pour le positionnement absolu du titre */
+  display: inline-block;    /* largeur définie par l'image */
+}
+
+.event img {
+  display: block;           /* supprime les espaces sous l'image */
+  width: 100%;              /* image responsive */
+  height: auto
+  
+}
+
+.event-title {
+  position: absolute;
+  top: 20px;                /* distance depuis le haut de l'image */ 
+  max-width: 100%;           /* jamais dépasser la largeur de l'image */
+  text-align: center;
+  color: #e6ca2d;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: lighter;
+  z-index: 2;
+  font-size: clamp(1rem, 2.5vw, 1.8rem); /* texte responsive */
+}
+
+
 
 
 /* CARROUSEL */
@@ -893,19 +920,24 @@ body {
 }
 
 .events-dots button {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 10px;                /* largeur = hauteur */
+  height: 10px;
+  border-radius: 50%;         /* cercle parfait */
   border: none;
   background: rgba(0,0,0,0.3);
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
+  padding: 0;                 /* supprime tout padding */
+  box-sizing: border-box;     /* inclut bordures et padding */
 }
 
 .events-dots button.active {
   background: #d11f1f;
   transform: scale(1.3);
+  /* Optionnel : pour garder le cercle parfait même en scale */
+  border-radius: 50%;
 }
+
 
 
 /* ===== VERSION MOBILE ===== */
@@ -994,8 +1026,14 @@ body {
 /* ======================================================= */
 .partners {
   text-align: center;
-  background: #f4f4f4; /* fond sombre */
+  background-color: rgba(244, 244, 244, 0.7);
+
+  width: 100vw;                     /* prend toute la largeur */
+  margin-left: calc(50% - 50vw);    /* compense le centrage du parent */
+  box-sizing: border-box;
 }
+
+
 
 .partners h2 {
   color: #000000; /* rouge bordeaux */
