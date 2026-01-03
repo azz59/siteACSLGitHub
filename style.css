@@ -157,13 +157,6 @@ body::before {
   box-sizing: border-box;
 }
 
-/* Contenu au-dessus du fond */
-.accueil > * {
-  position: relative;
-  z-index: 1;
-}
-
-
 
 /* Image de ACSL */
 .accueil-image {
@@ -245,6 +238,8 @@ body::before {
 .actu-card-title {
   position: relative;
   padding-bottom: 8px;
+  font-weight: lighter;
+  font-size: 2rem;
 }
 
 .actu-card-title::after {
@@ -293,11 +288,11 @@ body::before {
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
-
-  color: #fcfcfc;
+  width: 90%;
+  color: #e6ca2d;
   text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: lighter;
 }
 
 .actu-date,
@@ -715,10 +710,9 @@ body::before {
    ========================================================= */
 
 .evenements {
-  background-color: rgba(255, 255, 255, 0.0); /* 👈 blanc transparent */
+ 
   padding: 40px 0;
   text-align: center;
-
   width: 100vw;
   margin-left: calc(50% - 50vw);
   box-sizing: border-box;

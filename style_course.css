@@ -275,7 +275,7 @@ html, body {
    RESPONSIVE ACCUEIL
    ======================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   .accueil {
     padding: 0;             /* empêche la vidéo d'être poussée vers le bas */
