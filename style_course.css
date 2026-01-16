@@ -101,6 +101,11 @@ html, body {
 
 /* ===== Version mobile ===== */
 @media (max-width: 768px) {
+
+ html {
+    font-family: 'Insaniburger', 'Poppins', sans-serif;
+  }
+
   .hamburger {
     margin-right: 40px;
     
