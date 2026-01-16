@@ -1,6 +1,13 @@
 /* =========================================================
    🌍 GLOBAL
    ========================================================= */
+@font-face {
+  font-family: 'Insaniburger';
+  src: url('fonts/Insanibu.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 html, body {
   margin: 0;
@@ -101,10 +108,6 @@ html, body {
 
 /* ===== Version mobile ===== */
 @media (max-width: 768px) {
-
- html {
-    font-family: 'Insaniburger', 'Poppins', sans-serif;
-  }
 
   .hamburger {
     margin-right: 40px;
