@@ -2,8 +2,8 @@
    🌍 GLOBAL
    ========================================================= */
 @font-face {
-  font-family: 'Paris Forbel';
-  src: url('fonts/Vogue.ttf') format('truetype');
+  font-family: 'Insaniburger';
+  src: url('fonts/Insanibu.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -15,11 +15,37 @@ html, body {
   width: 100%;
   overflow-x: hidden;   /* Empêche le scroll horizontal */
   overflow-y: auto;     /* Autorise le scroll vertical */
-  font-family: 'Paris Forbel', 'Poppins', sans-serif;
-  background: #000;
-  color: #fff;
+  font-family: 'Insaniburger', 'Poppins', sans-serif;
+  background: #ffffff;
+  color: #000000;
   scroll-behavior: smooth;
 }
+
+
+/* FILIGRANE GLOBAL */
+body::before {
+  content: "🏃🏀ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚾ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚽ACSL🏃🏀🏸ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋🏀ACSL🏃⚾ACSL🏃🏸ACSL⚽🏸ACSL🏸🏀ACSL🏀🏃ACSL🏐🏸ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏀🏃ACSL🏃🏐ACSL🏃🏋";
+  
+  position: fixed;
+  inset: -20%;                 /* déborde volontairement */
+  
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 30px;
+  line-height: 1.5;
+
+  color: rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(-20deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
 
 /* =========================================================
    🧭 HEADER / NAVIGATION
@@ -107,9 +133,11 @@ html, body {
 }
 
 /* ===== Version mobile ===== */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
   .hamburger {
     margin-right: 40px;
+    
   }
 
   .menu-bar {
@@ -130,40 +158,45 @@ html, body {
 
 
 /* =========================================================
-   🏁 SECTION ACCUEIL – Animation séquentielle centrée
+   🏁 SECTION ACCUEIL
    ========================================================= */
 
 .accueil {
   position: relative;
   width: 100%;
-  min-height: 120vh;
-  background-color: #000;
+  min-height: 140vh;
+  background-color: #ffffff;
   overflow: hidden;
   display: flex;
   flex-direction: column; 
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
 }
 
-/* Vidéo de fond */
-.accueil video {
-  position: absolute;
-  top: 60%;
-  left: 50%;
+.accueil-image {
+  position: absolute;        /* ou absolute selon ton layout */
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 120vh;
-  object-fit: cover;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+  height: 100%;
+  object-fit: cover;      /* équivalent du background-size: cover */
+  z-index: 1;            /* pour rester en arrière-plan */
+  opacity: 0.4;   /* 0 = invisible | 1 = opaque */
 }
 
-/* Overlay sombre */
-.overlay {
+/* Overlay blanc */
+/* .overlay {
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(10, 10, 10, 0.4); /* blanc semi-transparent */
+  z-index: 2;
+} */
+
 
 /* Supprime le scroll horizontal global */
 html, body {
@@ -189,20 +222,22 @@ html, body {
   width: 90%;
   max-width: 800px;
   box-sizing: border-box;
-  z-index: 2;
+  z-index: 3;
 }
 
 .accueil-text h1 {
   color: #e91147;
-  font-size: 2.8em;
+  font-size: 3em;
   margin: 0;
+  z-index: 3;
 }
 
 .accueil-text h2 {
-  color: #fff;
+  color: #4a4141;
   font-size: 1.5em;
   margin-top: 10px;
   font-weight: 400;
+  
 }
 
 
@@ -251,7 +286,7 @@ html, body {
   border-radius: 12px;
   padding: 12px;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   backdrop-filter: blur(5px);
   transition: 0.3s ease;
@@ -262,6 +297,7 @@ html, body {
 .accueil-card h3 {
   margin: 0;
   font-size: 1.2rem;
+  color: #c10b38;
 }
 
 .accueil-card:hover {
@@ -289,7 +325,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: translate(-50%, -50%);  /* reste centrée */
+    transform: translate(-50%, -50%);
   }
 
   .accueil-text {
@@ -355,7 +391,7 @@ html, body {
 
 .section.inscription {
   padding: 100px 20px 80px;
-  background: radial-gradient(circle, #111 0%, #000 100%);
+  background: #ffffff;
   text-align: center;
 }
 
@@ -385,11 +421,11 @@ html, body {
    CARTES — Style commun
 ================================ */
 .info-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(245, 245, 245, 0.3);
   border-radius: 12px;
   padding: 30px 20px;
   text-align: center;
-  color: white;
+  color: rgba(245, 245, 245, 0.3);
   backdrop-filter: blur(10px);
   transition: 0.3s ease;
   overflow: hidden;
@@ -397,20 +433,26 @@ html, body {
 
 .info-card:hover {
   transform: translateY(-5px);
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(238, 236, 236, 0.2);
 }
 
 /* Bandeau noir */
 .card-title {
-  background: linear-gradient(to bottom, rgba(214,214,214,0.4), rgba(62,58,58,0.1));
+  background: linear-gradient(
+    to bottom,
+    rgba(206, 206, 206, 0.7),
+    rgba(245, 245, 245, 0.3)
+  );
+
   margin: -30px -20px 20px;
   padding: 12px 0;
   border-radius: 12px 12px 0 0;
 }
 
+
 .card-title h3 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #ff0040;
 }
 
@@ -468,10 +510,10 @@ html, body {
 
 /* Inscription */
 .inscription-link {
-  background: linear-gradient(135deg, #00b894, #009f6b);
+  background: linear-gradient(135deg, #e91147, #e7d405);
 }
 .inscription-link:hover {
-  background: linear-gradient(135deg, #00d19b, #00b894);
+  background: linear-gradient(135deg, #e91147, #e7d405);
 }
 
 
@@ -514,8 +556,9 @@ html, body {
    =============================== */
 .section.resultats {
   padding: 80px 20px 60px; /* réduit la hauteur globale */
-  background: #000;
+  background: #f2f2f2;
   text-align: center;
+  min-height: 100vh;
 }
 
 .section.resultats h2 {
@@ -534,19 +577,19 @@ html, body {
 .section.resultats .results-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;               /* réduit l’espace entre les cartes */
+  gap: 30px;               /* réduit l’espace entre les cartes */
   max-width: 600px;
   margin: 0 auto;
 }
 
 /* Carte année */
 .section.resultats .result-card {
-  background: rgba(255,255,255,0.1);
+  background: rgba(174, 5, 5, 0.975);
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 25px 15px;      /* 📌 réduit la carte */
   text-align: center;
-  color: #fff;
+  color: #e6c325;
   text-decoration: none;
   transition: 0.3s ease;
   border: 1px solid rgba(255,255,255,0.05);
@@ -554,7 +597,7 @@ html, body {
 
 .section.resultats .result-card:hover {
   transform: translateY(-4px);
-  background: rgba(255,255,255,0.2);
+  background: rgb(234, 35, 35);
 }
 
 .section.resultats .result-card h3 {
@@ -565,8 +608,8 @@ html, body {
 
 .section.resultats .result-card p {
   margin-top: 8px;
-  font-size: 1.2rem;      /* 📌 réduit */
-  opacity: 0.9;
+  font-size: 1.5rem;      /* 📌 réduit */
+
 }
 
 /* Empêche tout débordement horizontal */
@@ -613,6 +656,13 @@ html, body {
 /* =========================================================
    SECTION — Retour en images
 ========================================================= */
+.section.retour-en-images {
+  padding: 80px 20px 60px; /* réduit la hauteur globale */
+  background: #ffffff;
+  text-align: center;
+  min-height: 100vh;
+}
+
 .retour-en-images h2 {
   text-align: center;   /* centre le texte */
   color: #c2103c;       /* rouge ACSL */
@@ -623,11 +673,14 @@ html, body {
 
 .retour-en-images .cards-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  max-width: 900px;
+  width: 100%;
+  max-width: 1200px;
   margin: 10px auto;
+  padding: 0 15px;
 }
+
 
 /* Bloc image */
 .retour-en-images .image-block {
@@ -645,7 +698,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4); /* 0.4 = niveau d'assombrissement */
+  /* background: rgba(0,0,0,0.4); 0.4 = niveau d'assombrissement */
   z-index: 2; /* doit être sous ton texte mais au-dessus de l'image */
 }
 
@@ -743,10 +796,10 @@ html, body {
    🏃‍♀️ SECTION INFOS PRATIQUES - version sans cartes
    ========================================================= */
 #infospratiques {
-  background-color: #000; /* fond noir pour toute la section */
+  background-color: #f2f2f2; 
   padding: 50px 20px;     /* espace autour du contenu */
-  color: #fff;            /* couleur du texte par défaut */
-  text-align: center;
+  color: #000000;            /* couleur du texte par défaut */
+  text-align: justify;
 }
 
 #infospratiques h2 {
@@ -754,25 +807,13 @@ html, body {
   margin-bottom: 40px;
   font-size: 2.2rem;
   font-weight: 700;
+  text-align: center;
 }
 
 #infospratiques h3 {
   color: #e91147;
   margin-top: 30px;
   margin-bottom: 15px;
-}
-
-#infospratiques p,
-#infospratiques ul {
-  max-width: 800px;       /* limite la largeur pour plus de lisibilité */
-  margin: 0 auto 20px auto;
-  text-align: left;
-  line-height: 1.6;
-  color: #fff;
-}
-
-#infospratiques ul {
-  padding-left: 20px;
 }
 
 #infospratiques img {
@@ -783,23 +824,11 @@ html, body {
   height: auto;
 }
 
-/* liens éventuels */
-#infospratiques a {
-  color: #e91147;
-  text-decoration: none;
-}
-
-#infospratiques a:hover {
-  color: #ff3377;
-}
-
-
-
 /* ===== PARTENAIRES ===== */
 .partners {
   text-align: center;
   padding: 40px 20px;
-  background: #111; /* fond sombre */
+  background: #ffffff;
 }
 
 .partners h2 {
