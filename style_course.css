@@ -181,21 +181,16 @@ body::before {
   height: 100%;
   object-fit: cover;      /* équivalent du background-size: cover */
   z-index: 1;            /* pour rester en arrière-plan */
-  opacity: 0.4;   /* 0 = invisible | 1 = opaque */
 }
 
-/* Overlay blanc */
-/* .overlay {
+.overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
 
-  width: 100%;
-  height: 100%;
-
-  background: rgba(10, 10, 10, 0.4); /* blanc semi-transparent */
+  background: rgba(0, 0, 0, 0.45); /* sombre */
   z-index: 2;
-} */
+}
+
 
 
 /* Supprime le scroll horizontal global */
@@ -226,14 +221,14 @@ html, body {
 }
 
 .accueil-text h1 {
-  color: #e91147;
+  color: #ffffff;
   font-size: 3em;
   margin: 0;
   z-index: 3;
 }
 
 .accueil-text h2 {
-  color: #4a4141;
+  color: #f9d926;
   font-size: 1.5em;
   margin-top: 10px;
   font-weight: 400;
@@ -297,7 +292,7 @@ html, body {
 .accueil-card h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: #c10b38;
+  color: #ffffff;
 }
 
 .accueil-card:hover {
@@ -464,20 +459,20 @@ html, body {
 
 .info-card .lieu,
 .info-card .heure {
-  color: #ccc;
+  color: #b4b3b3;
 }
 
 .info-card .parcours {
   font-size: 1.1rem;
   font-weight: bold;
-  color: #e91147;
+  color: #b0b0b0;
   margin-top: 10px;
   text-transform: uppercase;
 }
 
 .info-card .label {
   font-size: 0.9rem;
-  color: #aaa;
+  color: #e92626;
 }
 
 
