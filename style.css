@@ -223,10 +223,16 @@ body::before {
 }
 
 /* Carte Actualité */
+.accueil-actu-container {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+} 
+
 .accueil-actu-card {
-  width: 90%;
-  max-width: 500px;
-  margin: 20px auto;
+  flex: 1; 
+  max-width: none;       /* aucune limite */
+  margin: 0;             /* empêche le recentrage */
 
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
@@ -235,21 +241,12 @@ body::before {
 }
 
 /* Titre ACTUALITE */
-.actu-card-title {
-  position: relative;
-  padding-bottom: 8px;
-  font-weight: lighter;
+.actu-section-title {
+  text-align: center;
   font-size: 2rem;
+  margin-bottom: 30px;
 }
 
-.actu-card-title::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 2px;
-  background: rgba(0,0,0,0.3);
-  margin: 8px auto 0;
-}
 
 /* Image */
 .actu-image {
@@ -418,7 +415,11 @@ body::before {
   }
 
   /* ===== CARTE ACTUALITÉ ===== */
-    .accueil-actu-card {
+  .accueil-actu-container {
+    flex-direction: column;
+  }
+  .accueil-actu-card {
+    width: 100%;               /* 🔥 pleine largeur */
     margin-left: auto;
     margin-right: auto;
   }
