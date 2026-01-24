@@ -225,6 +225,7 @@ body::before {
 /* Carte Actualité */
 .accueil-actu-container {
   display: flex;
+  flex-direction: row;   /* FORCE l’alignement horizontal */
   gap: 20px;
   width: 100%;
 } 
