@@ -252,3 +252,29 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateCountdown, 1000);
   }
 });
+
+/* =========================================================
+   ACTU 3 - TEXTE DÉPLIABLE
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.querySelector('.actu-toggle');
+  
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const section = document.querySelector('.accueil-actu');
+      const content = section.querySelector('.actu-content-fullwidth');
+      
+      if (content) {
+        if (content.style.display === 'none' || content.style.display === '') {
+          content.style.display = 'block';
+          this.textContent = 'Réduire';
+        } else {
+          content.style.display = 'none';
+          this.textContent = 'En savoir plus';
+        }
+      }
+    });
+  }
+});

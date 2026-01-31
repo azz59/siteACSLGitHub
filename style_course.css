@@ -869,11 +869,26 @@ body::before {
   margin-bottom: 15px;
 }
 
+#infospratiques h4 {
+  color: #e91147;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#infospratiques p {
+  color: #000000;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
 #infospratiques img {
   display: block;
   margin: 20px auto;
   border-radius: 8px;
-  max-width: 100%;
+  max-width: 800px;
+  width: 100%;
   height: auto;
 }
 
