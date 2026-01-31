@@ -192,15 +192,6 @@ body::before {
 }
 
 
-
-/* Supprime le scroll horizontal global */
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-
 /* =========================================================
    TEXTE ACCUEIL
    ========================================================= */
@@ -220,19 +211,59 @@ html, body {
   z-index: 3;
 }
 
-.accueil-text h1 {
+.accueil-text h2 {
   color: #ffffff;
   font-size: 3em;
   margin: 0;
   z-index: 3;
 }
 
-.accueil-text h2 {
+.accueil-text h3 {
   color: #f9d926;
   font-size: 1.5em;
   margin-top: 10px;
   font-weight: 400;
   
+}
+
+
+/* =========================================================
+   COMPTE À REBOURS
+   ========================================================= */
+.countdown {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 30px 0;
+  z-index: 3;
+  position: relative;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 60px;
+  backdrop-filter: blur(5px);
+  /* border: 2px solid rgba(249, 217, 38, 0.5); */
+}
+
+.countdown-number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #f9d926;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.countdown-label {
+  font-size: 0.75em;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 
@@ -289,7 +320,7 @@ html, body {
   flex: 0 0 auto;        /* empêche l'étirement horizontal */
 }
 
-.accueil-card h3 {
+.accueil-card h4 {
   margin: 0;
   font-size: 1.2rem;
   color: #ffffff;
@@ -330,11 +361,11 @@ html, body {
     width: 90%;
   }
 
-  .accueil-text h1 {
+  .accueil-text h2 {
     font-size: 1.7rem;
   }
 
-  .accueil-text h2 {
+  .accueil-text h3 {
     font-size: 1rem;
   }
 
@@ -342,6 +373,33 @@ html, body {
     width: 60px;
     height: 60px;
   }
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px auto;
+  flex-wrap: nowrap; /* Empêche de passer à la ligne sur petit écran */
+}
+
+.countdown-item {
+  flex: 1; /* Force les boîtes à avoir la même largeur */
+  max-width: 80px; /* Limite la largeur sur grand écran */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px 5px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-number {
+    font-size: 1.2rem; /* Plus petit pour les téléphones étroits */
+  }
+.countdown-label {
+    font-size: 0.5rem;
+  }
+
 
 
   /* ===== CARTES (2 colonnes) ===== */
@@ -368,15 +426,15 @@ html, body {
     box-sizing: border-box;
   }
 
-  .accueil .accueil-card h3 {
+  .accueil .accueil-card h4 {
     font-size: 0.95rem;
   }
 
   .accueil .accueil-card p {
     font-size: 0.85rem;
   }
-}
 
+}
 
 
 
@@ -859,6 +917,212 @@ html, body {
   .cards { flex-direction: column; align-items:center; }
   .apropos-cards { flex-direction: column; align-items:center; }
   .events { flex-direction: column; align-items:center; }
+}
+
+
+
+
+/* ===== BOUTON FLOTTANT CONTACT ===== */
+.floating-contact-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #e91147;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(233, 17, 71, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 3200 !important;
+}
+
+.floating-contact-btn:hover {
+  background-color: #c10d3a;
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(233, 17, 71, 0.6);
+}
+
+.floating-contact-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ===== MODAL FORMULAIRE CONTACT ===== */
+.contact-modal {
+  display: none;
+  position: fixed;
+  z-index: 3300;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.contact-modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: slideDown 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.contact-close {
+  color: #aaa;
+  float: right;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.contact-close:hover,
+.contact-close:focus {
+  color: #e91147;
+}
+
+.contact-modal-content h2 {
+  color: #e91147;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #e91147;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #e91147;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #c10d3a;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.form-status {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+  display: none;
+}
+
+.form-status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  display: block;
+}
+
+.form-status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .floating-contact-btn {
+    position: fixed !important;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 3200 !important;
+    display: flex !important;
+  }
+
+  .floating-contact-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-modal-content {
+    width: 95%;
+    padding: 20px 25px;
+    margin: 10% auto;
+  }
+
+  .contact-modal-content h2 {
+    font-size: 24px;
+  }
 }
 
 

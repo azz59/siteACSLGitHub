@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="style_course.css">
   <style>
     body {
-      background: #111;
-      color: white;
+      background: #ffffff;
+      color: black;
       font-family: Arial, sans-serif;
       line-height: 1.6;
       padding: 40px;
@@ -29,6 +29,52 @@
     }
     a.retour:hover {
       text-decoration: underline;
+    }
+
+    /* Bouton flottant accueil */
+    .floating-home-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #e91147;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(233, 17, 71, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 3200;
+      text-decoration: none;
+    }
+
+    .floating-home-btn:hover {
+      background-color: #c10d3a;
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(233, 17, 71, 0.6);
+    }
+
+    .floating-home-btn svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .floating-home-btn {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .floating-home-btn svg {
+        width: 24px;
+        height: 24px;
+      }
     }
   </style>
 </head>
@@ -152,6 +198,11 @@
     <h2>Article 26 – ACCEPTATION</h2>
     <p>La signature du bulletin d’inscription vaut acceptation intégrale du présent règlement. Tout manquement peut entraîner l’exclusion.</p>
 
-  <a href="course.html" class="retour">← Retour à l’accueil</a>
-</body>
+  <a href="quandlommecourt.html" class="retour">← Retour à l’accueil</a>
+  <!-- Bouton flottant Accueil -->
+  <a href="quandlommecourt.html" class="floating-home-btn" title="Retour à l'accueil">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+  </a></body>
 </html>

@@ -110,3 +110,145 @@ if (eventsTrack && events.length && dotsContainer) {
     if (dots[index]) dots[index].classList.add('active');
   });
 }
+
+/* =========================================================
+   FORMULAIRE DE CONTACT
+========================================================= */
+const contactBtn = document.getElementById('contactBtn');
+const contactModal = document.getElementById('contactModal');
+const contactClose = document.querySelector('.contact-close');
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
+
+// Ouvrir le modal
+if (contactBtn) {
+  contactBtn.addEventListener('click', () => {
+    contactModal.style.display = 'block';
+  });
+}
+
+// Fermer le modal
+if (contactClose) {
+  contactClose.addEventListener('click', () => {
+    contactModal.style.display = 'none';
+  });
+}
+
+// Fermer au clic en dehors du modal
+window.addEventListener('click', (event) => {
+  if (event.target === contactModal) {
+    contactModal.style.display = 'none';
+  }
+});
+
+// Gestion de l'envoi du formulaire avec EmailJS
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    // Désactiver le bouton d'envoi pendant le traitement
+    const submitBtn = contactForm.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours...';
+
+    // Récupérer les données du formulaire
+    const templateParams = {
+      from_name: document.getElementById('name').value,
+      from_email: document.getElementById('email').value,
+      subject: document.getElementById('subject').value,
+      message: document.getElementById('message').value,
+      to_email: 'acslomme@gmail.com'
+    };
+
+    try {
+      // Envoi via EmailJS
+      console.log('Tentative d\'envoi avec les paramètres:', templateParams);
+      
+      const response = await emailjs.send(
+        'service_f0f51ab',
+        'template_lxrp5jo',
+        templateParams
+      );
+
+      console.log('Email envoyé avec succès!', response.status, response.text);
+
+      // Afficher un message de succès
+      formStatus.textContent = '✓ Message envoyé avec succès !';
+      formStatus.className = 'form-status success';
+
+      // Réinitialiser le formulaire
+      contactForm.reset();
+
+      // Fermer le modal après 3 secondes
+      setTimeout(() => {
+        contactModal.style.display = 'none';
+        formStatus.style.display = 'none';
+        formStatus.className = 'form-status';
+      }, 3000);
+
+    } catch (error) {
+      console.error('Erreur complète:', error);
+      console.error('Message d\'erreur:', error.text || error.message);
+      console.error('Statut:', error.status);
+
+      // Afficher un message d'erreur détaillé
+      let errorMessage = '✗ Erreur lors de l\'envoi. ';
+      
+      if (error.text) {
+        errorMessage += error.text;
+      } else if (error.message) {
+        errorMessage += error.message;
+      } else {
+        errorMessage += 'Vérifiez votre configuration EmailJS.';
+      }
+      
+      formStatus.textContent = errorMessage;
+      formStatus.className = 'form-status error';
+    } finally {
+      // Réactiver le bouton
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Envoyer';
+    }
+  });
+}
+/* =========================================================
+   COMPTE À REBOURS (OPTIMISÉ)
+========================================================= */
+function updateCountdown() {
+    // Utilisation d'un format plus universel pour le constructeur Date
+    const targetDate = new Date(2026, 3, 6).getTime(); // 3 = Avril (index 0)
+    const now = new Date().getTime();
+    const timeRemaining = targetDate - now;
+
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+
+    // On vérifie qu'au moins un élément existe avant de calculer
+    if (!daysElement) return;
+
+    if (timeRemaining > 0) {
+        const d = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const h = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        // Affichage avec ajout d'un zéro devant si chiffre unique (ex: 09)
+        daysElement.textContent = d;
+        hoursElement.textContent = h < 10 ? '0' + h : h;
+        minutesElement.textContent = m < 10 ? '0' + m : m;
+        secondsElement.textContent = s < 10 ? '0' + s : s;
+    } else {
+        // Date passée : on met tout à zéro
+        [daysElement, hoursElement, minutesElement, secondsElement].forEach(el => el.textContent = '00');
+    }
+}
+
+// Démarrer le compte à rebours après le chargement du DOM
+document.addEventListener('DOMContentLoaded', function() {
+  if (document.getElementById('days')) {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  }
+});

@@ -15,6 +15,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="ACSL accompagne et soutient les clubs sportifs de Lomme. Organise des événements sportifs et culturels.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="/favicon.png">
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init({
+      publicKey: "JN5P5k_taTuWx9rku",
+    });
+  })();
+</script>
 
 </head>
 <body>
@@ -24,8 +33,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- HEADER -->
-<header class="menu-bar"> 
-  <h1>Association des Clubs Sportifs Lommois</h1>
+<header class="menu-bar">
+  <div class="header-logo-title">
+    <img src="images/logoACSLNewBlackReduit.png" alt="Logo ACSL" class="header-logo">
+    <h1>Association des Clubs Sportifs Lommois</h1>
+  </div>
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </div>
@@ -47,7 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <img src="images/acsl.jpg" alt="ACSL" class="accueil-image">
 
-    <h1>Bienvenue sur le site de l’ACSL</h1>
+    <h2>Bienvenue sur le site de l’ACSL</h2>
     
 
     <div class="social-links">
@@ -72,21 +84,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- ACTU 1 -->
     <div class="accueil-actu-card">
       <div class="actu-image">
-        <img src="images/christian.jpg" alt="Portrait de Christian Montay, Président de l'ACSL">
-
-        <div class="actu-overlay">
-          <h4>Portrait de Christian Montay, Président de l'ACSL</h4>
-        </div>
-
-        <a href="https://www.ville-lomme.fr/Actualites/Se-bouger-pour-le-sport" target="_blank" class="actu-more">
-          En savoir plus
-        </a>
-      </div>
-    </div>
-
-    <!-- ACTU 2 -->
-    <div class="accueil-actu-card">
-      <div class="actu-image">
         <img src="images/qlcaffiche.jpg" alt="Quand Lomme Court 2026">
 
         <div class="actu-overlay">
@@ -99,11 +96,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <small>AVR</small> 
           </div> 
 
-
           <!-- Lien -->
         <a href="quandlommecourt.html" class="actu-more">En savoir plus</a>
       </div>
     </div>
+
+
+        <!-- ACTU 2 -->
+    <div class="accueil-actu-card">
+      <div class="actu-image">
+        <img src="images/christian.jpg" alt="Portrait de Christian Montay, Président de l'ACSL">
+
+        <div class="actu-overlay">
+          <h4>Portrait de Christian Montay, Président de l'ACSL</h4>
+        </div>
+
+        <a href="https://www.ville-lomme.fr/Actualites/Se-bouger-pour-le-sport" target="_blank" class="actu-more">
+          En savoir plus
+        </a>
+      </div>
+    </div>
+    
 
     <!-- ACTU 3 -->
     <div class="accueil-actu-card">
@@ -111,7 +124,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <img src="images/evenement.jpg" alt="Événement sportif ACSL">
 
         <div class="actu-overlay">
-          <h4>Retour sur l’événement sportif du week-end</h4>
+          <h4>L’événement sportif du week-end</h4>
         </div>
 
         <a href="#" class="actu-more">En savoir plus</a>
@@ -425,6 +438,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="events-carousel">
     <div class="events-track">
 
+    <!-- EVENEMENT 1 -->
       <div class="event">
         <img src="images/noel.png" alt="Spectacle musical pour enfants">
         <div class="overlay">
@@ -441,6 +455,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
+      <!-- EVENEMENT 2 -->
       <div class="event">
         <img src="images/qlc.jpg" alt="Quand Lomme Court">
         <div class="overlay">
@@ -457,6 +472,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
+      <!-- EVENEMENT 3 -->
       <div class="event">
         <img src="images/ecosport.jpg" alt="Inauguration de l'école du sport">
         <div class="overlay">
@@ -473,13 +489,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
+      <!-- EVENEMENT 4 -->
       <div class="event">
-  <img src="images/telethon.png" alt="Telethon">
-
-  <!-- Texte en haut, placé après l'image pour être positionné dessus -->
-  
-
-  <div class="overlay">
+        <img src="images/telethon.png" alt="Telethon">
+        <div class="overlay">
         <div class="event-title">Super Loto au profit du Téléthon</div>
 
     <div class="event-date">
@@ -489,6 +502,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#" class="event-square"></a>
     <div class="event-buttons">
       <a href="https://www.ville-lomme.fr/Evenements/Evenements-contribues-a-valider/Super-loto-au-profit-du-Teleton" class="event-btn">En savoir plus</a>
+      <a href="#" class="event-btn">Photos</a>
+    </div>
+  </div>
+</div>
+
+  <!-- EVENEMENT 5 -->
+      <div class="event">
+        <img src="images/feteDuSport.png" alt="Fête du Sport">
+        <div class="overlay">
+        <div class="event-title">Fête/Faites du Sport</div>
+
+    <div class="event-date">
+      <span>07</span>
+      <small>Sep</small>
+    </div>
+    <a href="#" class="event-square"></a>
+    <div class="event-buttons">
+      <a href="https://www.ville-lomme.fr/Evenements/Evenements-contribues-a-valider/Fete-Faites-du-Sport" class="event-btn">En savoir plus</a>
       <a href="#" class="event-btn">Photos</a>
     </div>
   </div>
@@ -553,6 +584,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+
+<!-- Bouton flottant Contact -->
+<button id="contactBtn" class="floating-contact-btn" title="Nous contacter">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </svg>
+</button>
+
+<!-- Modal Formulaire de Contact -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-modal-content">
+    <span class="contact-close">&times;</span>
+    <h2>Nous contacter</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Nom *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Sujet *</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Envoyer</button>
+    </form>
+    <div id="formStatus" class="form-status"></div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>

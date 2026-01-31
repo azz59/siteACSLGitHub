@@ -10,9 +10,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quand Lomme Court – Course sur route à Lomme : 10 km, 5 km, 1,5 km, marche nordique, rando et baby</title>
+<title>Quand Lomme Court - 10 km - 5 km - 1,5 km - marche nordique - rando et baby</title>
 <meta name="description" content="Quand Lomme Court - Course sur route à Lomme : 10 km Lomme, 5 km Lomme, 1,5 km, marche nordique, rando et baby.">
 <link rel="stylesheet" href="style_course.css">
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init({
+      publicKey: "JN5P5k_taTuWx9rku",
+    });
+  })();
+</script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -50,24 +59,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
   <div class="accueil-text">
-    <h1>Quand Lomme Court</h1>
-    <h2>Le 6 avril 2026</h2>
+    <h2>Quand Lomme Court</h2>
+    <h3>Le 6 avril 2026</h3>
+
+    <!-- 🕐 Compte à rebours -->
+    <div class="countdown">
+      <div class="countdown-item">
+        <span id="days" class="countdown-number">0</span>
+        <span class="countdown-label">Jours</span>
+      </div>
+      <div class="countdown-item">
+        <span id="hours" class="countdown-number">0</span>
+        <span class="countdown-label">Heures</span>
+      </div>
+      <div class="countdown-item">
+        <span id="minutes" class="countdown-number">0</span>
+        <span class="countdown-label">Minutes</span>
+      </div>
+      <div class="countdown-item">
+        <span id="seconds" class="countdown-number">0</span>
+        <span class="countdown-label">Secondes</span>
+      </div>
+    </div>
 
     <!-- ⭐ Image label -->
     <img src="images/labelbronze.png" alt="Icône tournante" class="rotate-icon">
 
-    <h2>Qualificatif aux Championnats de France</h2>
+    <h3>Qualificatif aux Championnats de France</h3>
     <div class="accueil-cards">
 
   <div class="accueil-col">
-    <a href="#inscription" class="accueil-card"><h3>Inscription</h3></a>
-    <!-- <a href="https://www.athle.fr/bases/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=296040" target="_blank" class="accueil-card"><h3>Résultats 2026</h3></a> -->
-    <a href="docs/bulletin25.pdf" download class="accueil-card"><h3>Résultats 2026</h3></a>
+    <!-- Bouton inscription -->
+    <a href="#inscription" class="accueil-card"><h4>Inscription</h4></a>
+
+    <!-- Bouton résultats -->
+    <!-- <a href="https://www.athle.fr/bases/liste.aspx?frmbase=resultats&frmmode=1&frmespace=0&frmcompetition=296040" target="_blank" class="accueil-card"><h4>Résultats 2026</h4></a> -->
+    <a href="docs/Resultats2026.pdf" download class="accueil-card"><h4>Résultats 2026</h4></a>
   </div>
 
   <div class="accueil-col">
-    <a href="https://photos.app.goo.gl/eXdibPrecKoP2n219" class="accueil-card"><h3>Photos</h3></a>
-    <a href="https://www.youtube.com/watch?v=oWJfHG_ROTo" class="accueil-card"><h3>Vidéos</h3></a>
+    <a href="https://photos.app.goo.gl/eXdibPrecKoP2n219" class="accueil-card"><h4>Photos</h4></a>
+    <a href="https://www.youtube.com/watch?v=oWJfHG_ROTo" class="accueil-card"><h4>Vidéos</h4></a>
   </div>
 
 </div>
@@ -87,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- 10 km -->
     <div class="info-card">
       <div class="card-title"><h3>10 km - 5 km - 1,5 km</h3></div>
-      <p class="lieu">Départ au stade des Ormes à partir de 10h</p>
+      <p class="lieu">Départ au stade des Ormes à partir de 9h</p>
       <p class="parcours"></p>
       <p class="label">Label Bronze, qualificatif pour les Championnats de France</p>
       <a href="https://fr.milesrepublic.com/event/quand-lomme-court-4835" target="_blank" class="inscription-link">S'inscrire</a>
@@ -96,8 +128,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Baby 0,5 km -->
     <div class="info-card">
       <div class="card-title"><h3>Baby 0,5 km</h3></div>
-      <p class="lieu">Stade des Ormes</p>
-      <p class="heure">Départ à 11h45</p>
+      <p class="lieu">Départ au stade des Ormes à 11h45</p>
+      <p class="heure"></p>
       <p class="parcours"></p>
       <p class="label">L'inscription se fait via le bulletin d'inscription ci-dessous</p>
       <a href="docs/bulletin25.pdf"
@@ -251,8 +283,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 
+<!-- Bouton flottant Contact -->
+<button id="contactBtn" class="floating-contact-btn" title="Nous contacter">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </svg>
+</button>
+
+<!-- Modal Formulaire de Contact -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-modal-content">
+    <span class="contact-close">&times;</span>
+    <h2>Nous contacter</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Nom *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Sujet *</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Envoyer</button>
+    </form>
+    <div id="formStatus" class="form-status"></div>
+  </div>
+</div>
 
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
