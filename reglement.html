@@ -7,8 +7,8 @@
   <link rel="stylesheet" href="style.css">
   <style>
     body {
-      background: #111;
-      color: white;
+      background: #ffffff;
+      color: rgb(0, 0, 0);
       font-family: Arial, sans-serif;
       line-height: 1.6;
       padding: 40px;
@@ -26,6 +26,33 @@
     }
     a.retour:hover {
       text-decoration: underline;
+    }
+    .floating-home-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #e91147;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(233, 17, 71, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .floating-home-btn:hover {
+      background-color: #c10d3a;
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(233, 17, 71, 0.6);
+    }
+    .floating-home-btn svg {
+      fill: white;
+      width: 28px;
+      height: 28px;
     }
   </style>
 </head>
@@ -98,5 +125,10 @@
    </p>
 
   <a href="index.html" class="retour">← Retour à l’accueil</a>
-</body>
+  <!-- Bouton flottant retour à l'accueil -->
+  <a href="index.html" class="floating-home-btn" title="Retour à l'accueil">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+  </a></body>
 </html>

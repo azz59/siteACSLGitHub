@@ -15,6 +15,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="ACSL accompagne et soutient les clubs sportifs de Lomme. Organise des événements sportifs et culturels.">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="/favicon.png">
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init({
+      publicKey: "JN5P5k_taTuWx9rku",
+    });
+  })();
+</script>
 
 </head>
 <body>
@@ -24,8 +33,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- HEADER -->
-<header class="menu-bar"> 
-  <h1>Association des Clubs Sportifs Lommois</h1>
+<header class="menu-bar">
+  <div class="header-logo-title">
+    <img src="images/logoACSLNewBlackReduit.png" alt="Logo ACSL" class="header-logo">
+    <h1>Association des Clubs Sportifs Lommois</h1>
+  </div>
   <div class="hamburger" id="hamburger">
     <span></span><span></span><span></span>
   </div>
@@ -47,7 +59,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <img src="images/acsl.jpg" alt="ACSL" class="accueil-image">
 
-    <h1>Bienvenue sur le site de l’ACSL</h1>
+    <h2>Bienvenue sur le site de l’ACSL</h2>
     
 
     <div class="social-links">
@@ -72,21 +84,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- ACTU 1 -->
     <div class="accueil-actu-card">
       <div class="actu-image">
-        <img src="images/christian.jpg" alt="Portrait de Christian Montay, Président de l'ACSL">
-
-        <div class="actu-overlay">
-          <h4>Portrait de Christian Montay, Président de l'ACSL</h4>
-        </div>
-
-        <a href="https://www.ville-lomme.fr/Actualites/Se-bouger-pour-le-sport" target="_blank" class="actu-more">
-          En savoir plus
-        </a>
-      </div>
-    </div>
-
-    <!-- ACTU 2 -->
-    <div class="accueil-actu-card">
-      <div class="actu-image">
         <img src="images/qlcaffiche.jpg" alt="Quand Lomme Court 2026">
 
         <div class="actu-overlay">
@@ -99,26 +96,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <small>AVR</small> 
           </div> 
 
-
           <!-- Lien -->
         <a href="quandlommecourt.html" class="actu-more">En savoir plus</a>
       </div>
     </div>
 
+
+        <!-- ACTU 2 -->
+      <div class="accueil-actu-card">
+      <div class="actu-image">
+        <img src="images/téléthon25.JPG" alt="Événement sportif ACSL">
+
+        <div class="actu-overlay">
+          <h4>Téléthon : les Pioupious collectent 26 675 € !</h4>
+        </div>
+
+        <a href="#" class="actu-more actu-toggle">En savoir plus</a>
+      </div>
+
+    
+    
+
     <!-- ACTU 3 -->
     <div class="accueil-actu-card">
       <div class="actu-image">
-        <img src="images/evenement.jpg" alt="Événement sportif ACSL">
+        <img src="images/christian.jpg" alt="Portrait de Christian Montay, Président de l'ACSL">
 
         <div class="actu-overlay">
-          <h4>Retour sur l’événement sportif du week-end</h4>
+          <h4>Portrait de Christian Montay, Président de l'ACSL</h4>
         </div>
 
-        <a href="#" class="actu-more">En savoir plus</a>
+        <a href="https://www.ville-lomme.fr/Actualites/Se-bouger-pour-le-sport" target="_blank" class="actu-more">
+          En savoir plus
+        </a>
+      </div>
+    </div>
+      
+      <!-- Texte dépliable -->
+      <div class="actu-content" style="display: none;">
+        <p>Avec une cinquantaine de manifestations organisées pour la dernière édition du Téléthon lommois, les « grands Pioupious » que sont les bénévoles, se sont retrouvés samedi 31 janvier au pôle associatif Michelet pour la traditionnelle remise du chèque de dons au profit de l’AFM-Téléthon*, représentée par Isabelle Naessens, coordinatrice départementale : « Comme chaque année, vous avez fait bouger les lignes à Lomme pour faire bouger la vie. Continuez ! La thérapie génique est là et fonctionne, mais en France, il y a encore 7 000 maladies rares, dont 95 % sans traitement spécifique ».
+
+Cette année, c’est donc un chèque de 26 675 € (26 675,72 €, précise le trésorier de l’association) que l’ACSL a remis à l’AFM-Téléthon, pour la joie de son président, Christian Montay : « Dans le monde actuel, un peu fou dans lequel nous vivons, tout le monde répond présent à Lomme pour cette manifestation du Téléthon. Alors merci ! Merci aux clubs, merci aux associations, merci à nos partenaires** et merci aux donateurs ». La générosité des Français avait permis à l'échelle nationale de collecter plus de 83 millions d’euros cette année.
+
+Et pour 2026 ? Préparez-vous à voir beaucoup de Pioupious en ville ! Jean-Pierre Alexandre, coordinateur du Téléthon à Lomme, prépare déjà son programme : « Pour notre toute première participation au Téléthon, nous avions fait 30 heures non-stop. Alors, comme l’année prochaine nous fêterons notre 30ᵉ participation, ce sera : 30 ans, 30 heures et 30 000 € de dons comme objectif », a-t-il conclu avant un pot de l’amitié.
+
+* https://www.afm-telethon.fr/fr</p>
       </div>
     </div>
 
   </div>
+  
+  <!-- Texte dépliable - en dehors du conteneur des cartes -->
+  <div class="actu-content-fullwidth" style="display: none;">
+    <p>Avec une cinquantaine de manifestations organisées pour la dernière édition du Téléthon lommois, les « grands Pioupious » que sont les bénévoles, se sont retrouvés samedi 31 janvier au pôle associatif Michelet pour la traditionnelle remise du chèque de dons au profit de l'AFM-Téléthon*, représentée par Isabelle Naessens, coordinatrice départementale : « Comme chaque année, vous avez fait bouger les lignes à Lomme pour faire bouger la vie. Continuez ! La thérapie génique est là et fonctionne, mais en France, il y a encore 7 000 maladies rares, dont 95 % sans traitement spécifique ».<br>
+
+Cette année, c'est donc un chèque de 26 675 € (26 675,72 €, précise le trésorier de l'association) que l'ACSL a remis à l'AFM-Téléthon, pour la joie de son président, Christian Montay : « Dans le monde actuel, un peu fou dans lequel nous vivons, tout le monde répond présent à Lomme pour cette manifestation du Téléthon. Alors merci ! Merci aux clubs, merci aux associations, merci à nos partenaires** et merci aux donateurs ». La générosité des Français avait permis à l'échelle nationale de collecter plus de 83 millions d'euros cette année.<br>
+
+Et pour 2026 ? Préparez-vous à voir beaucoup de Pioupious en ville ! Jean-Pierre Alexandre, coordinateur du Téléthon à Lomme, prépare déjà son programme : « Pour notre toute première participation au Téléthon, nous avions fait 30 heures non-stop. Alors, comme l'année prochaine nous fêterons notre 30ᵉ participation, ce sera : 30 ans, 30 heures et 30 000 € de dons comme objectif », a-t-il conclu avant un pot de l'amitié.
+
+* https://www.afm-telethon.fr/fr</p>
+  </div>
+  
 </section>
 
 
@@ -425,6 +463,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="events-carousel">
     <div class="events-track">
 
+    <!-- EVENEMENT 1 -->
       <div class="event">
         <img src="images/noel.png" alt="Spectacle musical pour enfants">
         <div class="overlay">
@@ -441,6 +480,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
+      <!-- EVENEMENT 2 -->
       <div class="event">
         <img src="images/qlc.jpg" alt="Quand Lomme Court">
         <div class="overlay">
@@ -451,12 +491,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <a href="#" class="event-square"></a>
           <div class="event-buttons">
-            <a href="#" class="event-btn">En savoir plus</a>
+            <a href="quandlommecourt.html" class="event-btn">En savoir plus</a>
             <a href="#" class="event-btn">Photos</a>
           </div>
         </div>
       </div>
 
+      <!-- EVENEMENT 3 -->
       <div class="event">
         <img src="images/ecosport.jpg" alt="Inauguration de l'école du sport">
         <div class="overlay">
@@ -473,13 +514,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
+      <!-- EVENEMENT 4 -->
       <div class="event">
-  <img src="images/telethon.png" alt="Telethon">
-
-  <!-- Texte en haut, placé après l'image pour être positionné dessus -->
-  
-
-  <div class="overlay">
+        <img src="images/telethon.png" alt="Telethon">
+        <div class="overlay">
         <div class="event-title">Super Loto au profit du Téléthon</div>
 
     <div class="event-date">
@@ -489,6 +527,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <a href="#" class="event-square"></a>
     <div class="event-buttons">
       <a href="https://www.ville-lomme.fr/Evenements/Evenements-contribues-a-valider/Super-loto-au-profit-du-Teleton" class="event-btn">En savoir plus</a>
+      <a href="#" class="event-btn">Photos</a>
+    </div>
+  </div>
+</div>
+
+  <!-- EVENEMENT 5 -->
+      <div class="event">
+        <img src="images/feteDuSport.png" alt="Fête du Sport">
+        <div class="overlay">
+        <div class="event-title">Fête/Faites du Sport</div>
+
+    <div class="event-date">
+      <span>07</span>
+      <small>Sep</small>
+    </div>
+    <a href="#" class="event-square"></a>
+    <div class="event-buttons">
+      <a href="https://www.ville-lomme.fr/Evenements/Evenements-contribues-a-valider/Fete-Faites-du-Sport" class="event-btn">En savoir plus</a>
       <a href="#" class="event-btn">Photos</a>
     </div>
   </div>
@@ -504,29 +560,119 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-
 <!-- SECTION PARTENAIRES -->
 <section id="partenaires" class="partners">
   <h2>Nos Partenaires</h2>
   <div class="partners-logos">
     
-    <img src="images/kine.jpg" alt="Kiné">
-    <img src="images/carref.jpg" alt="Carrefour">
-    <img src="images/vlom.jpg" alt="Vlom">
-    <img src="images/credimut.jpg" alt="Crédit Mutuel">
-    <img src="images/prclass.jpg" alt="Prclass">
-    <img src="images/inter.jpg" alt="Intermarché">
-    <img src="images/litri.jpg" alt="Litri">
-    <img src="images/3br.jpg" alt="3 Brasseurs">
-    <img src="images/verb.jpg" alt="Verbaudet">
-    <img src="images/logo-hippopotamus-rouge.svg" alt="Hippo">
-    <img src="images/lillopirates.jfif" alt="lilleopir">
-    <img src="images/planetbowling.jpg" alt="planet">
-    <img src="images/FRANCE_PARE_BRISE.jpg" alt="frparebrise">
+    <a href="https://kinepolis.fr/cinemas/kinepolis-lomme/infos/" target="_blank">
+      <img src="images/kine.jpg" alt="Kiné">
+    </a>
+    <a href="https://www.carrefour.fr" target="_blank">
+      <img src="images/carref.jpg" alt="Carrefour">
+    </a>
+    <a href="https://www.ville-lomme.fr" target="_blank">
+      <img src="images/vlom.jpg" alt="Vlom">
+    </a>
+    <a href="https://www.creditmutuel.fr" target="_blank">
+      <img src="images/credimut.jpg" alt="Crédit Mutuel">
+    </a>
+    <a href="https://lille-ouest-lomme.premiereclasse.com/fr-fr/?sr=SEO_GOOGLE" target="_blank">
+      <img src="images/prclass.jpg" alt="Prclass">
+    </a>
+    <a href="https://www.intersport.fr/Nord-59/LILLE-59160/INTERSPORT-LILLELOMME/00489_000/" target="_blank">
+      <img src="images/inter.jpg" alt="Intermarché">
+    </a>
+    <a href="https://www.litrimarche.fr/" target="_blank">
+      <img src="images/litri.jpg" alt="Litri">
+    </a>
+    <a href="https://www.3brasseurs.com" target="_blank">
+      <img src="images/3br.jpg" alt="3 Brasseurs">
+    </a>
+    <a href="https://www.vertbaudet.fr" target="_blank">
+      <img src="images/verb.jpg" alt="Verbaudet">
+    </a>
+    <a href="https://www.hippopotamus.fr" target="_blank">
+      <img src="images/logo-hippopotamus-rouge.svg" alt="Hippo">
+    </a>
+    <a href="https://www.lillopirates.com" target="_blank">
+      <img src="images/lillopirates.jfif" alt="lilleopir">
+    </a>
+    <a href="https://www.planetbowling.fr" target="_blank">
+      <img src="images/planetbowling.jpg" alt="planet">
+    </a>
+    <a href="https://www.france-pare-brise.fr" target="_blank">
+      <img src="images/FRANCE_PARE_BRISE.jpg" alt="frparebrise">
+    </a>
   </div>
 </section>
 
+
+<!-- Bouton flottant Contact -->
+<button id="contactBtn" class="floating-contact-btn" title="Nous contacter">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </svg>
+</button>
+
+<!-- Modal Formulaire de Contact -->
+<div id="contactModal" class="contact-modal">
+  <div class="contact-modal-content">
+    <span class="contact-close">&times;</span>
+    <h2>Nous contacter</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Nom *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="subject">Sujet *</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Envoyer</button>
+    </form>
+    <div id="formStatus" class="form-status"></div>
+  </div>
+</div>
+
+<!-- FOOTER / BAS DE PAGE -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>ACSL</h3>
+      <p>Association des Clubs Sportifs Lommois</p>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/acsl_lomme?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" aria-label="Instagram">
+          <img src="images/instagram.svg" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/share/1BXgYH46Em/" target="_blank" aria-label="Facebook">
+          <img src="images/facebook.svg" alt="Facebook">
+        </a>
+      </div>
+    </div>
+    
+    <div class="footer-section">
+      <h3>Espace Clubs</h3>
+      <ul>
+        <li><a href="docs/DossierCoupDePouce.pdf" download>Coup de pouce</a></li>
+        <li><a href="docs/MiniBus.pdf" download>Location de mini-bus</a></li>
+        <li><a href="docs/PretMat.pdf" download>Demande de prêt de matériel</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 ACSL - Tous droits réservés</p>
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
