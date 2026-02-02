@@ -246,7 +246,7 @@ body::before {
   background: rgba(0, 0, 0, 0.2);
   padding: 20px;
   border-radius: 10px;
-  min-width: 60px;
+  min-width: 50px;
   backdrop-filter: blur(5px);
   /* border: 2px solid rgba(249, 217, 38, 0.5); */
 }
@@ -867,6 +867,7 @@ body::before {
   color: #e91147;
   margin-top: 30px;
   margin-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #infospratiques h4 {
@@ -881,6 +882,7 @@ body::before {
   margin-top: 30px;
   margin-bottom: 15px;
   margin-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #infospratiques img {

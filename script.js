@@ -278,3 +278,65 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+/* =========================================================
+   BANDEAUX CLUBS - DRAG TO SCROLL
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const carousels = document.querySelectorAll('.carousel.clubs');
+  
+  carousels.forEach(carousel => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    let scrollTimeout;
+    
+    carousel.addEventListener('mousedown', (e) => {
+      isDown = true;
+      carousel.style.cursor = 'grabbing';
+      startX = e.pageX - carousel.offsetLeft;
+      scrollLeft = carousel.scrollLeft;
+      
+      // Arrêter l'animation pendant le drag
+      const track = carousel.querySelector('.carousel-track');
+      if (track) {
+        track.style.animationPlayState = 'paused';
+      }
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+      if (isDown) {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+        restartAnimation(carousel);
+      }
+    });
+    
+    carousel.addEventListener('mouseup', () => {
+      if (isDown) {
+        isDown = false;
+        carousel.style.cursor = 'grab';
+        restartAnimation(carousel);
+      }
+    });
+    
+    carousel.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - carousel.offsetLeft;
+      const walk = (x - startX) * 2;
+      carousel.scrollLeft = scrollLeft - walk;
+    });
+    
+    // Redémarrer l'animation après un certain temps d'inactivité
+    function restartAnimation(carousel) {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        const track = carousel.querySelector('.carousel-track');
+        if (track) {
+          track.style.animationPlayState = 'running';
+        }
+      }, 2000); // Redémarre l'animation après 2 secondes d'inactivité
+    }
+  });
+});
