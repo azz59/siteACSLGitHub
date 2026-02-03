@@ -252,10 +252,9 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateCountdown, 1000);
   }
 });
-<<<<<<< HEAD
 
 /* =========================================================
-   ACTU 3 - TEXTE DÉPLIABLE
+   ACTU 2 - TEXTE DÉPLIABLE
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
   const toggleBtn = document.querySelector('.actu-toggle');
@@ -265,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       
       const section = document.querySelector('.accueil-actu');
-      const content = section.querySelector('.actu-content-fullwidth');
+      const content = section.querySelector('.actu-content');
       
       if (content) {
         if (content.style.display === 'none' || content.style.display === '') {
@@ -341,5 +340,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-=======
->>>>>>> parent of 69c4dc8 (Actu avec texte dépliable)
