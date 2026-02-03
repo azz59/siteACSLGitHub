@@ -8,8 +8,16 @@
   font-display: swap;
 }
 
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: 'Insaniburger', 'Poppins', sans-serif;
   background: #ffffff;
   color:  #000000;
@@ -54,10 +62,11 @@ body::before {
   align-items: center;
   padding: 10px 20px;
   position: fixed;
-  margin-right: 100px;
   width: 100%;
   top: 0;
+  left: 0;
   z-index: 1000;
+  box-sizing: border-box;
 }
 
 .header-logo-title {
@@ -86,9 +95,9 @@ body::before {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-    margin-right: 80px; /* <-- ajuste la distance depuis le bord gauche */
+  margin-right: 20px;
   cursor: pointer;
-  z-index: 1001;
+  z-index: 1002;
 }
 
 .hamburger span {
@@ -115,13 +124,14 @@ body::before {
 #navMenu.nav-visible {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 50px;
-  right: 100px;
+  position: fixed;
+  top: 60px;
+  right: 20px;
   background: #222;
   border-radius: 6px;
   padding: 10px 0;
-  z-index: 1000;
+  z-index: 1001;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 
 #navMenu a {
@@ -153,49 +163,61 @@ body::before {
 /* =============================================================== */
 /* ============================ ACCUEIL ========================== */
 /* =============================================================== */
+/* ===============================
+   SECTION ACCUEIL
+================================ */
 
 .accueil {
-  overflow: hidden; /* 🔒 empêche le scroll horizontal */
+  overflow-x: hidden;
   width: 100%;
   min-height: 180vh;
-  background-color: #ffffff;
+  background-color: #fff;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* 🔥 contenu en haut */
-  padding: 200px 20px 100px;   /* espace haut + bas */
+  justify-content: flex-start;
+
+  padding: 200px 20px 100px;
   box-sizing: border-box;
 }
 
 
-/* Image de ACSL */
+/* ===============================
+   IMAGE PRINCIPALE
+================================ */
+
 .accueil-image {
-  width: 300px;   /* ou max-width: 100% */
-  margin: 0 auto 16px;  /* centre horizontalement et espace en bas */
-  margin-top: 400px;      /* pousse l’image vers le bas */
+  width: 300px;
+  margin: 400px auto 16px;
   display: block;
-  position: relative;    /* NE PAS mettre absolute */
+  position: relative;
 }
 
 
-/* Texte centré au-dessus de la vidéo */
-.accueil-text { 
-  position: absolute; 
-  top: 45%; 
-  left: 48%; 
-  transform: translate(-50%, -50%); /* centre pile au milieu */ 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; /* centre horizontalement */ 
-  justify-content: center; 
-  text-align: center; 
-  z-index: 2; 
-  width: 95%; /* évite le dépassement sur mobile */ 
-  max-width: 1400px; 
+/* ===============================
+   TEXTE CENTRAL
+================================ */
+
+.accueil-text {
+  position: absolute;
+  top: 45%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  z-index: 2;
+
+  width: 95%;
+  max-width: 1400px;
+  padding-top: 100px;
+  margin-bottom: 60px;
   box-sizing: border-box;
-  margin-bottom: 60px; /* espace avant l’actualité */ 
-  padding-top: 100px; /* 🔥 crée de l’espace au-dessus */
 }
 
 .accueil-text h2 {
@@ -204,17 +226,22 @@ body::before {
   margin: 0;
 }
 
-/* Réseaux sociaux */
+
+/* ===============================
+   RÉSEAUX SOCIAUX
+================================ */
+
 .social-links {
-  margin-top: 10px;      /* espace sous le h2 */
+  margin-top: 10px;
   display: flex;
   gap: 20px;
   z-index: 2;
 }
 
-.social-links a img {
+.social-links img {
   width: 36px;
   height: 36px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .social-links a:hover img {
@@ -223,88 +250,116 @@ body::before {
 }
 
 
-/* ===== Cartes d’information ===== */
-/* Trait fin */
+/* ===============================
+   SÉPARATEUR
+================================ */
+
 .accueil-separator {
   width: 80%;
   max-width: 300px;
-  border: none;
-  border-top: 1px solid rgba(0,0,0,0.2);
   margin: 20px auto;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* Carte Actualité */
-.accueil-actu-container {
-  display: flex;
-  flex-direction: row;   /* FORCE l’alignement horizontal */
-  gap: 30px;
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-} 
 
-.accueil-actu-card {
-  flex: 1; 
-  max-width: none;       /* aucune limite */
-  margin: 0;             /* empêche le recentrage */
+/* ===============================
+   ACTUALITÉS
+================================ */
 
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-  border-radius: 16px;
-  overflow: hidden;
-}
-
-/* Titre ACTUALITE */
 .actu-section-title {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 30px;
 }
 
+.accueil-actu-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;          /* 🔥 empêche le retour à la ligne */
+  gap: 30px;
 
-/* Image */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  box-sizing: border-box;
+}
+
+
+.accueil-actu-card {
+  flex: 1 1 0;                /* 🔥 autorise le shrink */
+  min-width: 0;               /* 🔥 CRUCIAL pour éviter le wrap */
+  position: relative;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+
+  border-radius: 24px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* ===============================
+   IMAGE ACTU
+================================ */
+
 .actu-image {
   position: relative;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25); /* 🔥 trait visible */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
 }
 
 .actu-image img {
   width: 100%;
-  height: 350px;
+  height: 280px;
   object-fit: cover;
   display: block;
+  border-radius: 24px 24px 0 0;
 }
 
-/* Voile sombre dégradé + titre */
+
+/* ===============================
+   OVERLAY
+================================ */
+
 .actu-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
 
+  padding: 14px;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.85) 0%,     /* haut très sombre */
-    rgba(0,0,0,0.2) 35%,    /* centre plus clair */
-    rgba(0,0,0,0.2) 65%,    /* centre */
-    rgba(0,0,0,0.85) 100%   /* bas très sombre */
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.2) 35%,
+    rgba(0, 0, 0, 0.2) 65%,
+    rgba(0, 0, 0, 0.85) 100%
   );
-
-  padding: 14px;
 }
-
 
 .actu-overlay h4 {
   position: absolute;
-  top: 12px;                 /* 🔼 remonte le titre */
+  top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  margin: 0;
+
   width: 90%;
+  margin: 0;
+
   color: #e6ca2d;
   text-align: center;
   font-size: 1.5rem;
   font-weight: lighter;
 }
+
+
+/* ===============================
+   DATE & LIEN
+================================ */
 
 .actu-date,
 .actu-more {
@@ -313,16 +368,14 @@ body::before {
   color: #fff;
 }
 
-/* Date */
 .actu-date {
-  position: absolute;
   bottom: 10px;
   left: 14px;
 
-  background: rgba(209, 31, 31, 0.9);
-  color: #ffffff;
   width: 48px;
   height: 48px;
+
+  background: rgba(209, 31, 31, 0.9);
   border-radius: 8px;
 
   display: flex;
@@ -342,20 +395,23 @@ body::before {
   text-transform: uppercase;
 }
 
-/* Lien */
 .actu-more {
-  position: absolute;
   bottom: 10px;
   right: 14px;
 
-  font-size: 0.8rem;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(209, 31, 31, 0.9);
   padding: 6px 10px;
+  font-size: 0.8rem;
+
+  background: rgba(209, 31, 31, 0.9);
   border-radius: 12px;
+
+  text-decoration: none;
 }
 
+
+/* ===============================
+   BOUTON INSCRIPTION
+================================ */
 
 .accueil .inscription-link {
   display: inline-block;
@@ -363,11 +419,12 @@ body::before {
 
   background: #2e0000;
   color: #fff;
+
   text-decoration: none;
   font-weight: 600;
-
   border-radius: 20px;
 }
+
 
 
 /* =========================

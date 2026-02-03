@@ -252,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateCountdown, 1000);
   }
 });
-<<<<<<< HEAD
 
 /* =========================================================
    ACTU 3 - TEXTE DÉPLIABLE
@@ -341,5 +340,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
-=======
->>>>>>> parent of 69c4dc8 (Actu avec texte dépliable)
