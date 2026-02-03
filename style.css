@@ -410,6 +410,25 @@ body::before {
 
 
 /* ===============================
+   TEXTE DÉPLIABLE ACTU 2
+================================ */
+
+.actu-content {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+}
+
+.actu-content p {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* ===============================
    BOUTON INSCRIPTION
 ================================ */
 
