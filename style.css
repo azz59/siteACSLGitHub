@@ -163,14 +163,18 @@ body::before {
 /* =============================================================== */
 /* ============================ ACCUEIL ========================== */
 /* =============================================================== */
-/* ===============================
-   SECTION ACCUEIL
-================================ */
 
+/* ==============================================
+   MOBILE FIRST / RESPONSIVE
+================================================= */
+
+/* -----------------------------
+   SECTION ACCUEIL
+------------------------------- */
 .accueil {
   overflow-x: hidden;
   width: 100%;
-  min-height: 180vh;
+  min-height: 180vh; /* conserve l'espace large pour desktop */
   background-color: #fff;
 
   display: flex;
@@ -178,32 +182,30 @@ body::before {
   align-items: center;
   justify-content: flex-start;
 
-  padding: 200px 20px 100px;
+  padding: 150px 16px 60px; /* top réduit pour mobile */
   box-sizing: border-box;
-}
-
-
-/* ===============================
-   IMAGE PRINCIPALE
-================================ */
-
-.accueil-image {
-  width: 300px;
-  margin: 400px auto 16px;
-  display: block;
   position: relative;
 }
 
+/* -----------------------------
+   IMAGE PRINCIPALE
+------------------------------- */
+.accueil-image {
+  width: 200px; /* réduit pour mobile */
+  margin: 0 auto 16px; /* plus cohérent */
+  display: block;
+  position: relative;
+  z-index: 2;
+}
 
-/* ===============================
+/* -----------------------------
    TEXTE CENTRAL
-================================ */
-
+------------------------------- */
 .accueil-text {
-  position: absolute;
-  top: 45%;
-  left: 48%;
-  transform: translate(-50%, -50%);
+  position: relative; /* absolute supprimé pour mobile */
+  transform: none;
+  top: auto;
+  left: auto;
 
   display: flex;
   flex-direction: column;
@@ -213,34 +215,32 @@ body::before {
   text-align: center;
   z-index: 2;
 
-  width: 95%;
-  max-width: 1400px;
-  padding-top: 100px;
-  margin-bottom: 60px;
+  width: 100%;
+  max-width: 95%;
+  padding: 20px 0;
+  margin-bottom: 20px;
   box-sizing: border-box;
 }
 
 .accueil-text h2 {
   color: #d30c3e;
-  font-size: 2.8em;
+  font-size: 1.6rem; /* plus petit pour mobile */
   margin: 0;
 }
 
-
-/* ===============================
+/* -----------------------------
    RÉSEAUX SOCIAUX
-================================ */
-
+------------------------------- */
 .social-links {
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
-  gap: 20px;
+  gap: 16px;
   z-index: 2;
 }
 
 .social-links img {
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -249,89 +249,82 @@ body::before {
   opacity: 0.8;
 }
 
-
-/* ===============================
+/* -----------------------------
    SÉPARATEUR
-================================ */
-
+------------------------------- */
 .accueil-separator {
-  width: 80%;
-  max-width: 300px;
-  margin: 20px auto;
+  width: 70%;
+  max-width: 250px;
+  margin: 16px auto;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-
-/* ===============================
+/* -----------------------------
    ACTUALITÉS
-================================ */
+------------------------------- */
+.accueil-actu {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  margin-top: 30px;
+}
 
 .actu-section-title {
   text-align: center;
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 10;
 }
 
 .accueil-actu-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;          /* 🔥 empêche le retour à la ligne */
-  gap: 30px;
-
+  flex-direction: column; /* cartes empilées */
+  gap: 20px;
+  padding: 0 8px;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-
+  max-width: 100%;
   box-sizing: border-box;
 }
-
 
 .accueil-actu-card {
-  flex: 1 1 0;                /* 🔥 autorise le shrink */
-  min-width: 0;               /* 🔥 CRUCIAL pour éviter le wrap */
+  width: 100%;           /* pleine largeur */
+  flex: unset;           /* override desktop flex */
+  min-width: auto;       /* override min-width desktop */
   position: relative;
-
+  border-radius: 16px;
+  overflow: hidden;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
-
-  border-radius: 24px;
-  overflow: hidden;
-  box-sizing: border-box;
 }
 
-
-/* ===============================
+/* -----------------------------
    IMAGE ACTU
-================================ */
-
+------------------------------- */
 .actu-image {
   position: relative;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: 24px 24px 0 0;
+  border-radius: 16px 16px 0 0;
   overflow: hidden;
 }
 
 .actu-image img {
   width: 100%;
-  height: 280px;
+  height: 200px; /* réduit pour mobile */
   object-fit: cover;
   display: block;
-  border-radius: 24px 24px 0 0;
+  border-radius: 16px 16px 0 0;
 }
 
-
-/* ===============================
+/* -----------------------------
    OVERLAY
-================================ */
-
+------------------------------- */
 .actu-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
-
-  padding: 14px;
+  padding: 12px;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.85) 0%,
@@ -343,24 +336,20 @@ body::before {
 
 .actu-overlay h4 {
   position: absolute;
-  top: 12px;
+  top: 8px;
   left: 50%;
   transform: translateX(-50%);
-
   width: 90%;
   margin: 0;
-
   color: #e6ca2d;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: lighter;
 }
 
-
-/* ===============================
+/* -----------------------------
    DATE & LIEN
-================================ */
-
+------------------------------- */
 .actu-date,
 .actu-more {
   position: absolute;
@@ -369,185 +358,90 @@ body::before {
 }
 
 .actu-date {
-  bottom: 10px;
-  left: 14px;
-
-  width: 48px;
-  height: 48px;
-
+  bottom: 8px;
+  left: 10px;
+  width: 44px;
+  height: 44px;
   background: rgba(209, 31, 31, 0.9);
   border-radius: 8px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   font-weight: bold;
 }
 
 .actu-date span {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .actu-date small {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
 }
 
 .actu-more {
-  bottom: 10px;
-  right: 14px;
-
-  padding: 6px 10px;
-  font-size: 0.8rem;
-
+  bottom: 8px;
+  right: 10px;
+  padding: 5px 8px;
+  font-size: 0.7rem;
   background: rgba(209, 31, 31, 0.9);
-  border-radius: 12px;
-
+  border-radius: 10px;
   text-decoration: none;
 }
 
-
-/* ===============================
+/* -----------------------------
    TEXTE DÉPLIABLE ACTU 2
-================================ */
-
+------------------------------- */
 .actu-content {
   font-family: Arial, sans-serif;
-  padding: 20px;
-  margin-top: 20px;
+  padding: 16px;
+  margin-top: 16px;
   background: rgba(255, 255, 255, 0.9);
-  border-radius: 12px;
+  border-radius: 10px;
 }
 
 .actu-content p {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  line-height: 1.5;
   color: #333;
 }
 
-
-/* ===============================
+/* -----------------------------
    BOUTON INSCRIPTION
-================================ */
-
+------------------------------- */
 .accueil .inscription-link {
   display: inline-block;
-  padding: 10px 18px;
-
+  padding: 10px 16px;
   background: #2e0000;
   color: #fff;
-
   text-decoration: none;
   font-weight: 600;
   border-radius: 20px;
+  margin-top: 12px;
 }
 
-
-
-/* =========================
-   VERSION MOBILE
-========================= */
-@media (max-width: 768px) {
-  .accueil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    padding: 70px 16px 40px; /* 🔥 espace suffisant sous le menu */
-    margin-top: 0;          /* ❌ supprimé */
-  }
-
- 
-
-  /* Texte accueil */
-  .accueil-text {
-    position: relative;
-    inset: auto;
-    transform: none;
-
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  /* Image ACSL */
+/* -----------------------------
+   MEDIA QUERIES TABLETTE/SMALL DESKTOP
+------------------------------- */
+@media (min-width: 769px) and (max-width: 1200px) {
   .accueil-image {
-    width: 140px;
-    margin: 8px auto 12px; /* 🔥 léger espace seulement */
-  }
-
-  /* Titres */
-  .accueil-text h2 {
-    font-size: 1.9rem;
+    width: 250px;
   }
 
   .accueil-text h2 {
-    font-size: 1.1rem;
+    font-size: 2rem;
   }
 
-  /* Réseaux sociaux */
-  .social-links {
-    margin-top: 14px;
-    gap: 16px;
-  }
-
-  .social-links a img {
-    width: 30px;
-    height: 30px;
-  }
-
-  /* ===== CARTE ACTUALITÉ ===== */
-  .accueil-actu-container {
-    flex-direction: column;
-  }
-  .accueil-actu-card {
-    width: 100%;               /* 🔥 pleine largeur */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-
-  /* Image actu plus immersive */
   .actu-image img {
-    height: 260px;  /* 🔥 plus grande sur mobile */
+    height: 240px;
   }
 
-  /* Titre sur image */
   .actu-overlay h4 {
-    font-size: 1.1rem;
-    top: 16px;
-  }
-
-  /* Date */
-  .actu-date {
-    width: 44px;
-    height: 44px;
-    bottom: 12px;
-    left: 12px;
-  }
-
-  /* Bouton */
-  .actu-more {
-    bottom: 12px;
-    right: 12px;
-    font-size: 0.75rem;
-    padding: 6px 10px;
-  }
-
-  /* Séparateur */
-  .accueil-separator {
-    width: 70%;
-    margin: 16px auto;
+    font-size: 1.3rem;
   }
 }
+
+
 
 /* =========================================================
    SECTION : CLUBS
