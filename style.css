@@ -152,11 +152,13 @@ body::before {
   .menu-bar {
     justify-content: space-between; /* garde le h1 à gauche et le menu à droite */
     padding: 10px 15px; /* un peu d’air */
-  }
+  } 
 
   .menu-bar h1 {
     text-align: left; /* s’assure qu’il reste à gauche */
-    font-size: 1rem;
+    font-size: 0.9rem;
+    color: black;
+    
   }
 }
 
@@ -164,13 +166,6 @@ body::before {
 /* ============================ ACCUEIL ========================== */
 /* =============================================================== */
 
-/* ==============================================
-   MOBILE FIRST / RESPONSIVE
-================================================= */
-
-/* -----------------------------
-   SECTION ACCUEIL
-------------------------------- */
 .accueil {
   overflow-x: hidden;
   width: 100%;
@@ -182,7 +177,7 @@ body::before {
   align-items: center;
   justify-content: flex-start;
 
-  padding: 150px 16px 60px; /* top réduit pour mobile */
+  padding: 50px 16px 60px; /* espace réduit entre menu et logo */
   box-sizing: border-box;
   position: relative;
 }
@@ -391,8 +386,137 @@ body::before {
 }
 
 /* -----------------------------
-   TEXTE DÉPLIABLE ACTU 2
+   TEXTE DÉPLIABLE ACTU 2 - MODAL PLEIN ÉCRAN
 ------------------------------- */
+.actu-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+}
+
+.actu-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+}
+
+.actu-modal-content {
+  position: relative;
+  background: white;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+  z-index: 10001;
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.actu-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: #d30c3e;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.actu-modal-close:hover {
+  background: rgba(211, 12, 62, 0.1);
+}
+
+.actu-modal-content h3 {
+  color: #d30c3e;
+  font-size: 1.8rem;
+  margin: 0 0 20px 0;
+  padding-right: 40px;
+}
+
+.actu-modal-text {
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.actu-modal-text p {
+  margin-bottom: 15px;
+}
+
+.actu-modal-share {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: #d30c3e;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.actu-modal-share:hover {
+  background: #b00a34;
+  transform: translateY(-2px);
+}
+
+.actu-modal-share svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .actu-modal-content {
+    width: 95%;
+    padding: 30px 20px;
+    max-height: 85vh;
+  }
+  
+  .actu-modal-content h3 {
+    font-size: 1.4rem;
+  }
+  
+  .actu-modal-close {
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+  }
+}
+
 .actu-content {
   font-family: Arial, sans-serif;
   padding: 16px;
@@ -432,12 +556,40 @@ body::before {
     font-size: 2rem;
   }
 
+  .accueil-actu-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .accueil-actu-card {
+    flex: 1;
+    max-width: 350px;
+  }
+
   .actu-image img {
     height: 240px;
   }
 
   .actu-overlay h4 {
     font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1201px) {
+  .accueil-actu-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .accueil-actu-card {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .actu-image img {
+    height: 280px;
   }
 }
 
@@ -991,10 +1143,12 @@ body::before {
 }
 
 .partners-logos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .partners-logos img {

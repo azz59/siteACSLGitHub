@@ -254,26 +254,43 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================
-   ACTU 2 - TEXTE DÉPLIABLE
+   ACTU 2 - MODAL PLEIN ÉCRAN
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
   const toggleBtn = document.querySelector('.actu-toggle');
+  const modal = document.getElementById('actuModal');
+  const closeBtn = document.querySelector('.actu-modal-close');
+  const overlay = document.querySelector('.actu-modal-overlay');
   
-  if (toggleBtn) {
+  if (toggleBtn && modal) {
+    // Ouvrir la modal
     toggleBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      
-      const section = document.querySelector('.accueil-actu');
-      const content = section.querySelector('.actu-content');
-      
-      if (content) {
-        if (content.style.display === 'none' || content.style.display === '') {
-          content.style.display = 'block';
-          this.textContent = 'Réduire';
-        } else {
-          content.style.display = 'none';
-          this.textContent = 'En savoir plus';
-        }
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Empêche le scroll
+    });
+    
+    // Fermer la modal avec le bouton X
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Réactive le scroll
+      });
+    }
+    
+    // Fermer la modal en cliquant sur l'overlay
+    if (overlay) {
+      overlay.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+    
+    // Fermer avec la touche Echap
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
       }
     });
   }
