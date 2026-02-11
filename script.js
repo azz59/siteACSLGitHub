@@ -254,15 +254,60 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================
-   ACTU 2 - MODAL PLEIN ÉCRAN
+   ACTU 2 - MODAL PLEIN ÉCRAN (IMAGE)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn2 = document.querySelector('.actu-toggle-2');
+  const modal2 = document.getElementById('actuModal2');
+  
+  if (toggleBtn2 && modal2) {
+    const closeBtn2 = modal2.querySelector('.actu-modal-close');
+    const overlay2 = modal2.querySelector('.actu-modal-overlay');
+    
+    // Ouvrir la modal
+    toggleBtn2.addEventListener('click', function(e) {
+      e.preventDefault();
+      modal2.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Empêche le scroll
+    });
+    
+    // Fermer la modal avec le bouton X
+    if (closeBtn2) {
+      closeBtn2.addEventListener('click', function() {
+        modal2.style.display = 'none';
+        document.body.style.overflow = ''; // Réactive le scroll
+      });
+    }
+    
+    // Fermer la modal en cliquant sur l'overlay
+    if (overlay2) {
+      overlay2.addEventListener('click', function() {
+        modal2.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+    
+    // Fermer avec la touche Echap
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal2.style.display === 'flex') {
+        modal2.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+
+/* =========================================================
+   ACTU 3 - MODAL PLEIN ÉCRAN (TEXTE)
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
   const toggleBtn = document.querySelector('.actu-toggle');
   const modal = document.getElementById('actuModal');
-  const closeBtn = document.querySelector('.actu-modal-close');
-  const overlay = document.querySelector('.actu-modal-overlay');
   
   if (toggleBtn && modal) {
+    const closeBtn = modal.querySelector('.actu-modal-close');
+    const overlay = modal.querySelector('.actu-modal-overlay');
+    
     // Ouvrir la modal
     toggleBtn.addEventListener('click', function(e) {
       e.preventDefault();
