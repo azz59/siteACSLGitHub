@@ -115,7 +115,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- ACTU 2 -->
+<!-- ACTU 2 -->
+  <div class="accueil-actu-card">
+    <div class="actu-image">
+      <img src="images/Championnat de Province U10-U13-Masters H&F (1).png" alt="Championnat de Province U10-U13-Masters H/F">
+
+      <div class="actu-overlay">
+        <h4>Championnat de Province U10-U13-Masters H/F</h4>
+      </div>
+
+      <div class="actu-date">
+        <span>22</span>
+        <small>FÉV</small>
+      </div>
+
+      <a href="#" class="actu-more actu-toggle-2">En savoir plus</a>
+    </div>
+  </div>
+
+  <!-- ACTU 3 -->
   <div class="accueil-actu-card">
     <div class="actu-image">
       <img src="images/telethon2025.JPG" alt="Événement sportif ACSL">
@@ -128,7 +146,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- ACTU 3 -->
+<!-- ACTU 3 Christian -->
+<!-- 
   <div class="accueil-actu-card">
     <div class="actu-image">
       <img src="images/christian.jpg" alt="Portrait de Christian Montay">
@@ -143,12 +162,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         En savoir plus
       </a>
     </div>
-  </div>
+  </div> -->
 
 </div>
 
-      
-      <!-- Texte dépliable -->
+      <!-- Contenu dépliable Actu 3 (Texte) -->
       <div class="actu-content" style="display: none;">
         <p>Avec une cinquantaine de manifestations organisées pour la dernière édition du Téléthon lommois, les « grands Pioupious » que sont les bénévoles, se sont retrouvés samedi 31 janvier au pôle associatif Michelet pour la traditionnelle remise du chèque de dons au profit de l’AFM-Téléthon*, représentée par Isabelle Naessens, coordinatrice départementale : « Comme chaque année, vous avez fait bouger les lignes à Lomme pour faire bouger la vie. Continuez ! La thérapie génique est là et fonctionne, mais en France, il y a encore 7 000 maladies rares, dont 95 % sans traitement spécifique ».
 
@@ -164,7 +182,29 @@ Et pour 2026 ? Préparez-vous à voir beaucoup de Pioupious en ville ! Jean-Pier
 
 </div>
 
-      <!-- Modal plein écran pour actu 2 -->
+      <!-- Modal plein écran pour actu 2 (Image) -->
+      <div class="actu-modal" id="actuModal2" style="display: none;">
+        <div class="actu-modal-overlay"></div>
+        <div class="actu-modal-content">
+          <button class="actu-modal-close">&times;</button>
+          <h3>Découvrez notre actualité</h3>
+          <div class="actu-modal-image">
+            <img src="images/Championnat de Province U10-U13-Masters H&F (1).png" alt="Actualité ACSL" style="max-width: 100%; height: auto; border-radius: 8px;">
+          </div>
+          <button class="actu-modal-share" onclick="shareEvent()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Partager
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal plein écran pour actu 3 (Texte) -->
       <div class="actu-modal" id="actuModal" style="display: none;">
         <div class="actu-modal-overlay"></div>
         <div class="actu-modal-content">
