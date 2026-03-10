@@ -254,43 +254,87 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================
-   ACTU 2 - MODAL PLEIN ÉCRAN (IMAGE)
+   ACTU LOTO - MODAL PLEIN ÉCRAN (IMAGE)
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtn2 = document.querySelector('.actu-toggle-2');
-  const modal2 = document.getElementById('actuModal2');
+  const toggleBtnLoto = document.querySelector('.actu-toggle-loto');
+  const modalLoto = document.getElementById('actuModalLoto');
   
-  if (toggleBtn2 && modal2) {
-    const closeBtn2 = modal2.querySelector('.actu-modal-close');
-    const overlay2 = modal2.querySelector('.actu-modal-overlay');
+  if (toggleBtnLoto && modalLoto) {
+    const closeBtnLoto = modalLoto.querySelector('.actu-modal-close');
+    const overlayLoto = modalLoto.querySelector('.actu-modal-overlay');
     
     // Ouvrir la modal
-    toggleBtn2.addEventListener('click', function(e) {
+    toggleBtnLoto.addEventListener('click', function(e) {
       e.preventDefault();
-      modal2.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Empêche le scroll
+      modalLoto.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     });
     
     // Fermer la modal avec le bouton X
-    if (closeBtn2) {
-      closeBtn2.addEventListener('click', function() {
-        modal2.style.display = 'none';
-        document.body.style.overflow = ''; // Réactive le scroll
+    if (closeBtnLoto) {
+      closeBtnLoto.addEventListener('click', function() {
+        modalLoto.style.display = 'none';
+        document.body.style.overflow = '';
       });
     }
     
     // Fermer la modal en cliquant sur l'overlay
-    if (overlay2) {
-      overlay2.addEventListener('click', function() {
-        modal2.style.display = 'none';
+    if (overlayLoto) {
+      overlayLoto.addEventListener('click', function() {
+        modalLoto.style.display = 'none';
         document.body.style.overflow = '';
       });
     }
     
     // Fermer avec la touche Echap
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal2.style.display === 'flex') {
-        modal2.style.display = 'none';
+      if (e.key === 'Escape' && modalLoto.style.display === 'flex') {
+        modalLoto.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+
+/* =========================================================
+   ACTU CHAMPIONNAT - MODAL PLEIN ÉCRAN (IMAGE)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtnChampionnat = document.querySelector('.actu-toggle-championnat');
+  const modalChampionnat = document.getElementById('actuModalChampionnat');
+  
+  if (toggleBtnChampionnat && modalChampionnat) {
+    const closeBtnChampionnat = modalChampionnat.querySelector('.actu-modal-close');
+    const overlayChampionnat = modalChampionnat.querySelector('.actu-modal-overlay');
+    
+    // Ouvrir la modal
+    toggleBtnChampionnat.addEventListener('click', function(e) {
+      e.preventDefault();
+      modalChampionnat.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    // Fermer la modal avec le bouton X
+    if (closeBtnChampionnat) {
+      closeBtnChampionnat.addEventListener('click', function() {
+        modalChampionnat.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+    
+    // Fermer la modal en cliquant sur l'overlay
+    if (overlayChampionnat) {
+      overlayChampionnat.addEventListener('click', function() {
+        modalChampionnat.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+    
+    // Fermer avec la touche Echap
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalChampionnat.style.display === 'flex') {
+        modalChampionnat.style.display = 'none';
         document.body.style.overflow = '';
       }
     });

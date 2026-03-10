@@ -77,9 +77,9 @@ body::before {
 }
 
 .header-logo {
-  width: 120px;
-  height: 50px;
-  object-fit: cover;
+  width: 135px;
+  height: 58px;
+  object-fit: contain;
 }
 
 .menu-bar h1 {
@@ -219,8 +219,8 @@ body::before {
 
 .accueil-text h2 {
   color: #d30c3e;
-  font-size: 1.6rem; /* plus petit pour mobile */
-  margin: 0;
+  font-size: 2rem; /* plus petit pour mobile */
+  margin: 30px 0 0;
 }
 
 /* -----------------------------
@@ -319,6 +319,7 @@ body::before {
   position: absolute;
   inset: 0;
   z-index: 2;
+  pointer-events: none;
   padding: 12px;
   background: linear-gradient(
     to bottom,
@@ -945,6 +946,7 @@ body::before {
   transform: translateX(-50%);
   width: 100%;
   max-width: 500px;
+  pointer-events: none;
 
   background: linear-gradient(
     to bottom,
@@ -961,6 +963,12 @@ body::before {
   box-sizing: border-box;
 
   border-radius: 8px; /* même arrondi que l’image */
+}
+
+.overlay .event-date,
+.overlay .event-buttons,
+.overlay .event-btn {
+  pointer-events: auto;
 }
 
 
