@@ -446,3 +446,33 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+/* =========================================================
+   INFO SLIDES — CROSS-FADE SMOOTH
+========================================================= */
+(function () {
+  const slides = Array.from(document.querySelectorAll('.info-slide'));
+  if (slides.length < 2) return;
+
+  let current = 0;
+  const DISPLAY_DURATION = 6000; // ms avant le prochain fondu
+
+  function goToNext() {
+    const leaving = slides[current];
+    current = (current + 1) % slides.length;
+    const entering = slides[current];
+
+    // Démarrer la sortie et l'entrée simultanément (vrai cross-fade)
+    leaving.classList.remove('is-active');
+    leaving.classList.add('is-leaving');
+
+    entering.classList.add('is-active');
+
+    // Nettoyer is-leaving après la transition
+    leaving.addEventListener('transitionend', () => {
+      leaving.classList.remove('is-leaving');
+    }, { once: true });
+  }
+
+  setInterval(goToNext, DISPLAY_DURATION);
+})();
