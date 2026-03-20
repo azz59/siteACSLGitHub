@@ -48,6 +48,37 @@ body::before {
 
 
 /* =========================================================
+   🏅 LOGOS PARTENAIRES FIXES (ACCUEIL)
+   ========================================================= */
+.accueil-partners-strip {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 18px 12px;
+  margin-top: 20px;
+  background: none;
+  box-sizing: border-box;
+}
+
+.accueil-partners-strip img {
+  flex: 1 1 0;
+  min-width: 0;
+  max-height: 44px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.accueil-partners-strip img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* =========================================================
    🧭 HEADER / NAVIGATION
    ========================================================= */
 

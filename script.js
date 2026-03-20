@@ -298,43 +298,43 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================
-   ACTU CHAMPIONNAT - MODAL PLEIN ÉCRAN (IMAGE)
+   ACTU VOLLEY - MODAL PLEIN ÉCRAN (IMAGE)
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtnChampionnat = document.querySelector('.actu-toggle-championnat');
-  const modalChampionnat = document.getElementById('actuModalChampionnat');
+  const toggleBtnVolley = document.querySelector('.actu-toggle-volley');
+  const modalVolley = document.getElementById('actuModalVolley');
   
-  if (toggleBtnChampionnat && modalChampionnat) {
-    const closeBtnChampionnat = modalChampionnat.querySelector('.actu-modal-close');
-    const overlayChampionnat = modalChampionnat.querySelector('.actu-modal-overlay');
+  if (toggleBtnVolley && modalVolley) {
+    const closeBtnVolley = modalVolley.querySelector('.actu-modal-close');
+    const overlayVolley = modalVolley.querySelector('.actu-modal-overlay');
     
     // Ouvrir la modal
-    toggleBtnChampionnat.addEventListener('click', function(e) {
+    toggleBtnVolley.addEventListener('click', function(e) {
       e.preventDefault();
-      modalChampionnat.style.display = 'flex';
+      modalVolley.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     });
     
     // Fermer la modal avec le bouton X
-    if (closeBtnChampionnat) {
-      closeBtnChampionnat.addEventListener('click', function() {
-        modalChampionnat.style.display = 'none';
+    if (closeBtnVolley) {
+      closeBtnVolley.addEventListener('click', function() {
+        modalVolley.style.display = 'none';
         document.body.style.overflow = '';
       });
     }
     
     // Fermer la modal en cliquant sur l'overlay
-    if (overlayChampionnat) {
-      overlayChampionnat.addEventListener('click', function() {
-        modalChampionnat.style.display = 'none';
+    if (overlayVolley) {
+      overlayVolley.addEventListener('click', function() {
+        modalVolley.style.display = 'none';
         document.body.style.overflow = '';
       });
     }
     
     // Fermer avec la touche Echap
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modalChampionnat.style.display === 'flex') {
-        modalChampionnat.style.display = 'none';
+      if (e.key === 'Escape' && modalVolley.style.display === 'flex') {
+        modalVolley.style.display = 'none';
         document.body.style.overflow = '';
       }
     });

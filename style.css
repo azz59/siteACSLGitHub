@@ -553,7 +553,7 @@ body::before {
   border-radius: 16px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(2px);
 }
 
 /* -----------------------------

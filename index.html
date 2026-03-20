@@ -52,7 +52,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header class="menu-bar">
   <div class="header-logo-title">
     <a href="#accueil" aria-label="Retour à l'accueil">
-      <img src="images/logoACSLNewBlackReduit.png" alt="Logo ACSL" class="header-logo">
+      <img src="images/LOGOACSLFondNoir.png" alt="Logo ACSL" class="header-logo">
     </a>
     <h1>Association des Clubs Sportifs Lommois</h1>
   </div>
@@ -93,7 +93,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="quandlommecourt.html" class="info-highlight-btn">Je m'inscris</a>
           </div>
         </div>
-        <div class="info-highlight info-slide info-slide--benevole" id="infoSlide1">
+        <!-- <div class="info-highlight info-slide info-slide--benevole" id="infoSlide1">
           <div class="info-highlight-text">
             <p class="info-highlight-label">Deviens bénévole pour "Quand Lomme Court" !</p>
             <h3 class="info-highlight-title">Nous cherchons encore des signaleurs !</h3>
@@ -101,7 +101,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <button class="info-highlight-btn" onclick="document.getElementById('contactModal').style.display='block'">C'est parti !</button>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -135,6 +135,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
 
+<!-- ACTU volley -->
+  <div class="accueil-actu-card">
+    <div class="actu-image">
+      <img src="images/Affiche Tournoi Volley 19-04-2026.jpeg" alt="Tournoi de Volleyball">
+
+      <div class="actu-overlay">
+        <h4>Tournoi de Volleyball</h4>
+      </div>
+
+      <div class="actu-date">
+        <span>19</span>
+        <small>AVR</small>
+      </div>
+
+      <a href="#" class="actu-more actu-toggle-volley">En savoir plus</a>
+    </div>
+  </div>
+
+
 <!-- ACTU LOTO OSML FOOTBALL -->
   <div class="accueil-actu-card">
     <div class="actu-image">
@@ -154,23 +173,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
 
-<!-- ACTU ch prov halt -->
-  <div class="accueil-actu-card">
-    <div class="actu-image">
-      <img src="images/Championnat de Province U10-U13-Masters H&F (1).png" alt="Championnat de Province U10-U13-Masters H/F">
 
-      <div class="actu-overlay">
-        <h4>Championnat de Province U10-U13-Masters H/F</h4>
-      </div>
-
-      <div class="actu-date">
-        <span>22</span>
-        <small>FÉV</small>
-      </div>
-
-      <a href="#" class="actu-more actu-toggle-championnat">En savoir plus</a>
-    </div>
-  </div>
 
     <!-- ACTU telethon -->
     <!-- <div class="accueil-actu-card">
@@ -245,6 +248,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
+
+      <!-- Modal plein écran pour actu Tournoi Volleyball (Image) -->
+      <div class="actu-modal" id="actuModalVolley" style="display: none;">
+        <div class="actu-modal-overlay"></div>
+        <div class="actu-modal-content">
+          <button class="actu-modal-close">&times;</button>
+          <h3>Tournoi de Volleyball</h3>
+          <div class="actu-modal-image">
+            <img src="images/Affiche Tournoi Volley 19-04-2026.jpeg" alt="Tournoi de Volleyball" style="max-width: 100%; height: auto; border-radius: 8px;">
+          </div>
+          <button class="actu-modal-share" onclick="shareEvent()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Partager
+          </button>
+        </div>
+      </div>
 
       <!-- Modal plein écran pour actu loto OSML Football (Image) -->
       <div class="actu-modal" id="actuModalLoto" style="display: none;">
