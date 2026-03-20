@@ -377,8 +377,9 @@ body::before {
 @media (max-width: 768px) {
 
   .accueil {
-    padding: 100px 0 0 0;    /* padding-top pour compenser le menu fixe */
-    min-height: 100vh;      /* garantit la bonne hauteur */
+    padding: 0;
+    min-height: 100vh;
+    justify-content: flex-start;
   }
 
   .accueil video {
@@ -392,10 +393,13 @@ body::before {
   }
 
   .accueil-text {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  /* recentrage vrai */
-    width: 90%;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 92%;
+    margin: 0 auto;
+    padding-top: 80px;  /* compense le header fixe */
   }
 
   .accueil-text h2 {
