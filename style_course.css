@@ -48,6 +48,37 @@ body::before {
 
 
 /* =========================================================
+   🏅 LOGOS PARTENAIRES FIXES (ACCUEIL)
+   ========================================================= */
+.accueil-partners-strip {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 18px 12px;
+  margin-top: 20px;
+  background: none;
+  box-sizing: border-box;
+}
+
+.accueil-partners-strip img {
+  flex: 1 1 0;
+  min-width: 0;
+  max-height: 44px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.accueil-partners-strip img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* =========================================================
    🧭 HEADER / NAVIGATION
    ========================================================= */
 
@@ -346,8 +377,9 @@ body::before {
 @media (max-width: 768px) {
 
   .accueil {
-    padding: 100px 0 0 0;    /* padding-top pour compenser le menu fixe */
-    min-height: 100vh;      /* garantit la bonne hauteur */
+    padding: 0;
+    min-height: 100vh;
+    justify-content: flex-start;
   }
 
   .accueil video {
@@ -361,10 +393,13 @@ body::before {
   }
 
   .accueil-text {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);  /* recentrage vrai */
-    width: 90%;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 92%;
+    margin: 0 auto;
+    padding-top: 80px;  /* compense le header fixe */
   }
 
   .accueil-text h2 {
@@ -622,9 +657,9 @@ body::before {
 
 .section.resultats h2 {
   text-align: center;   /* centre le texte */
-  color: #c2103c;       /* rouge ACSL */
+  color: #e91147;       /* rouge ACSL */
   margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-size: 2.2rem;      /* optionnel, pour le rendre plus visible */
   font-weight: 700;     /* gras pour bien ressortir */
 }
 .section.resultats .section-title {
@@ -724,9 +759,9 @@ body::before {
 
 .retour-en-images h2 {
   text-align: center;   /* centre le texte */
-  color: #c2103c;       /* rouge ACSL */
+  color: #e91147;       /* rouge ACSL */
   margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-size: 2.2rem;      /* optionnel, pour le rendre plus visible */
   font-weight: 700;     /* gras pour bien ressortir */
 }
 
@@ -907,10 +942,10 @@ body::before {
 }
 
 .partners h2 {
-  color: #cc0c3c; /* rouge bordeaux */
+  color: #e91147; /* rouge ACSL */
   text-align: center;
   margin-bottom: 30px;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
