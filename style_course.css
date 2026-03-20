@@ -657,9 +657,9 @@ body::before {
 
 .section.resultats h2 {
   text-align: center;   /* centre le texte */
-  color: #c2103c;       /* rouge ACSL */
+  color: #e91147;       /* rouge ACSL */
   margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-size: 2.2rem;      /* optionnel, pour le rendre plus visible */
   font-weight: 700;     /* gras pour bien ressortir */
 }
 .section.resultats .section-title {
@@ -759,9 +759,9 @@ body::before {
 
 .retour-en-images h2 {
   text-align: center;   /* centre le texte */
-  color: #c2103c;       /* rouge ACSL */
+  color: #e91147;       /* rouge ACSL */
   margin-bottom: 30px;  /* petit espace sous le titre */
-  font-size: 2rem;      /* optionnel, pour le rendre plus visible */
+  font-size: 2.2rem;      /* optionnel, pour le rendre plus visible */
   font-weight: 700;     /* gras pour bien ressortir */
 }
 
@@ -942,10 +942,10 @@ body::before {
 }
 
 .partners h2 {
-  color: #cc0c3c; /* rouge bordeaux */
+  color: #e91147; /* rouge ACSL */
   text-align: center;
   margin-bottom: 30px;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   font-weight: 700;
 }
 
