@@ -66,7 +66,7 @@ body::before {
 .accueil-partners-strip img {
   flex: 1 1 0;
   min-width: 0;
-  max-height: 44px;
+  max-height: 100px;
   width: auto;
   object-fit: contain;
   opacity: 0.85;
@@ -271,7 +271,7 @@ body::before {
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin: 30px 0;
+  margin: 10px 0;
   z-index: 3;
   position: relative;
 }
@@ -281,23 +281,23 @@ body::before {
   flex-direction: column;
   align-items: center;
   background: rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-  min-width: 50px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  min-width: 36px;
   backdrop-filter: blur(5px);
   /* border: 2px solid rgba(249, 217, 38, 0.5); */
 }
 
 .countdown-number {
-  font-size: 2.5em;
+  font-size: 1.6em;
   font-weight: bold;
   color: #f9d926;
   line-height: 1;
-  margin-bottom: 5px;
+  margin-bottom: 1px;
 }
 
 .countdown-label {
-  font-size: 0.75em;
+  font-size: 0.4em;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -345,7 +345,7 @@ body::before {
    ========================================================= */
 .accueil-card {
   background: rgba(255, 255, 255, 0.08);
-  border: 2px solid #e91147;
+  border: 2px solid #f9e1e7;
   border-radius: 12px;
   padding: 12px;
   text-align: center;
@@ -380,6 +380,10 @@ body::before {
     padding: 0;
     min-height: 100vh;
     justify-content: flex-start;
+  }
+
+  .accueil-image {
+    object-position: right center;
   }
 
   .accueil video {
