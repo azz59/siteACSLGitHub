@@ -66,7 +66,7 @@ body::before {
 .accueil-partners-strip img {
   flex: 1 1 0;
   min-width: 0;
-  max-height: 100px;
+  max-height: 200px;
   width: auto;
   object-fit: contain;
   opacity: 0.85;
@@ -251,7 +251,7 @@ body::before {
 .accueil-text h2 {
   color: #ffffff;
   font-size: 3em;
-  margin: 0;
+  margin: 40px 0 0;
   z-index: 3;
 }
 
@@ -307,11 +307,29 @@ body::before {
 /* =========================================================
    ICÔNE ROTATIVE
    ========================================================= */
+.qualif-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px 0;
+  z-index: 3;
+  position: relative;
+}
+
+.qualif-row h3 {
+  margin: 0;
+  color: #f9d926;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
 .rotate-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
-  margin: 15px auto;
+  flex-shrink: 0;
   border-radius: 50%;
   border: 3px solid #fff;
   animation: spin 8s linear infinite;
@@ -1190,6 +1208,118 @@ body::before {
 
   .contact-modal-content h2 {
     font-size: 24px;
+  }
+}
+
+/* =========================================================
+   BLOC HIGHLIGHT ACCUEIL
+   ========================================================= */
+.accueil-highlight-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0;
+  margin-top: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.info-highlight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 20px;
+  padding: 24px 32px;
+  backdrop-filter: blur(1px);
+  width: 100%;
+  max-width: 760px;
+  box-sizing: border-box;
+}
+
+.info-highlight-img {
+  width: 160px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.info-highlight-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+
+.info-highlight-label {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.65);
+}
+
+.info-highlight-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e6ca2d;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.info-highlight-sub {
+  margin: 0;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.info-highlight-btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 24px;
+  background: #d30c3e;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.info-highlight-btn:hover {
+  background: #a80a31;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .info-highlight {
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+    text-align: center;
+  }
+  .info-highlight-img {
+    width: 70px;
+    height: 96px;
+  }
+  .info-highlight-title {
+    font-size: 1.1rem;
+  }
+  .info-highlight-sub {
+    font-size: 0.85rem;
+  }
+  .info-highlight-btn {
+    align-self: center;
+    padding: 7px 16px;
+    font-size: 0.85rem;
   }
 }
 

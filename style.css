@@ -370,11 +370,11 @@ body::before {
   display: flex;
   align-items: center;
   gap: 30px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(0,0,0,0.45);
   border: none;
   border-radius: 20px;
   padding: 24px 32px;
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); */
   width: 100%;
   max-width: 760px;
   box-sizing: border-box;
