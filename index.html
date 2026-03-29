@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="google-site-verification" content="ExSlRpla1x3I-yv90dgWSsQjz5T8eoqzs4H24FpPPe4" />
 <title>ACSL - Association des Clubs Sportifs Lommois</title>
 <meta name="description" content="ACSL accompagne et soutient les clubs sportifs de Lomme. Organise des événements sportifs et culturels.">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?1.2">
 <link rel="icon" type="image/png" href="/favicon.png">
 <!-- EmailJS SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -138,6 +138,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
 
+
+<!-- vide grenier -->
+  <div class="accueil-actu-card">
+    <div class="actu-image">
+      <img src="images/videgreniertelethon.png" alt="Vide grenier - Lomme téléthon">
+
+      <div class="actu-overlay">
+        <h4>Vide grenier - Lomme téléthon</h4>
+      </div>
+
+      <div class="actu-date">
+        <span>25</span>
+        <small>AVR</small>
+      </div>
+
+      <a href="#" class="actu-more actu-toggle-loto">En savoir plus</a>
+    </div>
+  </div>
+
+
+
 <!-- ACTU volley -->
   <div class="accueil-actu-card">
     <div class="actu-image">
@@ -158,7 +179,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ACTU LOTO OSML FOOTBALL -->
-  <div class="accueil-actu-card">
+  <!-- <div class="accueil-actu-card">
     <div class="actu-image">
       <img src="images/LOTOv1.jpg" alt="LOTO - OSML Football">
 
@@ -173,7 +194,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <a href="#" class="actu-more actu-toggle-loto">En savoir plus</a>
     </div>
-  </div>
+  </div> -->
 
 
 
@@ -274,7 +295,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <!-- Modal plein écran pour actu loto OSML Football (Image) -->
+
+<!-- Modal plein écran pour actu loto OSML Football (Image) -->
+      <div class="actu-modal" id="actuModalLoto" style="display: none;">
+        <div class="actu-modal-overlay"></div>
+        <div class="actu-modal-content">
+          <button class="actu-modal-close">&times;</button>
+          <h3>Vide grenier - Lomme téléthon</h3>
+          <div class="actu-modal-image">
+            <img src="images/videgreniertelethon.png" alt="Actualité ACSL" style="max-width: 100%; height: auto; border-radius: 8px;">
+          </div>
+          <button class="actu-modal-share" onclick="shareEvent()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Partager
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Modal plein écran pour actu loto OSML Football (Image)
       <div class="actu-modal" id="actuModalLoto" style="display: none;">
         <div class="actu-modal-overlay"></div>
         <div class="actu-modal-content">
@@ -294,7 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             Partager
           </button>
         </div>
-      </div>
+      </div> -->
 
       <!-- Modal plein écran pour actu telethon (Texte) -->
       <!-- <div class="actu-modal" id="actuModal" style="display: none;">

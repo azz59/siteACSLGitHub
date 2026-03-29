@@ -103,6 +103,19 @@ body::before {
   color: #fff;
 }
 
+.menu-bar-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.menu-bar-logo img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
 .hamburger {
   width: 30px;
   height: 24px;
@@ -177,8 +190,7 @@ body::before {
   }
 
   .menu-bar h1 {
-    text-align: left;
-    font-size: 1rem;
+    display: none;
   }
 
   #navMenu.nav-visible {
@@ -322,7 +334,7 @@ body::before {
   color: #f9d926;
   font-size: 1.2em;
   font-weight: 600;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
 .rotate-icon {
@@ -369,7 +381,7 @@ body::before {
   text-align: center;
   color: #ffffff;
   text-decoration: none;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
   transition: 0.3s ease;
   width: 180px;          /* largeur réduite des cartes */
   flex: 0 0 auto;        /* empêche l'étirement horizontal */
@@ -384,7 +396,7 @@ body::before {
 .accueil-card:hover {
   background: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -1229,7 +1241,7 @@ body::before {
   display: flex;
   align-items: center;
   gap: 30px;
-  background: rgba(0,0,0,0.4);
+  background: rgba(63, 62, 62, 0.436);
   border-radius: 20px;
   padding: 24px 32px;
   backdrop-filter: blur(1px);
