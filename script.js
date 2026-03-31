@@ -395,55 +395,54 @@ document.addEventListener('DOMContentLoaded', function() {
     let isDown = false;
     let startX;
     let scrollLeft;
-    let scrollTimeout;
-    
+
+    // --- ÉVÉNEMENTS SOURIS (DESKTOP) ---
     carousel.addEventListener('mousedown', (e) => {
       isDown = true;
-      carousel.style.cursor = 'grabbing';
+      carousel.classList.add('active');
       startX = e.pageX - carousel.offsetLeft;
       scrollLeft = carousel.scrollLeft;
       
-      // Arrêter l'animation pendant le drag
+      // Pause de l'animation CSS si elle existe
       const track = carousel.querySelector('.carousel-track');
-      if (track) {
-        track.style.animationPlayState = 'paused';
-      }
+      if (track) track.style.animationPlayState = 'paused';
     });
-    
+
     carousel.addEventListener('mouseleave', () => {
-      if (isDown) {
-        isDown = false;
-        carousel.style.cursor = 'grab';
-        restartAnimation(carousel);
-      }
+      isDown = false;
     });
-    
+
     carousel.addEventListener('mouseup', () => {
-      if (isDown) {
-        isDown = false;
-        carousel.style.cursor = 'grab';
-        restartAnimation(carousel);
-      }
+      isDown = false;
+      // Relance l'animation après un court délai
+      setTimeout(() => {
+        const track = carousel.querySelector('.carousel-track');
+        if (track) track.style.animationPlayState = 'running';
+      }, 500);
     });
-    
+
     carousel.addEventListener('mousemove', (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - carousel.offsetLeft;
-      const walk = (x - startX) * 2;
+      const walk = (x - startX) * 2; // Vitesse de scroll
       carousel.scrollLeft = scrollLeft - walk;
     });
-    
-    // Redémarrer l'animation après un certain temps d'inactivité
-    function restartAnimation(carousel) {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
+
+    // --- ÉVÉNEMENTS TACTILES (MOBILE) ---
+    // Le scroll naturel au doigt fonctionnera déjà grâce au CSS "overflow-x: auto",
+    // mais on met en pause l'animation pour éviter les saccades.
+    carousel.addEventListener('touchstart', () => {
+      const track = carousel.querySelector('.carousel-track');
+      if (track) track.style.animationPlayState = 'paused';
+    }, {passive: true});
+
+    carousel.addEventListener('touchend', () => {
+      setTimeout(() => {
         const track = carousel.querySelector('.carousel-track');
-        if (track) {
-          track.style.animationPlayState = 'running';
-        }
-      }, 2000); // Redémarre l'animation après 2 secondes d'inactivité
-    }
+        if (track) track.style.animationPlayState = 'running';
+      }, 1000);
+    }, {passive: true});
   });
 });
 
