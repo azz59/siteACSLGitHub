@@ -1798,6 +1798,23 @@ body::before {
   transform: scale(1.2);
 }
 
+.footer-logos-btn {
+  background: none;
+  border: none;
+  color: #cccccc;
+  font-size: 0.8rem;
+  font-family: inherit;
+  padding: 0;
+  cursor: pointer;
+  margin-top: 8px;
+  display: block;
+  transition: color 0.2s;
+}
+
+.footer-logos-btn:hover {
+  color: #e91147;
+}
+
 .footer-bottom {
   text-align: center;
   padding-top: 10px;

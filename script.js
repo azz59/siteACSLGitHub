@@ -1,4 +1,27 @@
 /* =========================================================
+   TÉLÉCHARGEMENT DES LOGOS
+========================================================= */
+function downloadAllLogos() {
+  const logos = [
+    { url: 'docs/LOGOACSLToutBlanc.png', name: 'LOGOACSLToutBlanc.png' },
+    { url: 'docs/LOGOACSLNoirFondTrans.png',         name: 'LOGOACSLNoirFondTrans.png' },
+    { url: 'docs/LOGOACSLFondBlanc.png',      name: 'LOGOACSLFondBlanc.png' },
+    { url: 'docs/LOGOACSLFondNoir.png',          name: 'LOGOACSLFondNoir.png' },
+    { url: 'docs/LOGOACSLBlancFondTrans.png',             name: 'LOGOACSLBlancFondTrans.png' }
+  ];
+  logos.forEach(function(logo, i) {
+    setTimeout(function() {
+      const a = document.createElement('a');
+      a.href = logo.url;
+      a.download = logo.name;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, i * 300);
+  });
+}
+
+/* =========================================================
    MENU BURGER
 ========================================================= */
 const hamburger = document.getElementById('hamburger');
@@ -454,7 +477,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (slides.length < 2) return;
 
   let current = 0;
-  const DISPLAY_DURATION = 6000; // ms avant le prochain fondu
+  const DISPLAY_DURATION = 8000; // ms avant le prochain fondu
 
   function goToNext() {
     const leaving = slides[current];
