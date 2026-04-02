@@ -2,12 +2,27 @@
    TÉLÉCHARGEMENT DES LOGOS
 ========================================================= */
 function downloadAllLogos() {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    var msg = document.getElementById('logos-mobile-msg');
+    if (!msg) {
+      msg = document.createElement('div');
+      msg.id = 'logos-mobile-msg';
+      msg.textContent = 'Logos ACSL : disponibles uniquement sur ordinateur.';
+      msg.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:10px 18px;border-radius:10px;font-size:0.85rem;z-index:9999;text-align:center;max-width:80vw;box-shadow:0 4px 12px rgba(0,0,0,0.4);';
+      document.body.appendChild(msg);
+      setTimeout(function() { msg.remove(); }, 3500);
+    }
+    return;
+  }
+
   const logos = [
     { url: 'docs/LOGOACSLToutBlanc.png', name: 'LOGOACSLToutBlanc.png' },
-    { url: 'docs/LOGOACSLNoirFondTrans.png',         name: 'LOGOACSLNoirFondTrans.png' },
-    { url: 'docs/LOGOACSLFondBlanc.png',      name: 'LOGOACSLFondBlanc.png' },
-    { url: 'docs/LOGOACSLFondNoir.png',          name: 'LOGOACSLFondNoir.png' },
-    { url: 'docs/LOGOACSLBlancFondTrans.png',             name: 'LOGOACSLBlancFondTrans.png' }
+    { url: 'docs/LOGOACSLNoirFondTrans.png', name: 'LOGOACSLNoirFondTrans.png' },
+    { url: 'docs/LOGOACSLFondBlanc.png', name: 'LOGOACSLFondBlanc.png' },
+    { url: 'docs/LOGOACSLFondNoir.png', name: 'LOGOACSLFondNoir.png' },
+    { url: 'docs/LOGOACSLBlancFondTrans.png', name: 'LOGOACSLBlancFondTrans.png' }
   ];
   logos.forEach(function(logo, i) {
     setTimeout(function() {

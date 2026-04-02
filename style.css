@@ -1856,6 +1856,10 @@ body::before {
   font-size: 0.6rem;
 }
 
+.footer-logos-btn {
+  font-size: 0.6rem;
+}
+
 .footer-section ul li a {
   color: #cccccc;
   text-decoration: none;
