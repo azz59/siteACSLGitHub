@@ -336,43 +336,83 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================
-   ACTU VOLLEY - MODAL PLEIN ÉCRAN (IMAGE)
+   ACTU BADMINTON - MODAL PLEIN ÉCRAN (IMAGE)
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtnVolley = document.querySelector('.actu-toggle-volley');
-  const modalVolley = document.getElementById('actuModalVolley');
+  const toggleBtnBadminton = document.querySelector('.actu-toggle-badminton');
+  const modalBadminton = document.getElementById('actuModalBadminton');
   
-  if (toggleBtnVolley && modalVolley) {
-    const closeBtnVolley = modalVolley.querySelector('.actu-modal-close');
-    const overlayVolley = modalVolley.querySelector('.actu-modal-overlay');
+  if (toggleBtnBadminton && modalBadminton) {
+    const closeBtnBadminton = modalBadminton.querySelector('.actu-modal-close');
+    const overlayBadminton = modalBadminton.querySelector('.actu-modal-overlay');
     
     // Ouvrir la modal
-    toggleBtnVolley.addEventListener('click', function(e) {
+    toggleBtnBadminton.addEventListener('click', function(e) {
       e.preventDefault();
-      modalVolley.style.display = 'flex';
+      modalBadminton.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     });
     
     // Fermer la modal avec le bouton X
-    if (closeBtnVolley) {
-      closeBtnVolley.addEventListener('click', function() {
-        modalVolley.style.display = 'none';
+    if (closeBtnBadminton) {
+      closeBtnBadminton.addEventListener('click', function() {
+        modalBadminton.style.display = 'none';
         document.body.style.overflow = '';
       });
     }
     
     // Fermer la modal en cliquant sur l'overlay
-    if (overlayVolley) {
-      overlayVolley.addEventListener('click', function() {
-        modalVolley.style.display = 'none';
+    if (overlayBadminton) {
+      overlayBadminton.addEventListener('click', function() {
+        modalBadminton.style.display = 'none';
         document.body.style.overflow = '';
       });
     }
     
     // Fermer avec la touche Echap
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modalVolley.style.display === 'flex') {
-        modalVolley.style.display = 'none';
+      if (e.key === 'Escape' && modalBadminton.style.display === 'flex') {
+        modalBadminton.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+
+/* =========================================================
+   ACTU MEETING PARITÉ - MODAL PLEIN ÉCRAN (IMAGE)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtnParite = document.querySelector('.actu-toggle-parite');
+  const modalParite = document.getElementById('actuModalParite');
+  
+  if (toggleBtnParite && modalParite) {
+    const closeBtnParite = modalParite.querySelector('.actu-modal-close');
+    const overlayParite = modalParite.querySelector('.actu-modal-overlay');
+    
+    toggleBtnParite.addEventListener('click', function(e) {
+      e.preventDefault();
+      modalParite.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    if (closeBtnParite) {
+      closeBtnParite.addEventListener('click', function() {
+        modalParite.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+    
+    if (overlayParite) {
+      overlayParite.addEventListener('click', function() {
+        modalParite.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalParite.style.display === 'flex') {
+        modalParite.style.display = 'none';
         document.body.style.overflow = '';
       }
     });

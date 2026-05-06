@@ -850,6 +850,7 @@ body::before {
 /* Image légèrement arrondie */
 .retour-en-images .image-block img {
   width: 90%;
+  height: 200px;
   display: block;
   border-radius: 15px;
   object-fit: cover;
