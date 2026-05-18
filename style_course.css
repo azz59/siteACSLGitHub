@@ -47,36 +47,6 @@ body::before {
 }
 
 
-/* =========================================================
-   🏅 LOGOS PARTENAIRES FIXES (ACCUEIL)
-   ========================================================= */
-.accueil-partners-strip {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  width: 100%;
-  padding: 18px 12px;
-  margin-top: 20px;
-  background: none;
-  box-sizing: border-box;
-}
-
-.accueil-partners-strip img {
-  flex: 1 1 0;
-  min-width: 0;
-  max-height: 44px;
-  width: auto;
-  object-fit: contain;
-  opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.accueil-partners-strip img:hover {
-  opacity: 1;
-  transform: scale(1.1);
-}
 
 /* =========================================================
    🧭 HEADER / NAVIGATION
@@ -100,7 +70,20 @@ body::before {
   text-align: left;
   font-family: 'Gemola';
   font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
-  color: #fff;
+  color: #000000;
+}
+
+.menu-bar-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.menu-bar-logo img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
 }
 
 .hamburger {
@@ -177,8 +160,7 @@ body::before {
   }
 
   .menu-bar h1 {
-    text-align: left;
-    font-size: 1rem;
+    display: none;
   }
 
   #navMenu.nav-visible {
@@ -251,7 +233,7 @@ body::before {
 .accueil-text h2 {
   color: #ffffff;
   font-size: 3em;
-  margin: 0;
+  margin: 40px 0 0;
   z-index: 3;
 }
 
@@ -271,7 +253,7 @@ body::before {
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin: 30px 0;
+  margin: 10px 0;
   z-index: 3;
   position: relative;
 }
@@ -281,23 +263,23 @@ body::before {
   flex-direction: column;
   align-items: center;
   background: rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-  min-width: 50px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  min-width: 36px;
   backdrop-filter: blur(5px);
   /* border: 2px solid rgba(249, 217, 38, 0.5); */
 }
 
 .countdown-number {
-  font-size: 2.5em;
+  font-size: 1.6em;
   font-weight: bold;
   color: #f9d926;
   line-height: 1;
-  margin-bottom: 5px;
+  margin-bottom: 1px;
 }
 
 .countdown-label {
-  font-size: 0.75em;
+  font-size: 0.4em;
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -307,11 +289,29 @@ body::before {
 /* =========================================================
    ICÔNE ROTATIVE
    ========================================================= */
+.qualif-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 10px 0;
+  z-index: 3;
+  position: relative;
+}
+
+.qualif-row h3 {
+  margin: 0;
+  color: #f63417;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
 .rotate-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
-  margin: 15px auto;
+  flex-shrink: 0;
   border-radius: 50%;
   border: 3px solid #fff;
   animation: spin 8s linear infinite;
@@ -344,17 +344,17 @@ body::before {
    CARTES — Style
    ========================================================= */
 .accueil-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 2px solid #e91147;
-  border-radius: 12px;
-  padding: 12px;
+  background: linear-gradient(135deg, #e91147, #e7d405);
+  border-radius: 25px;
+  padding: 10px 20px;
   text-align: center;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  backdrop-filter: blur(5px);
+  font-weight: bold;
   transition: 0.3s ease;
-  width: 180px;          /* largeur réduite des cartes */
-  flex: 0 0 auto;        /* empêche l'étirement horizontal */
+  width: 180px;
+  flex: 0 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
 .accueil-card h4 {
@@ -364,12 +364,41 @@ body::before {
 }
 
 .accueil-card:hover {
-  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
 
+/* =========================================================
+   🏅 LOGOS PARTENAIRES FIXES (ACCUEIL)
+   ========================================================= */
+.accueil-partners-strip {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 18px 12px;
+  margin-top: 20px;
+  background: none;
+  box-sizing: border-box;
+}
+
+.accueil-partners-strip img {
+  flex: 1 1 0;
+  min-width: 0;
+  max-height: 200px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.accueil-partners-strip img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
 /* =======================
    RESPONSIVE ACCUEIL
    ======================= */
@@ -380,6 +409,10 @@ body::before {
     padding: 0;
     min-height: 100vh;
     justify-content: flex-start;
+  }
+
+  .accueil-image {
+    object-position: right center;
   }
 
   .accueil video {
@@ -399,7 +432,7 @@ body::before {
     transform: none;
     width: 92%;
     margin: 0 auto;
-    padding-top: 80px;  /* compense le header fixe */
+    padding-top: 40px;  /* compense le header fixe */
   }
 
   .accueil-text h2 {
@@ -407,19 +440,19 @@ body::before {
   }
 
   .accueil-text h3 {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
   .accueil .rotate-icon {
-    width: 60px;
-    height: 60px;
+    width: 38px;
+    height: 38px;
   }
 
 .countdown {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 20px auto;
+  margin: 5px auto;
   flex-wrap: nowrap; /* Empêche de passer à la ligne sur petit écran */
 }
 
@@ -473,6 +506,22 @@ body::before {
 
   .accueil .accueil-card p {
     font-size: 0.85rem;
+  }
+
+  .accueil-partners-strip {
+    gap: 8px;
+    padding: 10px 6px;
+    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .accueil-partners-strip img {
+    flex: 0 0 auto;
+    width: auto;
+    height: 25px;
+    min-height: unset;
+    max-height: unset;
   }
 
 }
@@ -670,7 +719,7 @@ body::before {
 /* Conteneur grid */
 .section.resultats .results-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;               /* réduit l’espace entre les cartes */
   max-width: 600px;
   margin: 0 auto;
@@ -678,32 +727,33 @@ body::before {
 
 /* Carte année */
 .section.resultats .result-card {
-  background: rgba(174, 5, 5, 0.975);
-  backdrop-filter: blur(10px);
-  border-radius: 12px;
-  padding: 25px 15px;      /* 📌 réduit la carte */
+  background: linear-gradient(135deg, #e91147, #e7d405);
+  border-radius: 25px;
+  padding: 10px 20px;
   text-align: center;
-  color: #e6c325;
+  color: #fff;
   text-decoration: none;
+  font-weight: bold;
   transition: 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: none;
 }
 
 .section.resultats .result-card:hover {
   transform: translateY(-4px);
-  background: rgb(234, 35, 35);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
 }
 
 .section.resultats .result-card h3 {
-  font-size: 2.2rem;       /* 📌 plus petit */
+  font-size: 1.1rem;
   margin: 0;
-  color: #ff0040;
+  color: #fff;
 }
 
 .section.resultats .result-card p {
-  margin-top: 8px;
-  font-size: 1.5rem;      /* 📌 réduit */
-
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #fff;
 }
 
 /* Empêche tout débordement horizontal */
@@ -800,6 +850,7 @@ body::before {
 /* Image légèrement arrondie */
 .retour-en-images .image-block img {
   width: 90%;
+  height: 200px;
   display: block;
   border-radius: 15px;
   object-fit: cover;
@@ -1186,6 +1237,151 @@ body::before {
 
   .contact-modal-content h2 {
     font-size: 24px;
+  }
+}
+
+/* =========================================================
+   BLOC HIGHLIGHT ACCUEIL
+   ========================================================= */
+.accueil-highlight-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 16px 0;
+  margin-top: 8px;
+  position: relative;
+  z-index: 3;
+  min-height: 160px;
+}
+
+/* Slides cross-fade */
+.accueil-highlight-wrapper .info-slide {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 3s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(12px);
+  filter: blur(6px);
+}
+
+.accueil-highlight-wrapper .info-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.accueil-highlight-wrapper .info-slide.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+  filter: blur(6px);
+}
+
+.info-highlight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: rgba(63, 62, 62, 0.436);
+  border-radius: 20px;
+  padding: 24px 32px;
+  backdrop-filter: blur(1px);
+  width: 100%;
+  max-width: 760px;
+  box-sizing: border-box;
+}
+
+.info-highlight-img {
+  width: 160px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.info-highlight-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+}
+
+.info-highlight-label {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.65);
+}
+
+.info-highlight-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e6ca2d;
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.info-highlight-sub {
+  margin: 0;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.9);
+}
+
+.info-highlight-btn {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 10px 24px;
+  background: #d30c3e;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.info-highlight-btn:hover {
+  background: #a80a31;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .info-highlight {
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+    text-align: center;
+  }
+  .info-highlight-img {
+    width: 70px;
+    height: 96px;
+  }
+  .info-highlight-title {
+    font-size: 1.1rem;
+  }
+  .info-highlight-sub {
+    font-size: 0.85rem;
+  }
+  .info-highlight-btn {
+    align-self: center;
+    padding: 7px 16px;
+    font-size: 0.85rem;
   }
 }
 

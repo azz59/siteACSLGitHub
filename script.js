@@ -1,4 +1,42 @@
 /* =========================================================
+   TÉLÉCHARGEMENT DES LOGOS
+========================================================= */
+function downloadAllLogos() {
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+  if (isMobile) {
+    var msg = document.getElementById('logos-mobile-msg');
+    if (!msg) {
+      msg = document.createElement('div');
+      msg.id = 'logos-mobile-msg';
+      msg.textContent = 'Logos ACSL : disponibles uniquement sur ordinateur.';
+      msg.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:10px 18px;border-radius:10px;font-size:0.85rem;z-index:9999;text-align:center;max-width:80vw;box-shadow:0 4px 12px rgba(0,0,0,0.4);';
+      document.body.appendChild(msg);
+      setTimeout(function() { msg.remove(); }, 3500);
+    }
+    return;
+  }
+
+  const logos = [
+    { url: 'docs/LOGOACSLToutBlanc.png', name: 'LOGOACSLToutBlanc.png' },
+    { url: 'docs/LOGOACSLNoirFondTrans.png', name: 'LOGOACSLNoirFondTrans.png' },
+    { url: 'docs/LOGOACSLFondBlanc.png', name: 'LOGOACSLFondBlanc.png' },
+    { url: 'docs/LOGOACSLFondNoir.png', name: 'LOGOACSLFondNoir.png' },
+    { url: 'docs/LOGOACSLBlancFondTrans.png', name: 'LOGOACSLBlancFondTrans.png' }
+  ];
+  logos.forEach(function(logo, i) {
+    setTimeout(function() {
+      const a = document.createElement('a');
+      a.href = logo.url;
+      a.download = logo.name;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, i * 300);
+  });
+}
+
+/* =========================================================
    MENU BURGER
 ========================================================= */
 const hamburger = document.getElementById('hamburger');
@@ -298,43 +336,83 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================
-   ACTU VOLLEY - MODAL PLEIN ÉCRAN (IMAGE)
+   ACTU BADMINTON - MODAL PLEIN ÉCRAN (IMAGE)
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtnVolley = document.querySelector('.actu-toggle-volley');
-  const modalVolley = document.getElementById('actuModalVolley');
+  const toggleBtnBadminton = document.querySelector('.actu-toggle-badminton');
+  const modalBadminton = document.getElementById('actuModalBadminton');
   
-  if (toggleBtnVolley && modalVolley) {
-    const closeBtnVolley = modalVolley.querySelector('.actu-modal-close');
-    const overlayVolley = modalVolley.querySelector('.actu-modal-overlay');
+  if (toggleBtnBadminton && modalBadminton) {
+    const closeBtnBadminton = modalBadminton.querySelector('.actu-modal-close');
+    const overlayBadminton = modalBadminton.querySelector('.actu-modal-overlay');
     
     // Ouvrir la modal
-    toggleBtnVolley.addEventListener('click', function(e) {
+    toggleBtnBadminton.addEventListener('click', function(e) {
       e.preventDefault();
-      modalVolley.style.display = 'flex';
+      modalBadminton.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     });
     
     // Fermer la modal avec le bouton X
-    if (closeBtnVolley) {
-      closeBtnVolley.addEventListener('click', function() {
-        modalVolley.style.display = 'none';
+    if (closeBtnBadminton) {
+      closeBtnBadminton.addEventListener('click', function() {
+        modalBadminton.style.display = 'none';
         document.body.style.overflow = '';
       });
     }
     
     // Fermer la modal en cliquant sur l'overlay
-    if (overlayVolley) {
-      overlayVolley.addEventListener('click', function() {
-        modalVolley.style.display = 'none';
+    if (overlayBadminton) {
+      overlayBadminton.addEventListener('click', function() {
+        modalBadminton.style.display = 'none';
         document.body.style.overflow = '';
       });
     }
     
     // Fermer avec la touche Echap
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modalVolley.style.display === 'flex') {
-        modalVolley.style.display = 'none';
+      if (e.key === 'Escape' && modalBadminton.style.display === 'flex') {
+        modalBadminton.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+
+/* =========================================================
+   ACTU MEETING PARITÉ - MODAL PLEIN ÉCRAN (IMAGE)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtnParite = document.querySelector('.actu-toggle-parite');
+  const modalParite = document.getElementById('actuModalParite');
+  
+  if (toggleBtnParite && modalParite) {
+    const closeBtnParite = modalParite.querySelector('.actu-modal-close');
+    const overlayParite = modalParite.querySelector('.actu-modal-overlay');
+    
+    toggleBtnParite.addEventListener('click', function(e) {
+      e.preventDefault();
+      modalParite.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+    
+    if (closeBtnParite) {
+      closeBtnParite.addEventListener('click', function() {
+        modalParite.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+    
+    if (overlayParite) {
+      overlayParite.addEventListener('click', function() {
+        modalParite.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalParite.style.display === 'flex') {
+        modalParite.style.display = 'none';
         document.body.style.overflow = '';
       }
     });
@@ -395,55 +473,54 @@ document.addEventListener('DOMContentLoaded', function() {
     let isDown = false;
     let startX;
     let scrollLeft;
-    let scrollTimeout;
-    
+
+    // --- ÉVÉNEMENTS SOURIS (DESKTOP) ---
     carousel.addEventListener('mousedown', (e) => {
       isDown = true;
-      carousel.style.cursor = 'grabbing';
+      carousel.classList.add('active');
       startX = e.pageX - carousel.offsetLeft;
       scrollLeft = carousel.scrollLeft;
       
-      // Arrêter l'animation pendant le drag
+      // Pause de l'animation CSS si elle existe
       const track = carousel.querySelector('.carousel-track');
-      if (track) {
-        track.style.animationPlayState = 'paused';
-      }
+      if (track) track.style.animationPlayState = 'paused';
     });
-    
+
     carousel.addEventListener('mouseleave', () => {
-      if (isDown) {
-        isDown = false;
-        carousel.style.cursor = 'grab';
-        restartAnimation(carousel);
-      }
+      isDown = false;
     });
-    
+
     carousel.addEventListener('mouseup', () => {
-      if (isDown) {
-        isDown = false;
-        carousel.style.cursor = 'grab';
-        restartAnimation(carousel);
-      }
+      isDown = false;
+      // Relance l'animation après un court délai
+      setTimeout(() => {
+        const track = carousel.querySelector('.carousel-track');
+        if (track) track.style.animationPlayState = 'running';
+      }, 500);
     });
-    
+
     carousel.addEventListener('mousemove', (e) => {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - carousel.offsetLeft;
-      const walk = (x - startX) * 2;
+      const walk = (x - startX) * 2; // Vitesse de scroll
       carousel.scrollLeft = scrollLeft - walk;
     });
-    
-    // Redémarrer l'animation après un certain temps d'inactivité
-    function restartAnimation(carousel) {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(() => {
+
+    // --- ÉVÉNEMENTS TACTILES (MOBILE) ---
+    // Le scroll naturel au doigt fonctionnera déjà grâce au CSS "overflow-x: auto",
+    // mais on met en pause l'animation pour éviter les saccades.
+    carousel.addEventListener('touchstart', () => {
+      const track = carousel.querySelector('.carousel-track');
+      if (track) track.style.animationPlayState = 'paused';
+    }, {passive: true});
+
+    carousel.addEventListener('touchend', () => {
+      setTimeout(() => {
         const track = carousel.querySelector('.carousel-track');
-        if (track) {
-          track.style.animationPlayState = 'running';
-        }
-      }, 2000); // Redémarre l'animation après 2 secondes d'inactivité
-    }
+        if (track) track.style.animationPlayState = 'running';
+      }, 1000);
+    }, {passive: true});
   });
 });
 
@@ -455,7 +532,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (slides.length < 2) return;
 
   let current = 0;
-  const DISPLAY_DURATION = 6000; // ms avant le prochain fondu
+  const DISPLAY_DURATION = 8000; // ms avant le prochain fondu
 
   function goToNext() {
     const leaving = slides[current];

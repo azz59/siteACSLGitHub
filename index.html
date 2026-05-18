@@ -13,7 +13,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="google-site-verification" content="ExSlRpla1x3I-yv90dgWSsQjz5T8eoqzs4H24FpPPe4" />
 <title>ACSL - Association des Clubs Sportifs Lommois</title>
 <meta name="description" content="ACSL accompagne et soutient les clubs sportifs de Lomme. Organise des événements sportifs et culturels.">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?1.6">
 <link rel="icon" type="image/png" href="/favicon.png">
 <!-- EmailJS SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -83,25 +83,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://www.facebook.com/share/1BXgYH46Em/" target="_blank" aria-label="Facebook">
           <img src="images/facebook.svg" alt="Facebook">
         </a>
+        <a href="https://youtube.com/@acsllomme?si=fBPhFO3k-8Ou3503" target="_blank" aria-label="Youtube">
+          <img src="images/YouTube_Symbol_0.svg" alt="Youtube">
+        </a>
       </div>
       <div class="info-ticker-track">
-        <div class="info-highlight info-slide is-active" id="infoSlide0">
-          <img src="images/AfficheQLC2026.png" alt="Quand Lomme Court 2026" class="info-highlight-img">
+        <!-- PRESENTATION ACSL -->
+        <div class="info-highlight info-slide is-active info-slide--benevole" id="infoSlide1">
           <div class="info-highlight-text">
-            <h3 class="info-highlight-title">Quand Lomme Court 2026</h3>
-            <p class="info-highlight-sub">Les inscriptions sont ouvertes !</p>
-            <a href="quandlommecourt.html" class="info-highlight-btn">Je m'inscris</a>
+            <p class="info-highlight-label">L’Association des Clubs Sportifs Lommois a été créée le 26 septembre 2009. Son but est de</p>
+            <h3 class="info-highlight-title">Promouvoir, Accompagner et Développer les disciplines sportives sur la commune de Lomme !</h3>
+            <p class="info-highlight-sub">L'ACSL organise diverses manifestations sportives et extra-sportives chaque année, comme Quand Lomme Court, le Téléthon, et bien d'autres événements.</p>
+            <a href="reglement.html" class="info-highlight-btn">En savoir plus</a>
           </div>
         </div>
-        <!-- <div class="info-highlight info-slide info-slide--benevole" id="infoSlide1">
-          <div class="info-highlight-text">
-            <p class="info-highlight-label">Deviens bénévole pour "Quand Lomme Court" !</p>
-            <h3 class="info-highlight-title">Nous cherchons encore des signaleurs !</h3>
-            <p class="info-highlight-sub">Prêts pour rejoindre l'aventure ?</p>
-            <button class="info-highlight-btn" onclick="document.getElementById('contactModal').style.display='block'">C'est parti !</button>
-          </div>
-        </div>
-      </div> -->
+      </div>
+
+
+
     </div>
   </section>
 
@@ -116,56 +115,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="accueil-actu-container">
 
-  <!-- ACTU 1 -->
+
+
+    
+<!-- ACTU badminton -->
   <div class="accueil-actu-card">
     <div class="actu-image">
-      <img src="images/AfficheQLC2026.png" alt="Quand Lomme Court 2026">
+      <img src="images/bad0526.jpeg" alt="Tournoi de Badminton">
 
       <div class="actu-overlay">
-        <h4>Quand Lomme Court 2026</h4>
+        <h4>Tournoi de Badminton</h4>
       </div>
 
       <div class="actu-date">
-        <span>06</span>
-        <small>AVR</small>
+        <span>17</span>
+        <small>MAI</small>
       </div>
 
-      <a href="quandlommecourt.html" class="actu-more">En savoir plus</a>
+      <a href="#" class="actu-more actu-toggle-badminton">En savoir plus</a>
     </div>
   </div>
 
 
-<!-- ACTU volley -->
+
+    <!-- ACTU meeting parité -->
   <div class="accueil-actu-card">
     <div class="actu-image">
-      <img src="images/Affiche Tournoi Volley 19-04-2026.jpeg" alt="Tournoi de Volleyball">
+      <img src="images/meetingParité26.png" alt="Meeting de la parité">
 
       <div class="actu-overlay">
-        <h4>Tournoi de Volleyball</h4>
+        <h4>Athlétisme : Meeting de la parité</h4>
       </div>
 
       <div class="actu-date">
-        <span>19</span>
-        <small>AVR</small>
+        <span>12</span>
+        <small>JUIN</small>
       </div>
 
-      <a href="#" class="actu-more actu-toggle-volley">En savoir plus</a>
+      <a href="#" class="actu-more actu-toggle-parite">En savoir plus</a>
     </div>
   </div>
 
 
-<!-- ACTU LOTO OSML FOOTBALL -->
+<!-- vide grenier -->
   <div class="accueil-actu-card">
     <div class="actu-image">
-      <img src="images/LOTOv1.jpg" alt="LOTO - OSML Football">
+      <img src="images/videgreniertelethon.png" alt="Vide grenier - Lomme téléthon">
 
       <div class="actu-overlay">
-        <h4>LOTO - OSML Football</h4>
+        <h4>Vide grenier - Lomme téléthon</h4>
       </div>
 
       <div class="actu-date">
-        <span>08</span>
-        <small>MARS</small>
+        <span>25</span>
+        <small>AVR</small>
       </div>
 
       <a href="#" class="actu-more actu-toggle-loto">En savoir plus</a>
@@ -174,66 +177,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 
-
-    <!-- ACTU telethon -->
-    <!-- <div class="accueil-actu-card">
-      <div class="actu-image">
-        <img src="images/telethon2025.JPG" alt="Événement sportif ACSL">
-
-        <div class="actu-overlay">
-          <h4>Téléthon : les Pioupious collectent 26 675 € !</h4>
-        </div>
-
-        <a href="#" class="actu-more actu-toggle">En savoir plus</a>
-      </div>
-    </div> -->
-
-    <!-- Contenu dépliable Actu telethon (Texte) -->
-        <!-- <div class="actu-content" style="display: none;">
-          <p>Avec une cinquantaine de manifestations organisées pour la dernière édition du Téléthon lommois, les « grands Pioupious » que sont les bénévoles, se sont retrouvés samedi 31 janvier au pôle associatif Michelet pour la traditionnelle remise du chèque de dons au profit de l’AFM-Téléthon*, représentée par Isabelle Naessens, coordinatrice départementale : « Comme chaque année, vous avez fait bouger les lignes à Lomme pour faire bouger la vie. Continuez ! La thérapie génique est là et fonctionne, mais en France, il y a encore 7 000 maladies rares, dont 95 % sans traitement spécifique ».
-
-  Cette année, c’est donc un chèque de 26 675 € (26 675,72 €, précise le trésorier de l’association) que l’ACSL a remis à l’AFM-Téléthon, pour la joie de son président, Christian Montay : « Dans le monde actuel, un peu fou dans lequel nous vivons, tout le monde répond présent à Lomme pour cette manifestation du Téléthon. Alors merci ! Merci aux clubs, merci aux associations, merci à nos partenaires** et merci aux donateurs ». La générosité des Français avait permis à l'échelle nationale de collecter plus de 83 millions d’euros cette année.
-
-  Et pour 2026 ? Préparez-vous à voir beaucoup de Pioupious en ville ! Jean-Pierre Alexandre, coordinateur du Téléthon à Lomme, prépare déjà son programme : « Pour notre toute première participation au Téléthon, nous avions fait 30 heures non-stop. Alors, comme l’année prochaine nous fêterons notre 30ᵉ participation, ce sera : 30 ans, 30 heures et 30 000 € de dons comme objectif », a-t-il conclu avant un pot de l’amitié.
-
-  * https://www.afm-telethon.fr/fr</p>
-  </div> -->
-
-<!-- ACTU 3 Christian -->
-<!-- 
-  <div class="accueil-actu-card">
-    <div class="actu-image">
-      <img src="images/christian.jpg" alt="Portrait de Christian Montay">
-
-      <div class="actu-overlay">
-        <h4>Portrait de Christian Montay, Président de l'ACSL</h4>
-      </div>
-
-      <a href="https://www.ville-lomme.fr/Actualites/Se-bouger-pour-le-sport"
-         target="_blank"
-         class="actu-more">
-        En savoir plus
-      </a>
-    </div>
-  </div> -->
-
 </div>
-
-      
-
 </section>
-
-
 </div>
 
-      <!-- Modal plein écran pour actu ch prov halt (Image) -->
-      <div class="actu-modal" id="actuModalChampionnat" style="display: none;">
+
+      <!-- Modal plein écran pour actu Tournoi badminton (Image) -->
+      <div class="actu-modal" id="actuModalBadminton" style="display: none;">
         <div class="actu-modal-overlay"></div>
         <div class="actu-modal-content">
           <button class="actu-modal-close">&times;</button>
-          <h3>Championnat de Province U10-U13-Masters H/F</h3>
+          <h3>Tournoi de Badminton</h3>
           <div class="actu-modal-image">
-            <img src="images/Championnat de Province U10-U13-Masters H&F (1).png" alt="Actualité ACSL" style="max-width: 100%; height: auto; border-radius: 8px;">
+            <img src="images/bad0526.jpeg" alt="Tournoi de Badminton" style="max-width: 100%; height: auto; border-radius: 8px;">
           </div>
           <button class="actu-modal-share" onclick="shareEvent()">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -249,15 +205,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
 
-      <!-- Modal plein écran pour actu Tournoi Volleyball (Image) -->
-      <div class="actu-modal" id="actuModalVolley" style="display: none;">
+<!-- Modal plein écran pour actu Meeting de la parité (Image) -->
+      <div class="actu-modal" id="actuModalParite" style="display: none;">
         <div class="actu-modal-overlay"></div>
         <div class="actu-modal-content">
           <button class="actu-modal-close">&times;</button>
-          <h3>Tournoi de Volleyball</h3>
+          <h3>Athlétisme : Meeting de la parité</h3>
           <div class="actu-modal-image">
-            <img src="images/Affiche Tournoi Volley 19-04-2026.jpeg" alt="Tournoi de Volleyball" style="max-width: 100%; height: auto; border-radius: 8px;">
-          </div>
+            <img src="images/meetingParité26.png" alt="Athlétisme : Meeting de la parité" style="max-width: 100%; height: auto; border-radius: 8px;">           
+             <img src="images/meetingParité26Horaires.png" alt="Athlétisme : Meeting de la parité" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 12px;">          
+            </div>
           <button class="actu-modal-share" onclick="shareEvent()">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="18" cy="5" r="3"></circle>
@@ -271,14 +228,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
 
-      <!-- Modal plein écran pour actu loto OSML Football (Image) -->
+
+<!-- Modal plein écran pour actu loto OSML Football (Image) -->
       <div class="actu-modal" id="actuModalLoto" style="display: none;">
         <div class="actu-modal-overlay"></div>
         <div class="actu-modal-content">
           <button class="actu-modal-close">&times;</button>
-          <h3>LOTO - OSML Football</h3>
+          <h3>Vide grenier - Lomme téléthon</h3>
           <div class="actu-modal-image">
-            <img src="images/LOTOv1.jpg" alt="Actualité ACSL" style="max-width: 100%; height: auto; border-radius: 8px;">
+            <img src="images/videgreniertelethon.png" alt="Actualité ACSL" style="max-width: 100%; height: auto; border-radius: 8px;">
           </div>
           <button class="actu-modal-share" onclick="shareEvent()">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -292,34 +250,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </button>
         </div>
       </div>
-
-      <!-- Modal plein écran pour actu telethon (Texte) -->
-      <!-- <div class="actu-modal" id="actuModal" style="display: none;">
-        <div class="actu-modal-overlay"></div>
-        <div class="actu-modal-content">
-          <button class="actu-modal-close">&times;</button>
-          <h3>Téléthon : les Pioupious collectent 26 675 € !</h3>
-          <div class="actu-modal-text">
-            <p>Avec une cinquantaine de manifestations organisées pour la dernière édition du Téléthon lommois, les « grands Pioupious » que sont les bénévoles, se sont retrouvés samedi 31 janvier au pôle associatif Michelet pour la traditionnelle remise du chèque de dons au profit de l'AFM-Téléthon*, représentée par Isabelle Naessens, coordinatrice départementale : « Comme chaque année, vous avez fait bouger les lignes à Lomme pour faire bouger la vie. Continuez ! La thérapie génique est là et fonctionne, mais en France, il y a encore 7 000 maladies rares, dont 95 % sans traitement spécifique ».</p>
-
-            <p>Cette année, c'est donc un chèque de 26 675 € (26 675,72 €, précise le trésorier de l'association) que l'ACSL a remis à l'AFM-Téléthon, pour la joie de son président, Christian Montay : « Dans le monde actuel, un peu fou dans lequel nous vivons, tout le monde répond présent à Lomme pour cette manifestation du Téléthon. Alors merci ! Merci aux clubs, merci aux associations, merci à nos partenaires** et merci aux donateurs ». La générosité des Français avait permis à l'échelle nationale de collecter plus de 83 millions d'euros cette année.</p>
-
-            <p>Et pour 2026 ? Préparez-vous à voir beaucoup de Pioupious en ville ! Jean-Pierre Alexandre, coordinateur du Téléthon à Lomme, prépare déjà son programme : « Pour notre toute première participation au Téléthon, nous avions fait 30 heures non-stop. Alors, comme l'année prochaine nous fêterons notre 30ᵉ participation, ce sera : 30 ans, 30 heures et 30 000 € de dons comme objectif », a-t-il conclu avant un pot de l'amitié.</p>
-
-            <p>* https://www.afm-telethon.fr/fr</p>
-          </div>
-          <button class="actu-modal-share" onclick="shareEvent()">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="18" cy="5" r="3"></circle>
-              <circle cx="6" cy="12" r="3"></circle>
-              <circle cx="18" cy="19" r="3"></circle>
-              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-            </svg>
-            Partager
-          </button>
-        </div>
-      </div> -->
 
 </section>
 
@@ -802,6 +732,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://www.facebook.com/share/1BXgYH46Em/" target="_blank" aria-label="Facebook">
           <img src="images/facebook.svg" alt="Facebook">
         </a>
+        <a href="https://youtube.com/@acsllomme?si=fBPhFO3k-8Ou3503" target="_blank" aria-label="Youtube">
+          <img src="images/YouTube_Symbol_0.svg" alt="Youtube">
+        </a>
         <button class="share-btn" onclick="shareEvent()" aria-label="Partager">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="18" cy="5" r="3"/>
@@ -812,6 +745,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </svg>
         </button>
       </div>
+      <button class="footer-logos-btn" onclick="downloadAllLogos()">Logos ACSL</button>
     </div>
     
     <div class="footer-section">
