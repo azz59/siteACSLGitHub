@@ -27,7 +27,7 @@ body {
 
 /* FILIGRANE GLOBAL */
 body::before {
-  content: "🏃🏀ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚾ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚽ACSL🏃🏀🏸ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋🏀ACSL🏃⚾ACSL🏃🏸ACSL⚽🏸ACSL🏸🏀ACSL🏀🏃ACSL🏐🏸ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏀🏃ACSL🏃🏐ACSL🏃🏋";
+  /* content: "🏃🏀ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚾ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏀ACSL🏃🏐ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋ACSL🏃⚽ACSL🏃🏀🏸ACSL🏃🏀ACSL🏃🏐ACSL🏃🏋🏀ACSL🏃⚾ACSL🏃🏸ACSL⚽🏸ACSL🏸🏀ACSL🏀🏃ACSL🏐🏸ACSL🏋⚾ACSL🏃🏀ACSL🏃🏸ACSL🏃⚽ACSL🏀🏃ACSL🏃🏐ACSL🏃🏋"; */
   
   position: fixed;
   inset: -20%;                 /* déborde volontairement */

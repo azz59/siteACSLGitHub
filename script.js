@@ -295,18 +295,20 @@ document.addEventListener('DOMContentLoaded', function() {
    ACTU LOTO - MODAL PLEIN ÉCRAN (IMAGE)
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtnLoto = document.querySelector('.actu-toggle-loto');
+  const toggleBtnLoto = document.querySelectorAll('.actu-toggle-loto');
   const modalLoto = document.getElementById('actuModalLoto');
   
-  if (toggleBtnLoto && modalLoto) {
+  if (toggleBtnLoto.length && modalLoto) {
     const closeBtnLoto = modalLoto.querySelector('.actu-modal-close');
     const overlayLoto = modalLoto.querySelector('.actu-modal-overlay');
     
     // Ouvrir la modal
-    toggleBtnLoto.addEventListener('click', function(e) {
-      e.preventDefault();
-      modalLoto.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
+    toggleBtnLoto.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modalLoto.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
     });
     
     // Fermer la modal avec le bouton X
@@ -457,6 +459,94 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && modal.style.display === 'flex') {
         modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+
+/* =========================================================
+   EVENEMENT SPECTACLE MUSICAL - MODAL PLEIN ECRAN (IMAGE)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtnSpectacle = document.querySelectorAll('.actu-toggle-spectacle');
+  const modalSpectacle = document.getElementById('actuModalSpectacleMusical');
+
+  if (toggleBtnSpectacle.length && modalSpectacle) {
+    const closeBtnSpectacle = modalSpectacle.querySelector('.actu-modal-close');
+    const overlaySpectacle = modalSpectacle.querySelector('.actu-modal-overlay');
+
+    toggleBtnSpectacle.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modalSpectacle.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    if (closeBtnSpectacle) {
+      closeBtnSpectacle.addEventListener('click', function() {
+        modalSpectacle.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+
+    if (overlaySpectacle) {
+      overlaySpectacle.addEventListener('click', function() {
+        modalSpectacle.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalSpectacle.style.display === 'flex') {
+        modalSpectacle.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+
+/* =========================================================
+   EVENEMENT FETE/FAITES DU SPORT - MODAL PLEIN ECRAN (IMAGE)
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtnFete = document.querySelectorAll('.actu-toggle-fete');
+  const modalFete = document.getElementById('actuModalFete');
+
+  if (toggleBtnFete.length && modalFete) {
+    const closeBtnFete = modalFete.querySelector('.actu-modal-close');
+    const overlayFete = modalFete.querySelector('.actu-modal-overlay');
+
+    // Ouvrir la modal
+    toggleBtnFete.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modalFete.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Fermer la modal avec le bouton X
+    if (closeBtnFete) {
+      closeBtnFete.addEventListener('click', function() {
+        modalFete.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Fermer la modal en cliquant sur l'overlay
+    if (overlayFete) {
+      overlayFete.addEventListener('click', function() {
+        modalFete.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Fermer avec la touche Echap
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalFete.style.display === 'flex') {
+        modalFete.style.display = 'none';
         document.body.style.overflow = '';
       }
     });
