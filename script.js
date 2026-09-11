@@ -671,6 +671,11 @@ document.addEventListener('DOMContentLoaded', function() {
       resumeAutoScroll(1000);
     }, {passive: true});
 
+    carousel.addEventListener('touchcancel', () => {
+      keepInfiniteScroll();
+      resumeAutoScroll(1000);
+    }, {passive: true});
+
     carousel.addEventListener('mouseenter', pauseAutoScroll);
     carousel.addEventListener('mouseleave', () => resumeAutoScroll());
     carousel.addEventListener('scroll', keepInfiniteScroll);
