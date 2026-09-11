@@ -564,65 +564,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let hasDragged = false;
     let startX;
     let scrollLeft;
-    let isPaused = false;
-    let resumeTimer;
-    let lastFrameTime;
-    const track = carousel.querySelector('.carousel-track');
-    const direction = carousel.classList.contains('carousel-right') ? -1 : 1;
-    const speed = 35;
-
-    if (direction === -1 && track) {
-      carousel.scrollLeft = track.scrollWidth / 2;
-    }
-
-    function keepInfiniteScroll() {
-      if (!track) return;
-
-      const loopWidth = track.scrollWidth / 2;
-      if (loopWidth <= carousel.clientWidth) return;
-
-      if (carousel.scrollLeft >= loopWidth) {
-        carousel.scrollLeft -= loopWidth;
-      } else if (carousel.scrollLeft <= 0) {
-        carousel.scrollLeft += loopWidth;
-      }
-    }
-
-    function pauseAutoScroll() {
-      isPaused = true;
-      window.clearTimeout(resumeTimer);
-    }
-
-    function resumeAutoScroll(delay = 800) {
-      window.clearTimeout(resumeTimer);
-      resumeTimer = window.setTimeout(() => {
-        isPaused = false;
-        lastFrameTime = undefined;
-      }, delay);
-    }
-
-    function autoScroll(timestamp) {
-      if (!lastFrameTime) lastFrameTime = timestamp;
-      const elapsed = timestamp - lastFrameTime;
-      lastFrameTime = timestamp;
-
-      if (!isPaused) {
-        carousel.scrollLeft += direction * speed * (elapsed / 1000);
-        keepInfiniteScroll();
-      }
-
-      window.requestAnimationFrame(autoScroll);
-    }
-
-    if (track) {
-      window.requestAnimationFrame(autoScroll);
-    }
 
     function stopDrag() {
       isDown = false;
       carousel.classList.remove('active');
-      keepInfiniteScroll();
-      resumeAutoScroll();
     }
 
     // --- ÉVÉNEMENTS SOURIS (DESKTOP) ---
@@ -632,7 +577,6 @@ document.addEventListener('DOMContentLoaded', function() {
       carousel.classList.add('active');
       startX = e.pageX - carousel.offsetLeft;
       scrollLeft = carousel.scrollLeft;
-      pauseAutoScroll();
     });
 
     carousel.addEventListener('mouseleave', () => {
@@ -650,7 +594,6 @@ document.addEventListener('DOMContentLoaded', function() {
       const walk = (x - startX) * 2; // Vitesse de scroll
       if (Math.abs(walk) > 6) hasDragged = true;
       carousel.scrollLeft = scrollLeft - walk;
-      keepInfiniteScroll();
     });
 
     carousel.addEventListener('click', (e) => {
@@ -660,25 +603,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, true);
 
     // --- ÉVÉNEMENTS TACTILES (MOBILE) ---
-    // Le scroll naturel au doigt fonctionnera déjà grâce au CSS "overflow-x: auto",
-    // mais on met en pause l'auto-défilement pour éviter les saccades.
-    carousel.addEventListener('touchstart', () => {
-      pauseAutoScroll();
-    }, {passive: true});
-
-    carousel.addEventListener('touchend', () => {
-      keepInfiniteScroll();
-      resumeAutoScroll(1000);
-    }, {passive: true});
-
-    carousel.addEventListener('touchcancel', () => {
-      keepInfiniteScroll();
-      resumeAutoScroll(1000);
-    }, {passive: true});
-
-    carousel.addEventListener('mouseenter', pauseAutoScroll);
-    carousel.addEventListener('mouseleave', () => resumeAutoScroll());
-    carousel.addEventListener('scroll', keepInfiniteScroll);
+    // Le scroll naturel au doigt fonctionne grâce au CSS "overflow-x: auto".
   });
 });
 

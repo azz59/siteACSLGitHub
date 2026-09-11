@@ -1004,12 +1004,12 @@ body::before {
 
 /* Animation gauche (bandeau 2) */
 .carousel-left .carousel-track {
-  animation: none;
+  animation: scroll-left 35s linear infinite;
 }
 
 /* Animation droite (bandeau 3, sens inverse) */
 .carousel-right .carousel-track {
-  animation: none;
+  animation: scroll-right 35s linear infinite;
 }
 
 /* Pause de l’animation au survol */
