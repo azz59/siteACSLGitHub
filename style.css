@@ -1154,7 +1154,11 @@ body::before {
 
   .carousel-left .carousel-track,
   .carousel-right .carousel-track {
-    animation-duration: 55s; /* 🔥 plus lent */
+    animation-duration: 35s;
+  }
+
+  .carousel.clubs:hover .carousel-track {
+    animation-play-state: running;
   }
 }
 
