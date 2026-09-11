@@ -973,6 +973,7 @@ body::before {
    ========================================================= */
 
 .carousel.clubs {
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
   gap: 30px;
@@ -982,6 +983,12 @@ body::before {
   -webkit-overflow-scrolling: touch;
   margin: 10px 0;
   position: relative;
+  cursor: grab;
+  touch-action: pan-x;
+}
+
+.carousel.clubs.active {
+  cursor: grabbing;
 }
 
 /* Masquer scrollbar */
@@ -997,12 +1004,12 @@ body::before {
 
 /* Animation gauche (bandeau 2) */
 .carousel-left .carousel-track {
-  animation: scroll-left 35s linear infinite;
+  animation: none;
 }
 
 /* Animation droite (bandeau 3, sens inverse) */
 .carousel-right .carousel-track {
-  animation: scroll-right 35s linear infinite;
+  animation: none;
 }
 
 /* Pause de l’animation au survol */
@@ -1016,10 +1023,12 @@ body::before {
 
 .carousel.clubs .club-link {
   flex: 0 0 auto;
-  width: 200px;
-  height: 130px;
+  width: 170px;
+  height: 108px;
   position: relative;
+  border: 2px solid #d9d9d9;
   border-radius: 10%;
+  box-sizing: border-box;
   margin-right: 20px; /* ← AJOUTE L’ESPACE ENTRE LES IMAGES */
   overflow: hidden;
 }
@@ -1121,8 +1130,8 @@ body::before {
 
 /* Blocs clubs plus petits */
 .carousel.clubs .club-link {
-  width: 90px;
-  height: 90px;
+  width: 78px;
+  height: 78px;
   margin-right: 0;   /* 🔥 IMPORTANT : supprime le surplus */
   margin-top: 0;
   margin-bottom: 0;

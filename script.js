@@ -561,32 +561,86 @@ document.addEventListener('DOMContentLoaded', function() {
   
   carousels.forEach(carousel => {
     let isDown = false;
+    let hasDragged = false;
     let startX;
     let scrollLeft;
+    let isPaused = false;
+    let resumeTimer;
+    let lastFrameTime;
+    const track = carousel.querySelector('.carousel-track');
+    const direction = carousel.classList.contains('carousel-right') ? -1 : 1;
+    const speed = 35;
+
+    if (direction === -1 && track) {
+      carousel.scrollLeft = track.scrollWidth / 2;
+    }
+
+    function keepInfiniteScroll() {
+      if (!track) return;
+
+      const loopWidth = track.scrollWidth / 2;
+      if (loopWidth <= carousel.clientWidth) return;
+
+      if (carousel.scrollLeft >= loopWidth) {
+        carousel.scrollLeft -= loopWidth;
+      } else if (carousel.scrollLeft <= 0) {
+        carousel.scrollLeft += loopWidth;
+      }
+    }
+
+    function pauseAutoScroll() {
+      isPaused = true;
+      window.clearTimeout(resumeTimer);
+    }
+
+    function resumeAutoScroll(delay = 800) {
+      window.clearTimeout(resumeTimer);
+      resumeTimer = window.setTimeout(() => {
+        isPaused = false;
+        lastFrameTime = undefined;
+      }, delay);
+    }
+
+    function autoScroll(timestamp) {
+      if (!lastFrameTime) lastFrameTime = timestamp;
+      const elapsed = timestamp - lastFrameTime;
+      lastFrameTime = timestamp;
+
+      if (!isPaused) {
+        carousel.scrollLeft += direction * speed * (elapsed / 1000);
+        keepInfiniteScroll();
+      }
+
+      window.requestAnimationFrame(autoScroll);
+    }
+
+    if (track) {
+      window.requestAnimationFrame(autoScroll);
+    }
+
+    function stopDrag() {
+      isDown = false;
+      carousel.classList.remove('active');
+      keepInfiniteScroll();
+      resumeAutoScroll();
+    }
 
     // --- ÉVÉNEMENTS SOURIS (DESKTOP) ---
     carousel.addEventListener('mousedown', (e) => {
       isDown = true;
+      hasDragged = false;
       carousel.classList.add('active');
       startX = e.pageX - carousel.offsetLeft;
       scrollLeft = carousel.scrollLeft;
-      
-      // Pause de l'animation CSS si elle existe
-      const track = carousel.querySelector('.carousel-track');
-      if (track) track.style.animationPlayState = 'paused';
+      pauseAutoScroll();
     });
 
     carousel.addEventListener('mouseleave', () => {
-      isDown = false;
+      stopDrag();
     });
 
     carousel.addEventListener('mouseup', () => {
-      isDown = false;
-      // Relance l'animation après un court délai
-      setTimeout(() => {
-        const track = carousel.querySelector('.carousel-track');
-        if (track) track.style.animationPlayState = 'running';
-      }, 500);
+      stopDrag();
     });
 
     carousel.addEventListener('mousemove', (e) => {
@@ -594,23 +648,32 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const x = e.pageX - carousel.offsetLeft;
       const walk = (x - startX) * 2; // Vitesse de scroll
+      if (Math.abs(walk) > 6) hasDragged = true;
       carousel.scrollLeft = scrollLeft - walk;
+      keepInfiniteScroll();
     });
+
+    carousel.addEventListener('click', (e) => {
+      if (!hasDragged) return;
+      e.preventDefault();
+      hasDragged = false;
+    }, true);
 
     // --- ÉVÉNEMENTS TACTILES (MOBILE) ---
     // Le scroll naturel au doigt fonctionnera déjà grâce au CSS "overflow-x: auto",
-    // mais on met en pause l'animation pour éviter les saccades.
+    // mais on met en pause l'auto-défilement pour éviter les saccades.
     carousel.addEventListener('touchstart', () => {
-      const track = carousel.querySelector('.carousel-track');
-      if (track) track.style.animationPlayState = 'paused';
+      pauseAutoScroll();
     }, {passive: true});
 
     carousel.addEventListener('touchend', () => {
-      setTimeout(() => {
-        const track = carousel.querySelector('.carousel-track');
-        if (track) track.style.animationPlayState = 'running';
-      }, 1000);
+      keepInfiniteScroll();
+      resumeAutoScroll(1000);
     }, {passive: true});
+
+    carousel.addEventListener('mouseenter', pauseAutoScroll);
+    carousel.addEventListener('mouseleave', () => resumeAutoScroll());
+    carousel.addEventListener('scroll', keepInfiniteScroll);
   });
 });
 
