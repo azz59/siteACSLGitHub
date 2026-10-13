@@ -116,44 +116,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="accueil-actu-container">
 
 
-
-<!-- ACTU Fête/Faites du Sport -->
+<!-- ACTU Bowling -->
   <div class="accueil-actu-card">
     <div class="actu-image">
-      <img src="images/feteDuSport26.jpeg" alt="Fête/Faites du Sport">
+      <img src="images/Bowling.png" alt="Bowling">
 
       <div class="actu-overlay">
-        <h4>Fête/Faites du Sport</h4>
+        <h4>Téléthon : Bowling entre amis !</h4>
       </div>
 
       <div class="actu-date">
-        <span>12</span>
-        <small>Sep</small>
+        <span>05</span>
+        <small>Dec</small>
       </div>
 
-      <a href="#" class="actu-more actu-toggle-fete">En savoir plus</a>
+      <a href="#" class="actu-more actu-toggle-bowling">En savoir plus</a>
     </div>
   </div>
-  
 
 
-<!-- ACTU Super Loto -->
-  <div class="accueil-actu-card">
-    <div class="actu-image">
-      <img src="images/Affiche_Loto_Téléthon_2026.png" alt="Super Loto au profit du Téléthon">
-
-      <div class="actu-overlay">
-        <h4>Super Loto au profit du Téléthon</h4>
-      </div>
-
-      <div class="actu-date">
-        <span>20</span>
-        <small>Sep</small>
-      </div>
-
-      <a href="#" class="actu-more actu-toggle-loto">En savoir plus</a>
-    </div>
-  </div>
 
 
 <!-- ACTU Spectacle musical -->
@@ -173,26 +154,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#" class="actu-more actu-toggle-spectacle">En savoir plus</a>
     </div>
   </div>
-    
-<!-- ACTU Quand Lomme Court -->
+
+<!-- ACTU Super Loto -->
   <div class="accueil-actu-card">
     <div class="actu-image">
-      <img src="images/AfficheQLC2026.png" alt="Quand Lomme Court 2026">
+      <img src="images/Affiche_Loto_Téléthon_2026.png" alt="Super Loto au profit du Téléthon">
 
       <div class="actu-overlay">
-        <h4>Quand Lomme Court 2026</h4>
+        <h4>Super Loto au profit du Téléthon</h4>
       </div>
 
       <div class="actu-date">
-        <span>06</span>
-        <small>Avr</small>
+        <span>20</span>
+        <small>Sep</small>
       </div>
 
-      <a href="quandlommecourt.html" class="actu-more actu-toggle-qlc">En savoir plus</a>
+      <a href="#" class="actu-more actu-toggle-loto">En savoir plus</a>
     </div>
   </div>
 
-
+  
 
 </div>
 </section>
@@ -650,6 +631,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <h3>Fête/Faites du Sport</h3>
           <div class="actu-modal-image">
             <img src="images/feteDuSport26.jpeg" alt="Fête/Faites du Sport" style="max-width: 100%; height: auto; border-radius: 8px;">
+          </div>
+          <button class="actu-modal-share" onclick="shareEvent()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            Partager
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal plein écran pour Téléthon Bowling (PDF) -->
+      <div class="actu-modal" id="actuModalBowling" style="display: none;">
+        <div class="actu-modal-overlay"></div>
+        <div class="actu-modal-content">
+          <button class="actu-modal-close">&times;</button>
+          <h3>Téléthon : Bowling entre amis !</h3>
+          <div class="actu-modal-image">
+            <img src="images/Bowling.png" alt="Téléthon : Bowling entre amis !" style="max-width: 100%; height: auto; border-radius: 8px;">
           </div>
           <button class="actu-modal-share" onclick="shareEvent()">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

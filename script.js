@@ -554,6 +554,52 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 /* =========================================================
+   EVENEMENT TELETHON BOWLING - MODAL PLEIN ECRAN
+========================================================= */
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtnBowling = document.querySelectorAll('.actu-toggle-bowling');
+  const modalBowling = document.getElementById('actuModalBowling');
+
+  if (toggleBtnBowling.length && modalBowling) {
+    const closeBtnBowling = modalBowling.querySelector('.actu-modal-close');
+    const overlayBowling = modalBowling.querySelector('.actu-modal-overlay');
+
+    // Ouvrir la modal
+    toggleBtnBowling.forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modalBowling.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Fermer la modal avec le bouton X
+    if (closeBtnBowling) {
+      closeBtnBowling.addEventListener('click', function() {
+        modalBowling.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Fermer la modal en cliquant sur l'overlay
+    if (overlayBowling) {
+      overlayBowling.addEventListener('click', function() {
+        modalBowling.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Fermer avec la touche Echap
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modalBowling.style.display === 'flex') {
+        modalBowling.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+
+/* =========================================================
    BANDEAUX CLUBS - DRAG TO SCROLL
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function() {
