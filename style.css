@@ -730,6 +730,15 @@ body::before {
   padding-right: 40px;
 }
 
+.actu-modal-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
 .actu-modal-text {
   font-family: Arial, sans-serif;
   line-height: 1.7;
